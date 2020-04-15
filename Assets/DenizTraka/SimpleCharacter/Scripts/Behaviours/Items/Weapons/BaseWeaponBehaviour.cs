@@ -11,6 +11,7 @@ namespace DTWorld.Behaviours.Items.Weapons
     public abstract class BaseWeaponBehaviour : BaseItemBehaviour
     {
         private float attackSpeed;
+        private TrailRenderer trailRenderer;
 
         public new BaseWeapon Item;
         public BaseMobileBehaviour OwnerMobileBehaviour;
@@ -22,7 +23,8 @@ namespace DTWorld.Behaviours.Items.Weapons
         public override void Start()
         {
             base.Start();
-
+            trailRenderer = gameObject.transform.GetComponentInChildren<TrailRenderer>();
+            trailRenderer.enabled = false;
             this.BeforeAttackingEvent += new BeforeAttackingEventHandler(BeforeAttacking);
             this.AfterAttackedEvent += new AfterAttackedEventHandler(AfterAttacked);
         }
@@ -42,6 +44,7 @@ namespace DTWorld.Behaviours.Items.Weapons
             if (OwnerMobileBehaviour != null)
             {
                 OwnerMobileBehaviour.Mobile.IsAttacking = true;
+                trailRenderer.enabled = true;
             }
 
             yield return new WaitForSeconds(1/attackSpeed);
@@ -53,6 +56,7 @@ namespace DTWorld.Behaviours.Items.Weapons
 
             if (OwnerMobileBehaviour != null)
             {
+                trailRenderer.enabled = false;
                 OwnerMobileBehaviour.Mobile.IsAttacking = false;
             }
 
