@@ -10,9 +10,9 @@ namespace DTWorld.Behaviours.Items.Weapons
 {
     public abstract class BaseWeaponBehaviour : BaseItemBehaviour
     {
-        //private float timeBeforeHit;
+        private float attackSpeed;
 
-        protected new BaseWeapon Item;
+        public new BaseWeapon Item;
         public BaseMobileBehaviour OwnerMobileBehaviour;
 
         public delegate void BeforeAttackingEventHandler();
@@ -35,7 +35,6 @@ namespace DTWorld.Behaviours.Items.Weapons
 
         private IEnumerator ExecuteAfterTime(Action task)
         {
-
             if (BeforeAttackingEvent != null)
             {
                 BeforeAttackingEvent.Invoke();
@@ -45,7 +44,7 @@ namespace DTWorld.Behaviours.Items.Weapons
                 OwnerMobileBehaviour.Mobile.IsAttacking = true;
             }
 
-            yield return new WaitForSeconds(Item.SwingSpeed);
+            yield return new WaitForSeconds(1/attackSpeed);
 
             if (task != null)
             {
@@ -106,16 +105,21 @@ namespace DTWorld.Behaviours.Items.Weapons
 
             Hit(otherEntityHealth);
 
-            if (OwnerMobileBehaviour != null)
-            {
-                //pereventing hitting multiple times from each swing
-                OwnerMobileBehaviour.Mobile.IsAttacking = false;
-            }
+            // if (OwnerMobileBehaviour != null)
+            // {
+            //     //pereventing hitting multiple times from each swing
+            //     OwnerMobileBehaviour.Mobile.IsAttacking = false;
+            // }
         }
 
         private void Hit(HealthBehaviour otherEntityHealth)
         {
             otherEntityHealth.TakeDamage(Item.Damage);
+        }
+
+        public void SetAttackSpeed(float value)
+        {
+            attackSpeed = value;
         }
     }
 }

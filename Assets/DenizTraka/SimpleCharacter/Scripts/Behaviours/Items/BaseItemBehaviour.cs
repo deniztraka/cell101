@@ -8,7 +8,7 @@ namespace DTWorld.Behaviours.Items
     {
         public string Name;
 
-        protected BaseItem Item;
+        public BaseItem Item;
 
         public virtual void Awake()
         {

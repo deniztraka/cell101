@@ -6,6 +6,7 @@ using DTWorld.Core.Mobiles;
 using DTWorld.Engines.Animation;
 using UnityEngine;
 using static DTWorld.Behaviours.Interfacelike.HealthBehaviour;
+using static DTWorld.Behaviours.Items.Weapons.BaseWeaponBehaviour;
 
 namespace DTWorld.Behaviours.Mobiles
 {
@@ -84,12 +85,43 @@ namespace DTWorld.Behaviours.Mobiles
             }
         }
 
+        public float GetAttackRate()
+        {
+            //Attack rate only depends on weapon speed for now
+            return 1 / WeaponBehaviour.Item.SwingSpeed;
+        }
+
+        protected bool CanAttack(){
+            var calculatedAttackRate = GetAttackRate();
+            if(calculatedAttackRate <= Mobile.AttackRate){
+                return Mobile.CanAttack();
+            } else {
+                return Mobile.CanAttack(calculatedAttackRate);
+            }
+        }
+
         public void AddWeapon(BaseWeaponBehaviour weaponBehaviour)
         {
             if (RightHandle != null)
             {
-                weaponBehaviour.OwnerMobileBehaviour = this;
+                WeaponBehaviour = weaponBehaviour;
+                WeaponBehaviour.OwnerMobileBehaviour = this;
+                WeaponBehaviour.BeforeAttackingEvent += new BeforeAttackingEventHandler(SetAttackSpeedBefore);
+                WeaponBehaviour.AfterAttackedEvent += new AfterAttackedEventHandler(SetAttackSpeedAfter);
             }
+        }
+
+        private void SetAttackSpeedBefore()
+        {
+            var attackRate = GetAttackRate();
+            animationHandler.SetCurrentAnimationSpeedMultiplier(attackRate);
+            WeaponBehaviour.SetAttackSpeed(attackRate);
+        }
+
+        private void SetAttackSpeedAfter()
+        {
+            animationHandler.SetCurrentAnimationSpeedMultiplier(1f);
+            WeaponBehaviour.SetAttackSpeed(1f);
         }
     }
 }

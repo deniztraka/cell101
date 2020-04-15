@@ -73,11 +73,24 @@ namespace DTWorld.Core.Mobiles
             if (Time.time >= nextAttackTime)
             {
                 canAttack = true;
-                nextAttackTime = Time.time + AttackRate;
+                nextAttackTime = Time.time + attackRate;
             }
 
             return canAttack;
         }
+
+        internal bool CanAttack(float newAttackRate)
+        {
+            var canAttack = false;
+            if (Time.time >= nextAttackTime)
+            {
+                canAttack = true;
+                nextAttackTime = Time.time + newAttackRate;
+            }
+
+            return canAttack;
+        }
+
 
         public void TakeDamage(float damage)
         {

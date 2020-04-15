@@ -18,6 +18,10 @@ namespace DTWorld.Engines.Animation
             this.animator = animator;
         }
 
+        public void SetCurrentAnimationSpeedMultiplier(float speed){
+            this.animator.SetFloat("SpeedMultiplier", speed);
+        }
+
         public int SetCurrentAnimation(Vector2 direction, bool isAttacking)
         {
             //use the Run states by default
@@ -53,7 +57,6 @@ namespace DTWorld.Engines.Animation
             {
                 return lastDirection;
             }
-
 
             //play base character animation
             animator.Play(animationName, -1, 0);
