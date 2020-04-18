@@ -60,7 +60,7 @@ namespace DTWorld.Engines.Animation
 
             //play base character animation
             animator.Play(animationName, -1, 0);
-            SetHandleSortIndex(lastDirection);
+            //SetHandleSortIndex(lastDirection);
             lastAnimationName = animationName;
             return lastDirection;
         }
