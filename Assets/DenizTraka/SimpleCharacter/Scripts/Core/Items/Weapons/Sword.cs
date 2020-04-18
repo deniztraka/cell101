@@ -8,12 +8,14 @@ namespace DTWorld.Core.Items.Weapons
     {
         public Sword(string name) : base(name)
         {
-            this.Damage = 10;
             this.SwingSpeed = 1f;
         }
-        public Sword(string name, BaseMobile mobile) : base(name, mobile)
+        public Sword(string name, float damage) : base(name, damage)
         {
-            this.Damage = 10;
+            this.SwingSpeed = 1f;
+        }
+        public Sword(string name, float damage, BaseMobile mobile) : base(name, damage, mobile)
+        {
             this.SwingSpeed = 1f;
         }
     }

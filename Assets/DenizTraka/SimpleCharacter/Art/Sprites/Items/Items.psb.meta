@@ -155,8 +155,8 @@ ScriptedImporter:
     uvTransform: {x: 34, y: -969}
   - name: Heavy Round Shield
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.48322842, y: 0.36897275}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -177,8 +177,8 @@ ScriptedImporter:
     uvTransform: {x: -142, y: -910}
   - name: Round Shield
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.48757672, y: 0.4101527}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2

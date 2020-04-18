@@ -15,7 +15,7 @@ namespace DTWorld.Behaviours.Items.Weapons
 
         public new BaseWeapon Item;
         public BaseMobileBehaviour OwnerMobileBehaviour;
-
+        public float Damage;
         public delegate void BeforeAttackingEventHandler();
         public event BeforeAttackingEventHandler BeforeAttackingEvent;
         public delegate void AfterAttackedEventHandler();

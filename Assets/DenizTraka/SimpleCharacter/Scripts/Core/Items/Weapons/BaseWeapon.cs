@@ -38,8 +38,14 @@ namespace DTWorld.Core.Items.Weapons
         {
         }
 
-        public BaseWeapon(string name, BaseMobile mobile) : base(name)
+        public BaseWeapon(string name, float damage) : base(name)
         {
+            this.damage = damage;
+        }
+
+        public BaseWeapon(string name, float damage, BaseMobile mobile) : base(name)
+        {
+            this.damage = damage;
             this.mobile = mobile;
         }
 

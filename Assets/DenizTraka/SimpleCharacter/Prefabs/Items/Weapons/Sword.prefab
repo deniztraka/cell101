@@ -284,3 +284,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Regular Sword
   OwnerMobileBehaviour: {fileID: 0}
+  Damage: 20
