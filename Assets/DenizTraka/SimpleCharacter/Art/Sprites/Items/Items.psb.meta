@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8c7b380ed208bb24399297eb2d81a08f
+guid: 5b6dbc863106aba4db06182ea4c6f050
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -87,18 +87,18 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Eyes
+  - name: LongSword
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.50000036, y: 0.09222257}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 35
-      y: 41
-      width: 19
-      height: 9
-    spriteID: c5b3c5b213a000f43ae81427ad294d4b
+      x: 42
+      y: 4
+      width: 11
+      height: 51
+    spriteID: ad55e5c359995a8488c21715e2e38316
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -108,8 +108,52 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 13, y: 2}
-  - name: Head
+    uvTransform: {x: -113, y: -967}
+  - name: Sword
+    originalName: 
+    pivot: {x: 0.50000036, y: 0.084905624}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 63
+      width: 11
+      height: 40
+    spriteID: 6a54fc089f9806d4581378a951239e08
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -48, y: -910}
+  - name: ShortSword
+    originalName: 
+    pivot: {x: 0.53354263, y: 0.08882793}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 4
+      width: 10
+      height: 31
+    spriteID: 5cdab1936f1c4dc46a308f5eb51dc625
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 34, y: -969}
+  - name: Heavy Round Shield
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -118,9 +162,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 29
-      height: 29
-    spriteID: f3db3964803a22847890ae3a100cf89c
+      width: 30
+      height: 32
+    spriteID: 209abd2b54c4ee64d9ba0a6450e87653
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -130,8 +174,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -13, y: -23}
-  - name: Body
+    uvTransform: {x: -142, y: -910}
+  - name: Round Shield
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -139,10 +183,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 41
-      width: 23
-      height: 18
-    spriteID: 324ab665f5fc86f4b96f519c6cc6362d
+      y: 44
+      width: 27
+      height: 28
+    spriteID: c3f8feabecd891048a422defd8865bca
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -152,19 +196,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -16, y: 25}
-  - name: LeftLeg
+    uvTransform: {x: -82, y: -870}
+  - name: Small Round Shield
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 41
-      y: 4
-      width: 9
-      height: 10
-    spriteID: ab370ebf44adf6e49a56de109bc25b29
+      x: 4
+      y: 80
+      width: 21
+      height: 22
+    spriteID: 5843760effa36b9488ac22a36b2cfe02
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -174,90 +218,89 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 9, y: -7}
-  - name: RightLeg
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 41
-      y: 22
-      width: 9
-      height: 10
-    spriteID: 0bd76edc39509f245973456b020f5d7d
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 19, y: 11}
+    uvTransform: {x: -18, y: -836}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 64
-  importedTextureHeight: 64
-  documentSize: {x: 64, y: 64}
+  importedTextureWidth: 128
+  importedTextureHeight: 128
+  documentSize: {x: 1024, y: 1024}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
-  textureActualWidth: 64
-  textureActualHeight: 64
+  textureActualWidth: 128
+  textureActualHeight: 128
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Eyes
-    spriteName: Eyes
-    isGroup: 0
+  - name: Swords
+    spriteName: 
+    isGroup: 1
     parentIndex: -1
-    spriteID: c5b3c5b213a000f43ae81427ad294d4b
-    layerID: 7
-    mosaicPosition: {x: 35, y: 41}
-  - name: Head
-    spriteName: Head
+    spriteID: 00000000000000000000000000000000
+    layerID: 16
+    mosaicPosition: {x: 0, y: 0}
+  - name: LongSword
+    spriteName: LongSword
     isGroup: 0
+    parentIndex: 0
+    spriteID: ad55e5c359995a8488c21715e2e38316
+    layerID: 15
+    mosaicPosition: {x: 42, y: 4}
+  - name: Sword
+    spriteName: Sword
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 6a54fc089f9806d4581378a951239e08
+    layerID: 11
+    mosaicPosition: {x: 42, y: 63}
+  - name: ShortSword
+    spriteName: ShortSword
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 5cdab1936f1c4dc46a308f5eb51dc625
+    layerID: 22
+    mosaicPosition: {x: 61, y: 4}
+  - name: Shields
+    spriteName: 
+    isGroup: 1
     parentIndex: -1
-    spriteID: f3db3964803a22847890ae3a100cf89c
-    layerID: 6
+    spriteID: 00000000000000000000000000000000
+    layerID: 18
+    mosaicPosition: {x: 0, y: 0}
+  - name: Heavy Round Shield
+    spriteName: Heavy Round Shield
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 209abd2b54c4ee64d9ba0a6450e87653
+    layerID: 25
     mosaicPosition: {x: 4, y: 4}
-  - name: Body
-    spriteName: Body
+  - name: Round Shield
+    spriteName: Round Shield
     isGroup: 0
-    parentIndex: -1
-    spriteID: 324ab665f5fc86f4b96f519c6cc6362d
-    layerID: 5
-    mosaicPosition: {x: 4, y: 41}
-  - name: LeftLeg
-    spriteName: LeftLeg
+    parentIndex: 4
+    spriteID: c3f8feabecd891048a422defd8865bca
+    layerID: 24
+    mosaicPosition: {x: 4, y: 44}
+  - name: Small Round Shield
+    spriteName: Small Round Shield
     isGroup: 0
-    parentIndex: -1
-    spriteID: ab370ebf44adf6e49a56de109bc25b29
-    layerID: 4
-    mosaicPosition: {x: 41, y: 4}
-  - name: RightLeg
-    spriteName: RightLeg
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 0bd76edc39509f245973456b020f5d7d
-    layerID: 3
-    mosaicPosition: {x: 41, y: 22}
+    parentIndex: 4
+    spriteID: 5843760effa36b9488ac22a36b2cfe02
+    layerID: 20
+    mosaicPosition: {x: 4, y: 80}
   characterData:
     bones: []
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
   generateGOHierarchy: 0
-  textureAssetName: simpleCharacterMorePixels Texture
-  prefabAssetName: simpleCharacterMorePixels Prefab
-  spriteLibAssetName: simpleCharacterMorePixels Sprite Lib
+  textureAssetName: Items Texture
+  prefabAssetName: Items Prefab
+  spriteLibAssetName: Items Sprite Lib
   secondarySpriteTextures: []
