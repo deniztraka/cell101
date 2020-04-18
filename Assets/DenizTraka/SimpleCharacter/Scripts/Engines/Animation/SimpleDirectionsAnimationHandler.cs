@@ -42,30 +42,32 @@ namespace DTWorld.Engines.Animation
             return -1;
         }
 
-        protected override void SetHandleSortIndex(int directionIndex)
-        {            
+        protected override void SetHandleSortIndex(int directionIndex, bool isAttacking)
+        {
+            Debug.Log(directionIndex);
             if (rightHandleSortingGroup != null && leftHandleSortingGroup != null)
             {
                 if (directionIndex == 0)
                 {
-                    rightHandleSortingGroup.sortingOrder = 3;
-                    leftHandleSortingGroup.sortingOrder = -1;
-                }
-                else if (directionIndex == 2)
-                {
-                    rightHandleSortingGroup.sortingOrder = -1;
-                    leftHandleSortingGroup.sortingOrder = 3;
-                }
-                else if (directionIndex == 3)
-                {
-                    rightHandleSortingGroup.sortingOrder = 3;
-                    leftHandleSortingGroup.sortingOrder = 3;
+                    rightHandleSortingGroup.sortingOrder = 7;
+                    leftHandleSortingGroup.sortingOrder = isAttacking ? -1 : 6;
                 }
                 else if (directionIndex == 1)
                 {
                     rightHandleSortingGroup.sortingOrder = -1;
                     leftHandleSortingGroup.sortingOrder = -1;
                 }
+                else if (directionIndex == 2)
+                {
+                    rightHandleSortingGroup.sortingOrder = -1;
+                    leftHandleSortingGroup.sortingOrder = 6;
+                }
+                else if (directionIndex == 3)
+                {
+                    rightHandleSortingGroup.sortingOrder = 7;
+                    leftHandleSortingGroup.sortingOrder = 6;
+                }
+
             }
         }
     }

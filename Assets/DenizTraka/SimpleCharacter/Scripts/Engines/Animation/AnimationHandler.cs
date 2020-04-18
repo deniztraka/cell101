@@ -60,16 +60,16 @@ namespace DTWorld.Engines.Animation
 
             //play base character animation
             animator.Play(animationName, -1, 0);
-            //SetHandleSortIndex(lastDirection);
+            SetHandleSortIndex(lastDirection,isAttacking);
             lastAnimationName = animationName;
             return lastDirection;
         }
 
         //helper functions
 
-        protected virtual void SetHandleSortIndex(int directionIndex)
+        protected virtual void SetHandleSortIndex(int directionIndex, bool isAttacking)
         {
-
+            
         }
 
         //this function converts a Vector2 direction to an index to a slice around a circle
