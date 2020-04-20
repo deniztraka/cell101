@@ -1,19 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Engines.AI.Mobiles;
 using DTWorld.Interfaces;
 using UnityEngine;
 namespace DTWorld.Engines.Input
 {
-    public class MobileMovementInput : IMovementInput
+    public abstract class MobileMovementInput : IMovementInput
     {
-        public float GetXAxis()
+        protected BaseMobileAI MobileAI { get; set; }
+        public MobileMovementInput(BaseMobileAI mobileAI)
         {
-            throw new System.NotImplementedException();
+            MobileAI = mobileAI;
         }
+        public abstract float GetXAxis();
 
-        public float GetYAxis()
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract float GetYAxis();
     }
 }

@@ -36,6 +36,10 @@ namespace DTWorld.Behaviours.Mobiles
         public GameObject RightHandle;
         public GameObject LeftHandle;
 
+        public virtual void Awake(){
+            
+        }
+
         public virtual void Start()
         {
             this.Rigidbody2D = gameObject.GetComponent<Rigidbody2D>();

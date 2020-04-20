@@ -44,7 +44,7 @@ namespace DTWorld.Engines.Animation
 
         protected override void SetHandleSortIndex(int directionIndex, bool isAttacking)
         {
-            Debug.Log(directionIndex);
+            //Debug.Log(directionIndex);
             if (rightHandleSortingGroup != null && leftHandleSortingGroup != null)
             {
                 if (directionIndex == 0)

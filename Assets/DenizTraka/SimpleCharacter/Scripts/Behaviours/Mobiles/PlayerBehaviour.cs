@@ -1,4 +1,5 @@
 ﻿using DTWorld.Behaviours.Items.Weapons;
+using DTWorld.Behaviours.Mobiles.Human;
 using DTWorld.Core.Mobiles;
 using DTWorld.Engines.Movement;
 using UnityEngine;
@@ -43,8 +44,6 @@ namespace DTWorld.Behaviours.Mobiles
                     } else {
                         WeaponBehaviour.Attack();
                     }
-
-
                 }
             }
         }

@@ -3,7 +3,7 @@ using DTWorld.Interfaces;
 
 namespace DTWorld.Core.Mobiles
 {
-    public class Player : Human
+    public class Player : BaseHuman
     {
         public Player(float speed, IMovementType movementType) : base(speed, movementType)
         {

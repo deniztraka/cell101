@@ -6,9 +6,14 @@ namespace DTWorld.Engines.Movement
     public class FreeFormMovement : BaseMovement
     {
         #region Constructors
-        public FreeFormMovement(Rigidbody2D rigidbody) : base(rigidbody)
+        public FreeFormMovement(Rigidbody2D rigidbody, IMovementInput movementInput) : base(rigidbody, movementInput)
         {
             
+        }
+
+        public FreeFormMovement(Rigidbody2D rigidbody) : base(rigidbody)
+        {
+
         }
         #endregion
         public override Vector2 Move(float speed)

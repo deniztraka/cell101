@@ -100,7 +100,7 @@ namespace DTWorld.Behaviours.Items.Weapons
                 return;
             }
 
-            //check if it is mobile?
+            //check if it has health behaviour?
             var otherEntityHealth = other.GetComponent<HealthBehaviour>();
             if (otherEntityHealth == null)
             {
