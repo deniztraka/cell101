@@ -14,22 +14,19 @@ namespace DTWorld.Behaviours.Mobiles.Human
         private BanditAI banditAI;
         public override void Awake()
         {
-            base.Awake();            
+            base.Awake();
             banditAI = new BanditAI();
         }
-        // Start is called before the first frame update
+        
         public override void Start()
         {
             base.Start();
-
             this.Mobile = new Bandit(this.Speed, new FreeFormMovement(this.Rigidbody2D, new HumanMovementInput(banditAI)));
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-
-           
         }
     }
 }

@@ -60,7 +60,7 @@ namespace DTWorld.Core.Mobiles
 
         public virtual Vector2 Move()
         {
-            if (!isAttacking)
+            if (!isAttacking && this.MovementType != null)
             {
                 return this.MovementType.Move(Speed);
             }
