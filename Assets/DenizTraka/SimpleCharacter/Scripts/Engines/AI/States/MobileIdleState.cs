@@ -5,33 +5,36 @@ namespace DTWorld.Engines.AI.States
 
     public class MobileIdleState : BaseMobileState
     {
-        float chaseDistance;
-        public MobileIdleState(float chaseDistance)
+        protected float ChaseDistance;
+        protected bool IsAggressive;
+        public MobileIdleState()
         {
-            this.chaseDistance = chaseDistance;
+            this.IsAggressive = false;
+            this.ChaseDistance = 1f;
+        }
+
+        public MobileIdleState(bool isAggressive, float chaseDistance)
+        {
+            this.ChaseDistance = chaseDistance;
+            this.IsAggressive = isAggressive;
         }
         public override void OnStateExit()
         {
-            Debug.Log("OnIdleStateExit");
         }
 
         public override void OnStateEnter()
         {
             base.OnStateEnter();
-            Debug.Log("OnIdleStateEnter");
         }
 
         public override BaseMobileState OnStateUpdate()
         {
             if (PlayerBehaviour == null || MobileBehaviour)
             {
-                float distance = Vector2.Distance(PlayerBehaviour.transform.position, MobileBehaviour.transform.position);
-                if (distance <= this.chaseDistance)
+                if (IsAggressive && CheckChaseState())
                 {
-                    var mobileChaseState = new MobileChaseState(PlayerBehaviour);
-                    mobileChaseState.SetMobile(MobileBehaviour);
-                    return mobileChaseState;
-                }
+                    return ChaseState();
+                }                
             }
             return null;
         }
@@ -49,6 +52,19 @@ namespace DTWorld.Engines.AI.States
         internal override void OnStateFixedUpdate()
         {
 
+        }
+
+        public bool CheckChaseState()
+        {
+            float distance = Vector2.Distance(PlayerBehaviour.transform.position, MobileBehaviour.transform.position);
+            return distance <= this.ChaseDistance;
+        }        
+
+        public BaseMobileState ChaseState()
+        {
+            var mobileChaseState = new MobileChaseState(PlayerBehaviour, ChaseDistance);
+            mobileChaseState.SetMobile(MobileBehaviour);
+            return mobileChaseState;
         }
     }
 }

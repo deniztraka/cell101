@@ -1,6 +1,6 @@
 ﻿using DTWorld.Core.Mobiles.Humans.Bandits;
 using DTWorld.Engines.AI;
-using DTWorld.Engines.AI.States.Bandits;
+using DTWorld.Engines.AI.States;
 using DTWorld.Engines.Input;
 using DTWorld.Engines.Movement;
 
@@ -14,7 +14,7 @@ namespace DTWorld.Behaviours.Mobiles.Human
         public override void Awake()
         {
             base.Awake();
-            banditAI = new MobileAI(new BanditIdleState(1));
+            banditAI = new MobileAI(new MobileWanderState(1, 5, true, 1));
         }
 
         public override void Start()

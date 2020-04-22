@@ -32,8 +32,6 @@ namespace DTWorld.Engines.AI
                 }
                 value.OnStateEnter();
                 currentState = value;
-
-
             }
         }
         public MobileAI(BaseMobileState baseMobileState)

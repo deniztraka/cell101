@@ -8,17 +8,19 @@ namespace DTWorld.Engines.AI.States
     {
         private BaseMobileBehaviour target;
         private Vector2 delta;
-        private float distance;
+        private float currentDistance;
+        private float chaseDistance;
 
-        public MobileChaseState(BaseMobileBehaviour target)
+        public MobileChaseState(BaseMobileBehaviour target, float chaseDistance)
         {
             this.target = target;
+            this.chaseDistance = chaseDistance;
             delta = Vector2.zero;
         }
 
         public override float GetXAxis()
         {
-            if (distance <= 0.5)
+            if (currentDistance <= 0.5)
             {
                 return 0;
             }
@@ -33,7 +35,7 @@ namespace DTWorld.Engines.AI.States
 
         public override float GetYAxis()
         {
-            if (distance <= 0.5)
+            if (currentDistance <= 0.5)
             {
                 return 0;
             }
@@ -48,13 +50,19 @@ namespace DTWorld.Engines.AI.States
 
         public override void OnStateExit()
         {
-            Debug.Log("OnChaseStateExit");
+            if (MobileBehaviour != null)
+            {
+                MobileBehaviour.Speed = MobileBehaviour.Speed / 1.5f;
+            }
         }
 
         public override void OnStateEnter()
         {
             base.OnStateEnter();
-            Debug.Log("OnChaseStateEnter");
+            if (MobileBehaviour != null)
+            {
+                MobileBehaviour.Speed = MobileBehaviour.Speed * 1.5f;
+            }
         }
 
         public override BaseMobileState OnStateUpdate()
@@ -66,7 +74,12 @@ namespace DTWorld.Engines.AI.States
 
             delta = MobileBehaviour.transform.position - target.transform.position;
 
-            distance = Vector2.Distance(MobileBehaviour.transform.position, target.transform.position);
+            currentDistance = Vector2.Distance(MobileBehaviour.transform.position, target.transform.position);
+
+            if (currentDistance > chaseDistance)
+            {
+                return WanderState();
+            }
 
             return null;
         }
@@ -77,6 +90,13 @@ namespace DTWorld.Engines.AI.States
             {
                 return;
             }
+        }
+
+        private BaseMobileState WanderState()
+        {
+            var mobileIdleState = new MobileWanderState(1, 5, true, chaseDistance);
+            mobileIdleState.SetMobile(MobileBehaviour);
+            return mobileIdleState;
         }
     }
 }
