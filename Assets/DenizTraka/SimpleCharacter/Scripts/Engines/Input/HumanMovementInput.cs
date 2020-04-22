@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using DTWorld.Engines.AI.Mobiles;
+using DTWorld.Engines.AI;
 using UnityEngine;
 namespace DTWorld.Engines.Input
 {
     public class HumanMovementInput : MobileMovementInput
     {
-        public HumanMovementInput(BaseMobileAI mobileAI) : base(mobileAI)
+        public HumanMovementInput(MobileAI mobileAI) : base(mobileAI)
         {
         }
 
