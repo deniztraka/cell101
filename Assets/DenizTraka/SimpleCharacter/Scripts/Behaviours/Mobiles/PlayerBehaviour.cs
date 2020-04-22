@@ -15,36 +15,15 @@ namespace DTWorld.Behaviours.Mobiles
 
             this.Mobile = new Player(this.Speed, new FreeFormMovement(this.Rigidbody2D));
 
-            // add weapon object in the handle
-            if (RightHandle != null)
-            {
-                var weaponBehaviour = RightHandle.GetComponentInChildren<BaseWeaponBehaviour>();
-                if (weaponBehaviour != null)
-                {
-                    AddWeapon(weaponBehaviour);
-                }
-            }
+            
         }
 
         public void Update()
         {
 
-            if (Input.GetKeyDown(KeyCode.Space) && CanAttack())//if mobile can attack / timing is okey?
+            if (Input.GetKeyDown(KeyCode.Space))//if mobile can attack / timing is okey?
             {
-                //attack with weapon if mobile has any weapon      
-                if (RightHandle != null && RightHandle.transform.childCount > 0)
-                {
-                    if (WeaponBehaviour == null)
-                    {
-                        WeaponBehaviour = RightHandle.GetComponentInChildren<BaseWeaponBehaviour>();
-                        if (WeaponBehaviour != null)
-                        {
-                            WeaponBehaviour.Attack();
-                        }
-                    } else {
-                        WeaponBehaviour.Attack();
-                    }
-                }
+                Attack();
             }
         }
 

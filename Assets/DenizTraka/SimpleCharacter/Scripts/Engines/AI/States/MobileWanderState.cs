@@ -14,6 +14,15 @@ namespace DTWorld.Engines.AI.States
 
         Vector2 movement;
 
+        public MobileWanderState(BaseMobileBehaviour mobile, float minDecisionFrequency, float maxDecisionFrequency, bool isAggressive, float chaseDistance) : base(mobile, isAggressive, chaseDistance)
+        {
+            this.maxDecisionFrequency = maxDecisionFrequency;
+            this.minDecisionFrequency = minDecisionFrequency;
+            this.nextDecisionTime = Random.Range(minDecisionFrequency, maxDecisionFrequency);
+            this.isMoving = false;
+            this.movement = Vector2.zero;
+        }
+
         public MobileWanderState(float minDecisionFrequency, float maxDecisionFrequency, bool isAggressive, float chaseDistance) : base(isAggressive, chaseDistance)
         {
             this.maxDecisionFrequency = maxDecisionFrequency;
@@ -59,7 +68,6 @@ namespace DTWorld.Engines.AI.States
                 else
                 {
                     StopMovement();
-                    //return IdleState();
                 }
 
                 nextDecisionTime = Time.time + Random.Range(minDecisionFrequency, maxDecisionFrequency);
@@ -77,14 +85,6 @@ namespace DTWorld.Engines.AI.States
         private void StopMovement()
         {
             movement = Vector2.zero;
-        }
-
-        private BaseMobileState IdleState()
-        {
-            var mobileIdleState = new MobileIdleState(IsAggressive, ChaseDistance);
-            mobileIdleState.SetMobile(MobileBehaviour);
-
-            return mobileIdleState;
         }
     }
 }

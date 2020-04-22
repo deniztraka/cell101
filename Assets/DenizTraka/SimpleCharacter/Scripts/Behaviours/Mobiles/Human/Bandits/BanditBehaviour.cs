@@ -10,11 +10,12 @@ namespace DTWorld.Behaviours.Mobiles.Human
     public class BanditBehaviour : HumanBehaviour
     {
         private MobileAI banditAI;
+        
         //private PlayerBehaviour playerBehaviour;
         public override void Awake()
         {
             base.Awake();
-            banditAI = new MobileAI(new MobileWanderState(1, 5, true, 1));
+            banditAI = new MobileAI(new MobileWanderState(1, 5, IsAggressive, ChaseDistance));
         }
 
         public override void Start()

@@ -30,10 +30,20 @@ namespace DTWorld.Engines.AI
                 {
                     currentState.OnStateExit();
                 }
+
                 value.OnStateEnter();
                 currentState = value;
+
+                if (OnStateChangedEvent != null)
+                {
+                    OnStateChangedEvent.Invoke(value);
+                }
             }
         }
+
+        public delegate void OnStateChangedEventHandler(BaseMobileState currentState);
+        public event OnStateChangedEventHandler OnStateChangedEvent;
+
         public MobileAI(BaseMobileState baseMobileState)
         {
             CurrentState = baseMobileState;

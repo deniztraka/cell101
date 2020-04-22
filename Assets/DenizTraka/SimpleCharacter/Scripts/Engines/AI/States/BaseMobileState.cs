@@ -10,6 +10,14 @@ namespace DTWorld.Engines.AI.States
         protected BaseMobileBehaviour MobileBehaviour;
         protected PlayerBehaviour PlayerBehaviour;
 
+        public BaseMobileState(){
+
+        }
+
+        public BaseMobileState(BaseMobileBehaviour mobileBehaviour){
+            MobileBehaviour = mobileBehaviour;
+        }
+
         public virtual void OnStateEnter()
         {
             PlayerBehaviour = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();

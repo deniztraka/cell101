@@ -19,7 +19,12 @@ namespace DTWorld.Behaviours.Mobiles
         private float speed;
         private AnimationHandler animationHandler;
 
+        private float actionFrequency = 0.5f;
+        private float nextActionTime = 0;
+
         public BaseMobile Mobile;
+        public bool IsAggressive;
+        public float ChaseDistance;
 
         public float Speed
         {
@@ -36,13 +41,24 @@ namespace DTWorld.Behaviours.Mobiles
         public GameObject RightHandle;
         public GameObject LeftHandle;
 
-        public virtual void Awake(){
-            
+        public virtual void Awake()
+        {
+
         }
 
         public virtual void Start()
         {
             this.Rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+
+            // add weapon object in the handle
+            if (RightHandle != null)
+            {
+                var weaponBehaviour = RightHandle.GetComponentInChildren<BaseWeaponBehaviour>();
+                if (weaponBehaviour != null)
+                {
+                    AddWeapon(weaponBehaviour);
+                }
+            }
 
             //set animation system
             var animationRig = gameObject.transform.Find("Rig");
@@ -71,6 +87,11 @@ namespace DTWorld.Behaviours.Mobiles
             Mobile.TakeDamage(damage);
         }
 
+        public void Update()
+        {
+
+        }
+
         public virtual void FixedUpdate()
         {
 
@@ -95,13 +116,29 @@ namespace DTWorld.Behaviours.Mobiles
             return 1 / WeaponBehaviour.Item.SwingSpeed;
         }
 
-        protected bool CanAttack(){
-            var calculatedAttackRate = GetAttackRate();
-            if(calculatedAttackRate <= Mobile.AttackRate){
-                return Mobile.CanAttack();
-            } else {
-                return Mobile.CanAttack(calculatedAttackRate);
+        protected bool CanAttack()
+        {
+            if (WeaponBehaviour == null)
+            {
+                return false;
             }
+
+            if (Time.time > nextActionTime)
+            {
+                var calculatedAttackRate = GetAttackRate();
+                if (calculatedAttackRate <= Mobile.AttackRate)
+                {
+                    nextActionTime = Time.time + actionFrequency;
+                    return Mobile.CanAttack();
+
+                }
+                else
+                {
+                    nextActionTime = Time.time + actionFrequency;
+                    return Mobile.CanAttack(calculatedAttackRate);
+                }
+            }
+            return false;
         }
 
         public void AddWeapon(BaseWeaponBehaviour weaponBehaviour)
@@ -126,6 +163,26 @@ namespace DTWorld.Behaviours.Mobiles
         {
             animationHandler.SetCurrentAnimationSpeedMultiplier(1f);
             WeaponBehaviour.SetAttackSpeed(1f);
+        }
+
+        public void Attack()
+        {
+            //attack with weapon if mobile has any weapon 
+            if (CanAttack() && RightHandle != null && RightHandle.transform.childCount > 0)
+            {
+                if (WeaponBehaviour == null)
+                {
+                    WeaponBehaviour = RightHandle.GetComponentInChildren<BaseWeaponBehaviour>();
+                    if (WeaponBehaviour != null)
+                    {
+                        WeaponBehaviour.Attack();
+                    }
+                }
+                else
+                {
+                    WeaponBehaviour.Attack();
+                }
+            }
         }
     }
 }

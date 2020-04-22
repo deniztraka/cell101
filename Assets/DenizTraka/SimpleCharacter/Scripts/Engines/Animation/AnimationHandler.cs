@@ -18,7 +18,8 @@ namespace DTWorld.Engines.Animation
             this.animator = animator;
         }
 
-        public void SetCurrentAnimationSpeedMultiplier(float speed){
+        public void SetCurrentAnimationSpeedMultiplier(float speed)
+        {
             this.animator.SetFloat("SpeedMultiplier", speed);
         }
 
@@ -52,7 +53,6 @@ namespace DTWorld.Engines.Animation
             //tell the animator to play the requested state
             var animationName = directionArray[lastDirection];
 
-
             if (lastAnimationName == animationName)
             {
                 return lastDirection;
@@ -60,7 +60,7 @@ namespace DTWorld.Engines.Animation
 
             //play base character animation
             animator.Play(animationName, -1, 0);
-            SetHandleSortIndex(lastDirection,isAttacking);
+            SetHandleSortIndex(lastDirection, isAttacking);
             lastAnimationName = animationName;
             return lastDirection;
         }
@@ -69,7 +69,7 @@ namespace DTWorld.Engines.Animation
 
         protected virtual void SetHandleSortIndex(int directionIndex, bool isAttacking)
         {
-            
+
         }
 
         //this function converts a Vector2 direction to an index to a slice around a circle

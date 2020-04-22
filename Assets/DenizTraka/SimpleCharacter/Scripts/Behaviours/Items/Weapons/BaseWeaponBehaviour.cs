@@ -47,7 +47,9 @@ namespace DTWorld.Behaviours.Items.Weapons
                 trailRenderer.enabled = true;
             }
 
-            yield return new WaitForSeconds(1/attackSpeed);
+
+            yield return new WaitForSeconds(1 / attackSpeed);
+
 
             if (task != null)
             {

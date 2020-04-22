@@ -11,7 +11,7 @@ namespace DTWorld.Engines.AI.States
         private float currentDistance;
         private float chaseDistance;
 
-        public MobileChaseState(BaseMobileBehaviour target, float chaseDistance)
+        public MobileChaseState(BaseMobileBehaviour mobile, BaseMobileBehaviour target, float chaseDistance) : base(mobile)
         {
             this.target = target;
             this.chaseDistance = chaseDistance;
@@ -81,6 +81,11 @@ namespace DTWorld.Engines.AI.States
                 return WanderState();
             }
 
+            if (currentDistance <= 0.5)
+            {
+                return AttackingState();
+            }
+
             return null;
         }
 
@@ -94,9 +99,12 @@ namespace DTWorld.Engines.AI.States
 
         private BaseMobileState WanderState()
         {
-            var mobileIdleState = new MobileWanderState(1, 5, true, chaseDistance);
-            mobileIdleState.SetMobile(MobileBehaviour);
-            return mobileIdleState;
+            return new MobileWanderState(MobileBehaviour, 1, 5, true, chaseDistance);
+        }
+
+        private BaseMobileState AttackingState()
+        {
+            return new MobileAttackingState(MobileBehaviour, target, true, chaseDistance);
         }
     }
 }

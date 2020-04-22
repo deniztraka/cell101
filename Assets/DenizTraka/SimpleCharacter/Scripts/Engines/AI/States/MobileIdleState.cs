@@ -18,6 +18,12 @@ namespace DTWorld.Engines.AI.States
             this.ChaseDistance = chaseDistance;
             this.IsAggressive = isAggressive;
         }
+
+        public MobileIdleState(BaseMobileBehaviour mobile, bool isAggressive, float chaseDistance) : base(mobile)
+        {
+            this.ChaseDistance = chaseDistance;
+            this.IsAggressive = isAggressive;
+        }
         public override void OnStateExit()
         {
         }
@@ -34,7 +40,7 @@ namespace DTWorld.Engines.AI.States
                 if (IsAggressive && CheckChaseState())
                 {
                     return ChaseState();
-                }                
+                }
             }
             return null;
         }
@@ -58,13 +64,11 @@ namespace DTWorld.Engines.AI.States
         {
             float distance = Vector2.Distance(PlayerBehaviour.transform.position, MobileBehaviour.transform.position);
             return distance <= this.ChaseDistance;
-        }        
+        }
 
         public BaseMobileState ChaseState()
         {
-            var mobileChaseState = new MobileChaseState(PlayerBehaviour, ChaseDistance);
-            mobileChaseState.SetMobile(MobileBehaviour);
-            return mobileChaseState;
+            return new MobileChaseState(MobileBehaviour, PlayerBehaviour, ChaseDistance);
         }
     }
 }
