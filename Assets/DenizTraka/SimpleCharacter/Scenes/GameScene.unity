@@ -133,10 +133,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bandit
       objectReference: {fileID: 0}
-    - target: {fileID: 265820723927644911, guid: f0030748a99f8ae49924655f629ac3aa,
+    - target: {fileID: 852830742479897622, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: SwingSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 852830742479897622, guid: f0030748a99f8ae49924655f629ac3aa,
+        type: 3}
+      propertyPath: Damage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5262476430616430532, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
@@ -195,6 +200,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
+--- !u!4 &356105508 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1453673551, guid: 5e6c590c2fbdbbe4ab79d9ff83f27ebd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5923259746585834007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +589,75 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1001 &2066499933
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 356105508}
+    m_Modifications:
+    - target: {fileID: 960492098648506544, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_Name
+      value: LongSword Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960492098648506547, guid: 05a83f6f3e07f1445a6386a89605ab9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 05a83f6f3e07f1445a6386a89605ab9d, type: 3}
 --- !u!1 &2138677391
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,12 +9,11 @@ namespace DTWorld.Behaviours.Items.Weapons
         public override void Awake()
         {
             base.Awake();
-            Item = new Sword("Sword", 10);
+            Item = new Sword("Sword", Damage, SwingSpeed);
         }
 
         public override void Start()
         {
-            Item.Damage = Damage;
             base.Start();
         }
 

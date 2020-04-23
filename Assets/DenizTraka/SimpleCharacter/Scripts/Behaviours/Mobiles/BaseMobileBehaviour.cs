@@ -26,6 +26,8 @@ namespace DTWorld.Behaviours.Mobiles
         public bool IsAggressive;
         public float ChaseDistance;
 
+        public ParticleSystem DamageTakenEffect;
+
         public float Speed
         {
             get { return speed; }
@@ -49,6 +51,10 @@ namespace DTWorld.Behaviours.Mobiles
         public virtual void Start()
         {
             this.Rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+            var damageTakenEffectTransform = transform.Find("DamageTakenEffect");
+            if(damageTakenEffectTransform != null){
+                DamageTakenEffect = damageTakenEffectTransform.gameObject.GetComponent<ParticleSystem>();
+            }
 
             // add weapon object in the handle
             if (RightHandle != null)
@@ -86,6 +92,11 @@ namespace DTWorld.Behaviours.Mobiles
         private void OnDamageTaken(float damage)
         {
             Mobile.TakeDamage(damage);
+            if(DamageTakenEffect != null && !DamageTakenEffect.isPlaying){
+                DamageTakenEffect.Play();
+            }
+            // var lastDirection = animationHandler.GetLastDirection();
+            // Rigidbody2D.AddForce(Vector2.one*20);
         }
 
         private void OnDead()

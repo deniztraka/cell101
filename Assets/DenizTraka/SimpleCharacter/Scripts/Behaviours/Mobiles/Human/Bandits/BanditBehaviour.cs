@@ -11,7 +11,6 @@ namespace DTWorld.Behaviours.Mobiles.Human
     {
         private MobileAI banditAI;
         
-        //private PlayerBehaviour playerBehaviour;
         public override void Awake()
         {
             base.Awake();
@@ -25,8 +24,9 @@ namespace DTWorld.Behaviours.Mobiles.Human
             banditAI.SetMobile(this);
         }
 
-        public void Update()
+        public override void Update()
         {
+            base.Update();
             banditAI.Update();
         }
 

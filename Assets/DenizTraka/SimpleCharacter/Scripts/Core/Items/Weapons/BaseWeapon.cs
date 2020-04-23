@@ -38,15 +38,17 @@ namespace DTWorld.Core.Items.Weapons
         {
         }
 
-        public BaseWeapon(string name, float damage) : base(name)
+        public BaseWeapon(string name, float damage, float swingSpeed) : base(name)
         {
             this.damage = damage;
+            this.swingSpeed = swingSpeed;
         }
 
-        public BaseWeapon(string name, float damage, BaseMobile mobile) : base(name)
+        public BaseWeapon(string name, float damage, float swingSpeed, BaseMobile mobile) : base(name)
         {
             this.damage = damage;
             this.mobile = mobile;
+            this.swingSpeed = swingSpeed;
         }
 
         public virtual void Hit(BaseMobile mobile)

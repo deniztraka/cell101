@@ -10,13 +10,11 @@ namespace DTWorld.Core.Items.Weapons
         {
             this.SwingSpeed = 1f;
         }
-        public Sword(string name, float damage) : base(name, damage)
+        public Sword(string name, float damage, float swingSpeed) : base(name, damage, swingSpeed)
         {
-            this.SwingSpeed = 1f;
         }
-        public Sword(string name, float damage, BaseMobile mobile) : base(name, damage, mobile)
+        public Sword(string name, float damage, float swingSpeed, BaseMobile mobile) : base(name, damage, swingSpeed, mobile)
         {
-            this.SwingSpeed = 1f;
         }
     }
 }

@@ -95,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 2014593297897918314, guid: af1be9a8fb0241045a2b280fc463cf1e,
         type: 3}
       propertyPath: m_Name
-      value: LongSword
+      value: LongSword Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3189520311982372260, guid: af1be9a8fb0241045a2b280fc463cf1e,
         type: 3}
@@ -106,12 +106,17 @@ PrefabInstance:
     - target: {fileID: 4928371391592842199, guid: af1be9a8fb0241045a2b280fc463cf1e,
         type: 3}
       propertyPath: Damage
-      value: 30
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4928371391592842199, guid: af1be9a8fb0241045a2b280fc463cf1e,
         type: 3}
       propertyPath: Name
       value: Long Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928371391592842199, guid: af1be9a8fb0241045a2b280fc463cf1e,
+        type: 3}
+      propertyPath: SwingSpeed
+      value: 1.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af1be9a8fb0241045a2b280fc463cf1e, type: 3}

@@ -12,8 +12,10 @@ namespace DTWorld.Engines.Animation
         protected static readonly string[] attackingAnimations = { "HumanAttackingEast", "HumanAttackingNorth", "HumanAttackingWest", "HumanAttackingSouth" };
         protected static readonly string[] deadAnimations = { "HumanDeadEast", "HumanDeadNorth", "HumanDeadWest", "HumanDeadSouth" };
         private Animator animator;
-        private int lastDirection;
+        private int lastDirectionIndex;
         private string lastAnimationName = "";
+
+        private Vector2 lastDirection;
 
         public AnimationHandler(Animator animator)
         {
@@ -49,8 +51,8 @@ namespace DTWorld.Engines.Animation
                 //save the answer to lastDirection
                 directionArray = walkingAnimations;
 
-                lastDirection = DirectionToIndex(direction, 4);
-            }            
+                lastDirectionIndex = DirectionToIndex(direction, 4);
+            }
 
             if (mobile.Health <= 0)
             {
@@ -58,18 +60,19 @@ namespace DTWorld.Engines.Animation
             }
 
             //tell the animator to play the requested state
-            var animationName = directionArray[lastDirection];
+            var animationName = directionArray[lastDirectionIndex];
 
             if (lastAnimationName == animationName)
             {
-                return lastDirection;
+                return lastDirectionIndex;
             }
 
+            lastDirection = direction;
             //play base character animation
             animator.Play(animationName, -1, 0);
-            SetHandleSortIndex(lastDirection, mobile.IsAttacking);
+            SetHandleSortIndex(lastDirectionIndex, mobile.IsAttacking);
             lastAnimationName = animationName;
-            return lastDirection;
+            return lastDirectionIndex;
         }
 
         //helper functions
@@ -77,6 +80,11 @@ namespace DTWorld.Engines.Animation
         protected virtual void SetHandleSortIndex(int directionIndex, bool isAttacking)
         {
 
+        }
+
+        public Vector2 GetLastDirection()
+        {
+            return lastDirection;
         }
 
         //this function converts a Vector2 direction to an index to a slice around a circle

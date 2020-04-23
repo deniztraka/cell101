@@ -16,6 +16,7 @@ namespace DTWorld.Behaviours.Items.Weapons
         public new BaseWeapon Item;
         public BaseMobileBehaviour OwnerMobileBehaviour;
         public float Damage;
+        public float SwingSpeed;
         public delegate void BeforeAttackingEventHandler();
         public event BeforeAttackingEventHandler BeforeAttackingEvent;
         public delegate void AfterAttackedEventHandler();
@@ -105,6 +106,11 @@ namespace DTWorld.Behaviours.Items.Weapons
             //check if it has health behaviour?
             var otherEntityHealth = other.GetComponent<HealthBehaviour>();
             if (otherEntityHealth == null)
+            {
+                return;
+            }
+
+            if (otherEntityHealth.Health <= 0)
             {
                 return;
             }
