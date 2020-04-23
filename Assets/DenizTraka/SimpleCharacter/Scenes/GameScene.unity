@@ -133,16 +133,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bandit
       objectReference: {fileID: 0}
-    - target: {fileID: 852830742479897622, guid: f0030748a99f8ae49924655f629ac3aa,
-        type: 3}
-      propertyPath: SwingSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 852830742479897622, guid: f0030748a99f8ae49924655f629ac3aa,
-        type: 3}
-      propertyPath: Damage
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5262476430616430532, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
       propertyPath: m_LocalPosition.x

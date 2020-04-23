@@ -4881,7 +4881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.25
   IsAggressive: 1
-  ChaseDistance: 1
+  ChaseDistance: 2
   DamageTakenEffect: {fileID: 0}
   RightHandle: {fileID: 8064782391995625481}
   LeftHandle: {fileID: 8064782391500560771}
