@@ -93,7 +93,7 @@ namespace DTWorld.Behaviours.Mobiles
             healthBehaviourComponent.OnHealthBelowZeroEvent += new OnHealthBelowZeroEventHandler(OnDead);
         }
 
-        private void OnDamageTaken(float damage)
+        private void OnDamageTaken(float damage, float currentHealth, float maxHealth)
         {
             Mobile.TakeDamage(damage);
             if (DamageTakenEffect != null && !DamageTakenEffect.isPlaying)

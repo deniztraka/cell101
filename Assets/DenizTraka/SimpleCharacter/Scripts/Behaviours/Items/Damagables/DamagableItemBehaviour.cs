@@ -26,7 +26,7 @@ namespace DTWorld.Behaviours.Items.Damagables
             Item.SetHealth(healthBehaviour.Health);
         }
 
-        private void OnDamageTaken(float damage)
+        private void OnDamageTaken(float damage, float currentHealth, float maxHealth)
         {
             Item.TakeDamage(damage);
         }

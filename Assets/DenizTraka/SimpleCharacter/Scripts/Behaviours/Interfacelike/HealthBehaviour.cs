@@ -14,11 +14,12 @@ namespace DTWorld.Behaviours.Interfacelike
             set
             {
                 health = value;
-
             }
         }
 
-        public delegate void OnDamageTakenEventHandler(float damage);
+        public float MaxHealth;
+
+        public delegate void OnDamageTakenEventHandler(float damage, float health, float maxHealth);
         public delegate void OnHealthBelowZeroEventHandler();
         public event OnDamageTakenEventHandler OnDamageTakenEvent;
         public event OnHealthBelowZeroEventHandler OnHealthBelowZeroEvent;
@@ -26,17 +27,18 @@ namespace DTWorld.Behaviours.Interfacelike
         // Start is called before the first frame update
         void Start()
         {
+            
         }
 
         public void TakeDamage(float damage)
         {
+            Health -= damage;
+
             if (OnDamageTakenEvent != null)
             {
-                OnDamageTakenEvent.Invoke(damage);
+                OnDamageTakenEvent.Invoke(damage, Health, MaxHealth);
             }
 
-            Health -= damage;
-            
             if (Health <= 0 && OnHealthBelowZeroEvent != null)
             {
                 OnHealthBelowZeroEvent.Invoke();
