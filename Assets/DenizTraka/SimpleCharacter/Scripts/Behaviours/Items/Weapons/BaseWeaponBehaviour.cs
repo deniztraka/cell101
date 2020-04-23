@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.Audio;
 using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.Mobiles;
 using DTWorld.Core.Items.Weapons;
@@ -15,6 +16,9 @@ namespace DTWorld.Behaviours.Items.Weapons
 
         public new BaseWeapon Item;
         public BaseMobileBehaviour OwnerMobileBehaviour;
+
+        private AudioManager audioManager;
+
         public float Damage;
         public float SwingSpeed;
         public delegate void BeforeAttackingEventHandler();
@@ -24,6 +28,7 @@ namespace DTWorld.Behaviours.Items.Weapons
         public override void Start()
         {
             base.Start();
+            audioManager = gameObject.GetComponent<AudioManager>();
             trailRenderer = gameObject.transform.GetComponentInChildren<TrailRenderer>();
             trailRenderer.enabled = false;
             this.BeforeAttackingEvent += new BeforeAttackingEventHandler(BeforeAttacking);
@@ -47,10 +52,12 @@ namespace DTWorld.Behaviours.Items.Weapons
                 OwnerMobileBehaviour.Mobile.IsAttacking = true;
                 trailRenderer.enabled = true;
             }
-
-
-            yield return new WaitForSeconds(1 / attackSpeed);
-
+            if (audioManager != null)
+            {
+                audioManager.Play("Swing");
+            }
+            
+            yield return new WaitForSeconds(1 / (attackSpeed + 0.2f));
 
             if (task != null)
             {
@@ -85,6 +92,7 @@ namespace DTWorld.Behaviours.Items.Weapons
         {
             StartCoroutine(ExecuteAfterTime(() =>
             {
+
                 //Weapon.Attack();
             }));
         }
@@ -127,6 +135,7 @@ namespace DTWorld.Behaviours.Items.Weapons
         private void Hit(HealthBehaviour otherEntityHealth)
         {
             otherEntityHealth.TakeDamage(Item.Damage);
+            audioManager.Play("Hit");
         }
 
         public void SetAttackSpeed(float value)

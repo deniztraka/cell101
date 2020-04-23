@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 8653814666896819044}
   - component: {fileID: 232247241414910412}
   - component: {fileID: 4928371391592842199}
+  - component: {fileID: 2904453139003939461}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -284,4 +285,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Regular Sword
   OwnerMobileBehaviour: {fileID: 0}
-  Damage: 20
+  Damage: 5
+  SwingSpeed: 0.5
+--- !u!114 &2904453139003939461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014593297897918314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4e0e9d2ea4400449bb14745c431870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: a3dbc4bbd929f1048bc28c55c0dc4f72, type: 3}
+    Volume: 1
+    Pitch: 0.5
+    Source: {fileID: 0}
+  - Name: Swing
+    Clip: {fileID: 8300000, guid: 87d1a46450392be4288f6baf80a56520, type: 3}
+    Volume: 1
+    Pitch: 0.8
+    Source: {fileID: 0}

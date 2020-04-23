@@ -4768,6 +4768,7 @@ GameObject:
   - component: {fileID: 5873758041299126406}
   - component: {fileID: 2078379359941412503}
   - component: {fileID: 5471902547429326238}
+  - component: {fileID: 1498050187}
   m_Layer: 0
   m_Name: Bandit
   m_TagString: Enemy
@@ -4799,7 +4800,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265820723927644911}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -4885,6 +4886,29 @@ MonoBehaviour:
   DamageTakenEffect: {fileID: 0}
   RightHandle: {fileID: 8064782391995625481}
   LeftHandle: {fileID: 8064782391500560771}
+--- !u!114 &1498050187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265820723927644911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4e0e9d2ea4400449bb14745c431870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Dead
+    Clip: {fileID: 8300000, guid: 387d15c6f1501284282856c941310003, type: 3}
+    Volume: 1
+    Pitch: 1
+    Source: {fileID: 0}
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: 1f6f23c816ee38445983ac1b438864cd, type: 3}
+    Volume: 1
+    Pitch: 1
+    Source: {fileID: 0}
 --- !u!1 &1578360426373244857
 GameObject:
   m_ObjectHideFlags: 0

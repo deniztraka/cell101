@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.Audio;
 using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.Items.Weapons;
 using DTWorld.Core.Mobiles;
@@ -18,9 +19,10 @@ namespace DTWorld.Behaviours.Mobiles
         [SerializeField]
         private float speed;
         private AnimationHandler animationHandler;
-
+        private AudioManager audioManager;
         private float actionFrequency = 0.5f;
         private float nextActionTime = 0;
+        private int lastDirectionIndex;
 
         public BaseMobile Mobile;
         public bool IsAggressive;
@@ -45,14 +47,16 @@ namespace DTWorld.Behaviours.Mobiles
 
         public virtual void Awake()
         {
-
+            lastDirectionIndex = 0;
         }
 
         public virtual void Start()
         {
             this.Rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+            audioManager = gameObject.GetComponent<AudioManager>();
             var damageTakenEffectTransform = transform.Find("DamageTakenEffect");
-            if(damageTakenEffectTransform != null){
+            if (damageTakenEffectTransform != null)
+            {
                 DamageTakenEffect = damageTakenEffectTransform.gameObject.GetComponent<ParticleSystem>();
             }
 
@@ -92,16 +96,50 @@ namespace DTWorld.Behaviours.Mobiles
         private void OnDamageTaken(float damage)
         {
             Mobile.TakeDamage(damage);
-            if(DamageTakenEffect != null && !DamageTakenEffect.isPlaying){
+            if (DamageTakenEffect != null && !DamageTakenEffect.isPlaying)
+            {
                 DamageTakenEffect.Play();
             }
-            // var lastDirection = animationHandler.GetLastDirection();
-            // Rigidbody2D.AddForce(Vector2.one*20);
+
+            if (audioManager != null)
+            {
+                if (Random.Range(0, 10) > 8)
+                {
+                    audioManager.Play("Hurt");
+                }
+            }
+
+            // if (Mobile.Health <= 0)
+            // {
+            //     return;
+            // }
+
+            // var force = Vector2.zero;
+            // switch (lastDirectionIndex)
+            // {
+            //     case 0:
+            //         force = Vector2.right;
+            //         break;
+            //     case 1:
+            //         force = Vector2.up;
+            //         break;
+            //     case 2:
+            //         force = Vector2.left;
+            //         break;
+            //     case 3:
+            //         force = Vector2.down;
+            //         break;
+            // }
+            // Rigidbody2D.transform.position.Set()
         }
 
         private void OnDead()
         {
-           
+            if (audioManager != null)
+            {
+                audioManager.Play("Dead");
+            }
+            Destroy(gameObject, 3);
         }
 
         public virtual void Update()
@@ -119,7 +157,7 @@ namespace DTWorld.Behaviours.Mobiles
 
             if (animationHandler != null)
             {
-                animationHandler.SetCurrentAnimation(movement, Mobile);
+                lastDirectionIndex = animationHandler.SetCurrentAnimation(movement, Mobile);
             }
 
         }

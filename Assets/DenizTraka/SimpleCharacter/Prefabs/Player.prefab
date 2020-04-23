@@ -5215,6 +5215,7 @@ GameObject:
   - component: {fileID: 4496873959759197377}
   - component: {fileID: 833516541944609498}
   - component: {fileID: 8078710613285584881}
+  - component: {fileID: 837316353072960773}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5246,7 +5247,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7808043634761713320}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -5332,6 +5333,29 @@ MonoBehaviour:
   DamageTakenEffect: {fileID: 0}
   RightHandle: {fileID: 1453673550}
   LeftHandle: {fileID: 858482116}
+--- !u!114 &837316353072960773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7808043634761713320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4e0e9d2ea4400449bb14745c431870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Dead
+    Clip: {fileID: 8300000, guid: 387d15c6f1501284282856c941310003, type: 3}
+    Volume: 1
+    Pitch: 1
+    Source: {fileID: 0}
+  - Name: Hurt
+    Clip: {fileID: 8300000, guid: 1f6f23c816ee38445983ac1b438864cd, type: 3}
+    Volume: 1
+    Pitch: 1
+    Source: {fileID: 0}
 --- !u!1 &8154525312022652974
 GameObject:
   m_ObjectHideFlags: 0
