@@ -37,7 +37,7 @@ namespace DTWorld.Engines.AI.States
         {
             if (PlayerBehaviour == null || MobileBehaviour)
             {
-                if (IsAggressive && CheckChaseState())
+                if (PlayerBehaviour.Mobile.Health > 0 && IsAggressive && CheckChaseState())
                 {
                     return ChaseState();
                 }

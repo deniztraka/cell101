@@ -14,13 +14,11 @@ namespace DTWorld.Behaviours.Mobiles
             base.Start();
 
             this.Mobile = new Player(this.Speed, new FreeFormMovement(this.Rigidbody2D));
-
-            
         }
 
-        public void Update()
+        public override void Update()
         {
-
+            base.Update();
             if (Input.GetKeyDown(KeyCode.Space))//if mobile can attack / timing is okey?
             {
                 Attack();

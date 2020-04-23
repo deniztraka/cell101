@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Core.Mobiles;
 using UnityEngine;
 
 namespace DTWorld.Engines.Animation
@@ -9,6 +10,7 @@ namespace DTWorld.Engines.Animation
         protected static readonly string[] idleAnimations = { "HumanIdleEast", "HumanIdleNorth", "HumanIdleWest", "HumanIdleSouth" };
         protected static readonly string[] walkingAnimations = { "HumanWalkingEast", "HumanWalkingNorth", "HumanWalkingWest", "HumanWalkingSouth" };
         protected static readonly string[] attackingAnimations = { "HumanAttackingEast", "HumanAttackingNorth", "HumanAttackingWest", "HumanAttackingSouth" };
+        protected static readonly string[] deadAnimations = { "HumanDeadEast", "HumanDeadNorth", "HumanDeadWest", "HumanDeadSouth" };
         private Animator animator;
         private int lastDirection;
         private string lastAnimationName = "";
@@ -23,12 +25,12 @@ namespace DTWorld.Engines.Animation
             this.animator.SetFloat("SpeedMultiplier", speed);
         }
 
-        public int SetCurrentAnimation(Vector2 direction, bool isAttacking)
+        public int SetCurrentAnimation(Vector2 direction, BaseMobile mobile)
         {
             //use the Run states by default
             string[] directionArray = null;
 
-            if (isAttacking)
+            if (mobile.IsAttacking)
             {
                 directionArray = attackingAnimations;
             }
@@ -48,6 +50,11 @@ namespace DTWorld.Engines.Animation
                 directionArray = walkingAnimations;
 
                 lastDirection = DirectionToIndex(direction, 4);
+            }            
+
+            if (mobile.Health <= 0)
+            {
+                directionArray = deadAnimations;
             }
 
             //tell the animator to play the requested state
@@ -60,7 +67,7 @@ namespace DTWorld.Engines.Animation
 
             //play base character animation
             animator.Play(animationName, -1, 0);
-            SetHandleSortIndex(lastDirection, isAttacking);
+            SetHandleSortIndex(lastDirection, mobile.IsAttacking);
             lastAnimationName = animationName;
             return lastDirection;
         }

@@ -80,6 +80,7 @@ namespace DTWorld.Behaviours.Mobiles
 
             var healthBehaviourComponent = gameObject.GetComponent<HealthBehaviour>();
             healthBehaviourComponent.OnDamageTakenEvent += new OnDamageTakenEventHandler(OnDamageTaken);
+            healthBehaviourComponent.OnHealthBelowZeroEvent += new OnHealthBelowZeroEventHandler(OnDead);
         }
 
         private void OnDamageTaken(float damage)
@@ -87,19 +88,29 @@ namespace DTWorld.Behaviours.Mobiles
             Mobile.TakeDamage(damage);
         }
 
-        public void Update()
+        private void OnDead()
+        {
+           
+        }
+
+        public virtual void Update()
         {
 
         }
 
         public virtual void FixedUpdate()
         {
+            var movement = Vector2.zero;
+            if (Mobile.Health > 0)
+            {
+                movement = Mobile.Move();
+            }
 
-            var movement = Mobile.Move();
             if (animationHandler != null)
             {
-                animationHandler.SetCurrentAnimation(movement, Mobile.IsAttacking);
+                animationHandler.SetCurrentAnimation(movement, Mobile);
             }
+
         }
 
         void OnValidate()
@@ -118,6 +129,11 @@ namespace DTWorld.Behaviours.Mobiles
 
         protected bool CanAttack()
         {
+            if (Mobile.Health <= 0)
+            {
+                return false;
+            }
+
             if (WeaponBehaviour == null)
             {
                 return false;

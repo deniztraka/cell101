@@ -29,12 +29,16 @@ namespace DTWorld.Engines.AI.States
 
         public override BaseMobileState OnStateUpdate()
         {
+            if (target.Mobile.Health <= 0)
+            {
+                return WanderState();
+            }
+
             MobileBehaviour.Attack();
 
             var baseResult = base.OnStateUpdate();
             if (baseResult != null)
             {
-                
                 return baseResult;
             }
 
@@ -44,6 +48,11 @@ namespace DTWorld.Engines.AI.States
         internal override void OnStateFixedUpdate()
         {
 
+        }
+
+        private BaseMobileState WanderState()
+        {
+            return new MobileWanderState(MobileBehaviour, 1, 5, true, ChaseDistance);
         }
     }
 }
