@@ -137,8 +137,9 @@ namespace DTWorld.Behaviours.Mobiles
         {
             if (audioManager != null)
             {
+                audioManager.Stop("Walking");
                 audioManager.Play("Dead");
-            }            
+            }
             Destroy(gameObject, 3);
         }
 
@@ -153,6 +154,14 @@ namespace DTWorld.Behaviours.Mobiles
             if (Mobile.Health > 0)
             {
                 movement = Mobile.Move();
+                if (movement.magnitude > 0)
+                {
+                    audioManager.Play("Walking");
+                }
+                else if (movement.magnitude == 0)
+                {
+                    audioManager.Stop("Walking");
+                }
             }
 
             if (animationHandler != null)

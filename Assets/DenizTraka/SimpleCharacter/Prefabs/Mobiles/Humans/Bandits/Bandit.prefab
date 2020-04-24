@@ -5398,6 +5398,11 @@ MonoBehaviour:
     Volume: 1
     Pitch: 1
     Source: {fileID: 0}
+  - Name: Walking
+    Clip: {fileID: 8300000, guid: 5c1c358e34a2f854f8c712ac288dd6ed, type: 3}
+    Volume: 1
+    Pitch: 1
+    Source: {fileID: 0}
 --- !u!1 &1578360426373244857
 GameObject:
   m_ObjectHideFlags: 0

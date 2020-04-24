@@ -27,7 +27,7 @@ namespace DTWorld.Behaviours.Mobiles
                 playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
             }
 
-            //playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
+            playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
 
             this.Mobile = new Player(this.Speed, playerMovement);
         }
