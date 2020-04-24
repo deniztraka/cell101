@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace DTWorld.Behaviours.Interfacelike
@@ -19,6 +20,8 @@ namespace DTWorld.Behaviours.Interfacelike
 
         public float MaxHealth;
 
+        public GameObject FloatingDamagesPrefab;
+
         public delegate void OnDamageTakenEventHandler(float damage, float health, float maxHealth);
         public delegate void OnHealthBelowZeroEventHandler();
         public event OnDamageTakenEventHandler OnDamageTakenEvent;
@@ -27,7 +30,7 @@ namespace DTWorld.Behaviours.Interfacelike
         // Start is called before the first frame update
         void Start()
         {
-            
+
         }
 
         public void TakeDamage(float damage)
@@ -39,10 +42,22 @@ namespace DTWorld.Behaviours.Interfacelike
                 OnDamageTakenEvent.Invoke(damage, Health, MaxHealth);
             }
 
+            if (FloatingDamagesPrefab != null)
+            {
+                PopUpFloatingDamages(damage);
+            }
+
             if (Health <= 0 && OnHealthBelowZeroEvent != null)
             {
                 OnHealthBelowZeroEvent.Invoke();
             }
+        }
+
+        private void PopUpFloatingDamages(float damage)
+        {
+            var floatingDamage = Instantiate(FloatingDamagesPrefab, transform.position, Quaternion.identity, transform);
+            var textMesh = floatingDamage.GetComponent<TextMesh>();
+            textMesh.text = damage.ToString();
         }
     }
 }
