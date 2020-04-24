@@ -11,7 +11,9 @@ namespace DTWorld.Behaviours.UI
         private Image SliderFillLeft;
         private Slider SliderRight;
         private Image SliderFillRight;
-        
+
+
+        public Text HealthText;
         public Gradient Gradient;
 
         void Start()
@@ -28,6 +30,9 @@ namespace DTWorld.Behaviours.UI
         public void OnDamageTakenEvent(float damage, float currentHealth, float maxHealth)
         {
             UpdateSliders(currentHealth);
+            if(HealthText != null){
+                HealthText.text = currentHealth.ToString();
+            }
         }
 
         private void Init()

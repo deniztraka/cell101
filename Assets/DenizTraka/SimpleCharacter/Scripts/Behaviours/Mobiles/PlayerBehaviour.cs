@@ -1,7 +1,9 @@
 ﻿using DTWorld.Behaviours.Items.Weapons;
 using DTWorld.Behaviours.Mobiles.Human;
 using DTWorld.Core.Mobiles;
+using DTWorld.Engines.Input;
 using DTWorld.Engines.Movement;
+using DTWorld.Interfaces;
 using UnityEngine;
 
 namespace DTWorld.Behaviours.Mobiles
@@ -12,8 +14,22 @@ namespace DTWorld.Behaviours.Mobiles
         public override void Start()
         {
             base.Start();
+            IMovementType playerMovement = null;
 
-            this.Mobile = new Player(this.Speed, new FreeFormMovement(this.Rigidbody2D));
+            var joyStickObj = GameObject.FindGameObjectWithTag("Joystick");
+            if (joyStickObj != null)
+            {
+                var joyStick = joyStickObj.GetComponent<Joystick>();
+                playerMovement = new FreeFormMovement(this.Rigidbody2D, new JoyStickMovementInput(joyStick));
+            }
+            else
+            {
+                playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
+            }
+
+            //playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
+
+            this.Mobile = new Player(this.Speed, playerMovement);
         }
 
         public override void Update()
