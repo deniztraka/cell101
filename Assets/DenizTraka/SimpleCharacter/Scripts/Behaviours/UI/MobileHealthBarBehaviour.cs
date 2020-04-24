@@ -36,7 +36,5 @@ namespace DTWorld.Behaviours.UI
                 Destroy(gameObject, 0.5f);
             }
         }
-
-
     }
 }
