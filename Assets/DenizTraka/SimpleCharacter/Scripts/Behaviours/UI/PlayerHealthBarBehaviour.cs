@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using DTWorld.Behaviours.Interfacelike;
-using DTWorld.Behaviours.Mobiles;
+﻿using DTWorld.Behaviours.Interfacelike;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -138,7 +138,7 @@ namespace DTWorld.Behaviours.Mobiles
             if (audioManager != null)
             {
                 audioManager.Play("Dead");
-            }
+            }            
             Destroy(gameObject, 3);
         }
 
