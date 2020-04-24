@@ -52,7 +52,7 @@ namespace DTWorld.Engines.AI.States
         {
             if (MobileBehaviour != null)
             {
-                MobileBehaviour.Speed = MobileBehaviour.Speed / 1.5f;
+                MobileBehaviour.Speed = MobileBehaviour.Speed / 2f;
             }
         }
 
@@ -61,7 +61,7 @@ namespace DTWorld.Engines.AI.States
             base.OnStateEnter();
             if (MobileBehaviour != null)
             {
-                MobileBehaviour.Speed = MobileBehaviour.Speed * 1.5f;
+                MobileBehaviour.Speed = MobileBehaviour.Speed * 2f;
             }
         }
 
