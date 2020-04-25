@@ -18,6 +18,7 @@ namespace DTWorld.Behaviours.Mobiles
     {
         [SerializeField]
         private float speed;
+        private bool isParalyzed;
         private AnimationHandler animationHandler;
         private AudioManager audioManager;
         private float actionFrequency = 0.5f;
@@ -93,6 +94,24 @@ namespace DTWorld.Behaviours.Mobiles
             healthBehaviourComponent.OnHealthBelowZeroEvent += new OnHealthBelowZeroEventHandler(OnDead);
         }
 
+        IEnumerator SetParalyzed(float time)
+        {
+            if (isParalyzed)
+            {
+                Debug.Log("no paralyze");
+                yield return new WaitForSeconds(time);
+            }
+            else
+            {
+                Debug.Log("paralyzed");
+                isParalyzed = true;
+                yield return new WaitForSeconds(time);
+            }
+
+            Debug.Log("paralyzed released");
+            isParalyzed = false;
+        }
+
         private void OnDamageTaken(float damage, float currentHealth, float maxHealth)
         {
             Mobile.TakeDamage(damage);
@@ -101,6 +120,9 @@ namespace DTWorld.Behaviours.Mobiles
                 DamageTakenEffect.Play();
             }
 
+            //no movement for 0.25 seconds after damage taken
+            StartCoroutine(SetParalyzed(0.25f));
+
             if (audioManager != null)
             {
                 if (Random.Range(0, 10) > 8)
@@ -108,29 +130,6 @@ namespace DTWorld.Behaviours.Mobiles
                     audioManager.Play("Hurt");
                 }
             }
-
-            // if (Mobile.Health <= 0)
-            // {
-            //     return;
-            // }
-
-            // var force = Vector2.zero;
-            // switch (lastDirectionIndex)
-            // {
-            //     case 0:
-            //         force = Vector2.right;
-            //         break;
-            //     case 1:
-            //         force = Vector2.up;
-            //         break;
-            //     case 2:
-            //         force = Vector2.left;
-            //         break;
-            //     case 3:
-            //         force = Vector2.down;
-            //         break;
-            // }
-            // Rigidbody2D.transform.position.Set()
         }
 
         private void OnDead()
@@ -151,7 +150,7 @@ namespace DTWorld.Behaviours.Mobiles
         public virtual void FixedUpdate()
         {
             var movement = Vector2.zero;
-            if (Mobile.Health > 0)
+            if (Mobile.Health > 0 && !isParalyzed)
             {
                 movement = Mobile.Move();
                 if (movement.magnitude > 0)
