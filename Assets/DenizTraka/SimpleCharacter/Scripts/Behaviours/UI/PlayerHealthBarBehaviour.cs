@@ -16,6 +16,8 @@ namespace DTWorld.Behaviours.UI
         public Text HealthText;
         public Gradient Gradient;
 
+        public Animator Animator;
+
         void Start()
         {
             playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBehaviour>();
@@ -32,6 +34,10 @@ namespace DTWorld.Behaviours.UI
             UpdateSliders(currentHealth);
             if(HealthText != null){
                 HealthText.text = currentHealth.ToString();
+            }
+
+            if(Animator != null){
+                Animator.Play("Hearth");
             }
         }
 
