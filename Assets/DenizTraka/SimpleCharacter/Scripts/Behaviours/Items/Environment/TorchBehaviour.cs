@@ -19,7 +19,7 @@ namespace DTWorld.Behaviours.Items.Environment
         // Update is called once per frame
         void LateUpdate()
         {
-            if (timePassed > frequency && Random.Range(0, 10) > 5)
+            if (timePassed > frequency)
             {
                 timePassed = 0;
                 Light.intensity = Random.Range(MinIntensity, MaxIntensity);
