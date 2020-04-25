@@ -5254,6 +5254,8 @@ GameObject:
   - component: {fileID: 2078379359941412503}
   - component: {fileID: 5471902547429326238}
   - component: {fileID: 1498050187}
+  - component: {fileID: 5798794533136816232}
+  - component: {fileID: 2230466967639491130}
   m_Layer: 0
   m_Name: Bandit
   m_TagString: Enemy
@@ -5286,19 +5288,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265820723927644911}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 10
+  m_LinearDrag: 10
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &5873758041299126405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5400,9 +5402,51 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Name: Walking
     Clip: {fileID: 8300000, guid: 5c1c358e34a2f854f8c712ac288dd6ed, type: 3}
-    Volume: 1
+    Volume: 0.025
     Pitch: 1
     Source: {fileID: 0}
+--- !u!61 &5798794533136816232
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265820723927644911}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0060321093, y: 0.44955093}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.30027318, y: 0.47502112}
+  m_EdgeRadius: 0
+--- !u!58 &2230466967639491130
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265820723927644911}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.17}
+  serializedVersion: 2
+  m_Radius: 0.06
 --- !u!1 &1578360426373244857
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,3311 @@
+fileFormatVersion: 2
+guid: 395692a134eaaa241aaaa069a628ecfd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3716896095833442827
+    second: rpg indoor tileset expansion 1 trans_0
+  - first:
+      213: 8579902514275679951
+    second: rpg indoor tileset expansion 1 trans_1
+  - first:
+      213: -2775043963897334167
+    second: rpg indoor tileset expansion 1 trans_2
+  - first:
+      213: 9165744003908800903
+    second: rpg indoor tileset expansion 1 trans_3
+  - first:
+      213: -4254432947685358003
+    second: rpg indoor tileset expansion 1 trans_4
+  - first:
+      213: 4118614139100700854
+    second: rpg indoor tileset expansion 1 trans_5
+  - first:
+      213: 775826945955793958
+    second: rpg indoor tileset expansion 1 trans_6
+  - first:
+      213: -4363296938255994780
+    second: rpg indoor tileset expansion 1 trans_7
+  - first:
+      213: -7644933833700166589
+    second: rpg indoor tileset expansion 1 trans_8
+  - first:
+      213: 3621255558460322882
+    second: rpg indoor tileset expansion 1 trans_9
+  - first:
+      213: 1826321470864640192
+    second: rpg indoor tileset expansion 1 trans_10
+  - first:
+      213: 7000982824344284911
+    second: rpg indoor tileset expansion 1 trans_11
+  - first:
+      213: -7506261825381926932
+    second: rpg indoor tileset expansion 1 trans_12
+  - first:
+      213: -8158266180986135586
+    second: rpg indoor tileset expansion 1 trans_13
+  - first:
+      213: -203780492749132360
+    second: rpg indoor tileset expansion 1 trans_14
+  - first:
+      213: 2033982117395830368
+    second: rpg indoor tileset expansion 1 trans_15
+  - first:
+      213: -5808966110897174499
+    second: rpg indoor tileset expansion 1 trans_16
+  - first:
+      213: 3011394654794131848
+    second: rpg indoor tileset expansion 1 trans_17
+  - first:
+      213: -3847132853736365114
+    second: rpg indoor tileset expansion 1 trans_18
+  - first:
+      213: 2770120487357346439
+    second: rpg indoor tileset expansion 1 trans_19
+  - first:
+      213: 3476223915743506400
+    second: rpg indoor tileset expansion 1 trans_20
+  - first:
+      213: 5943527229822178758
+    second: rpg indoor tileset expansion 1 trans_21
+  - first:
+      213: 6850888076018721774
+    second: rpg indoor tileset expansion 1 trans_22
+  - first:
+      213: -5453354724550925770
+    second: rpg indoor tileset expansion 1 trans_23
+  - first:
+      213: 3628135652833654800
+    second: rpg indoor tileset expansion 1 trans_24
+  - first:
+      213: 5294106717748483747
+    second: rpg indoor tileset expansion 1 trans_25
+  - first:
+      213: 9017776319482445325
+    second: rpg indoor tileset expansion 1 trans_26
+  - first:
+      213: -7264507609002343308
+    second: rpg indoor tileset expansion 1 trans_27
+  - first:
+      213: 1619014239384216211
+    second: rpg indoor tileset expansion 1 trans_28
+  - first:
+      213: 1343859124009953438
+    second: rpg indoor tileset expansion 1 trans_29
+  - first:
+      213: -5933044014820173669
+    second: rpg indoor tileset expansion 1 trans_30
+  - first:
+      213: -1293240960394807934
+    second: rpg indoor tileset expansion 1 trans_31
+  - first:
+      213: -682584624582489011
+    second: rpg indoor tileset expansion 1 trans_32
+  - first:
+      213: -6198508880575010399
+    second: rpg indoor tileset expansion 1 trans_33
+  - first:
+      213: -8420941497479776428
+    second: rpg indoor tileset expansion 1 trans_34
+  - first:
+      213: 7441842065652933383
+    second: rpg indoor tileset expansion 1 trans_35
+  - first:
+      213: -6876354340634362456
+    second: rpg indoor tileset expansion 1 trans_36
+  - first:
+      213: -2668236952564876626
+    second: rpg indoor tileset expansion 1 trans_37
+  - first:
+      213: -673215642765527944
+    second: rpg indoor tileset expansion 1 trans_38
+  - first:
+      213: -1715973664774824229
+    second: rpg indoor tileset expansion 1 trans_39
+  - first:
+      213: 6347005437758680019
+    second: rpg indoor tileset expansion 1 trans_40
+  - first:
+      213: -7430483894036628751
+    second: rpg indoor tileset expansion 1 trans_41
+  - first:
+      213: -337216516501136897
+    second: rpg indoor tileset expansion 1 trans_42
+  - first:
+      213: -8834633972972775971
+    second: rpg indoor tileset expansion 1 trans_43
+  - first:
+      213: -4981161505443754731
+    second: rpg indoor tileset expansion 1 trans_44
+  - first:
+      213: -6981641937019536562
+    second: rpg indoor tileset expansion 1 trans_45
+  - first:
+      213: 5624191168606038566
+    second: rpg indoor tileset expansion 1 trans_46
+  - first:
+      213: 2754500225865914508
+    second: rpg indoor tileset expansion 1 trans_47
+  - first:
+      213: -3400947107789342571
+    second: rpg indoor tileset expansion 1 trans_48
+  - first:
+      213: -2604038756001707539
+    second: rpg indoor tileset expansion 1 trans_49
+  - first:
+      213: 2252053373190481584
+    second: rpg indoor tileset expansion 1 trans_50
+  - first:
+      213: -7715581203824785614
+    second: rpg indoor tileset expansion 1 trans_51
+  - first:
+      213: -2182737300948378940
+    second: rpg indoor tileset expansion 1 trans_52
+  - first:
+      213: -6932944815577856353
+    second: rpg indoor tileset expansion 1 trans_53
+  - first:
+      213: 2544302484196816129
+    second: rpg indoor tileset expansion 1 trans_54
+  - first:
+      213: 6314421654335879782
+    second: rpg indoor tileset expansion 1 trans_55
+  - first:
+      213: 3849482338964338270
+    second: rpg indoor tileset expansion 1 trans_56
+  - first:
+      213: 2882545106445971597
+    second: rpg indoor tileset expansion 1 trans_57
+  - first:
+      213: 8008444866553618101
+    second: rpg indoor tileset expansion 1 trans_58
+  - first:
+      213: 4562052397529350340
+    second: rpg indoor tileset expansion 1 trans_59
+  - first:
+      213: -7321636920574178824
+    second: rpg indoor tileset expansion 1 trans_60
+  - first:
+      213: -1344329342959063397
+    second: rpg indoor tileset expansion 1 trans_61
+  - first:
+      213: -466980258988753880
+    second: rpg indoor tileset expansion 1 trans_62
+  - first:
+      213: 8305157812617995699
+    second: rpg indoor tileset expansion 1 trans_63
+  - first:
+      213: 1325749203979240257
+    second: rpg indoor tileset expansion 1 trans_64
+  - first:
+      213: 1121182979992213953
+    second: rpg indoor tileset expansion 1 trans_65
+  - first:
+      213: -7302483853782859318
+    second: rpg indoor tileset expansion 1 trans_66
+  - first:
+      213: 8345005083510629932
+    second: rpg indoor tileset expansion 1 trans_67
+  - first:
+      213: -4895459297188388478
+    second: rpg indoor tileset expansion 1 trans_68
+  - first:
+      213: 5193445401378527653
+    second: rpg indoor tileset expansion 1 trans_69
+  - first:
+      213: -6026631728185098090
+    second: rpg indoor tileset expansion 1 trans_70
+  - first:
+      213: 4948857575756743311
+    second: rpg indoor tileset expansion 1 trans_71
+  - first:
+      213: 4043565052479111287
+    second: rpg indoor tileset expansion 1 trans_72
+  - first:
+      213: -7420966842462329574
+    second: rpg indoor tileset expansion 1 trans_73
+  - first:
+      213: -6329139026549999523
+    second: rpg indoor tileset expansion 1 trans_74
+  - first:
+      213: -7383966275351299232
+    second: rpg indoor tileset expansion 1 trans_75
+  - first:
+      213: 4990325578783348785
+    second: rpg indoor tileset expansion 1 trans_76
+  - first:
+      213: -1411282423538929393
+    second: rpg indoor tileset expansion 1 trans_77
+  - first:
+      213: 5211009876326823507
+    second: rpg indoor tileset expansion 1 trans_78
+  - first:
+      213: -2854624626895384315
+    second: rpg indoor tileset expansion 1 trans_79
+  - first:
+      213: -6331292119874132074
+    second: rpg indoor tileset expansion 1 trans_80
+  - first:
+      213: 619760887132992571
+    second: rpg indoor tileset expansion 1 trans_81
+  - first:
+      213: -25515436710416283
+    second: rpg indoor tileset expansion 1 trans_82
+  - first:
+      213: 6419313142381365261
+    second: rpg indoor tileset expansion 1 trans_83
+  - first:
+      213: -1392677301991691293
+    second: rpg indoor tileset expansion 1 trans_84
+  - first:
+      213: -1759723285391114059
+    second: rpg indoor tileset expansion 1 trans_85
+  - first:
+      213: -1762285518815804291
+    second: rpg indoor tileset expansion 1 trans_86
+  - first:
+      213: -801956577743570773
+    second: rpg indoor tileset expansion 1 trans_87
+  - first:
+      213: -9060876781010510514
+    second: rpg indoor tileset expansion 1 trans_88
+  - first:
+      213: -6494095233061965604
+    second: rpg indoor tileset expansion 1 trans_89
+  - first:
+      213: 1297203217892171150
+    second: rpg indoor tileset expansion 1 trans_90
+  - first:
+      213: 5990877096618763375
+    second: rpg indoor tileset expansion 1 trans_91
+  - first:
+      213: 389090958875332041
+    second: rpg indoor tileset expansion 1 trans_92
+  - first:
+      213: -1998183070716563697
+    second: rpg indoor tileset expansion 1 trans_93
+  - first:
+      213: -2785987097394955257
+    second: rpg indoor tileset expansion 1 trans_94
+  - first:
+      213: -95799862823243766
+    second: rpg indoor tileset expansion 1 trans_95
+  - first:
+      213: 4494037291974041695
+    second: rpg indoor tileset expansion 1 trans_96
+  - first:
+      213: -1962933858805174117
+    second: rpg indoor tileset expansion 1 trans_97
+  - first:
+      213: -7268312899524231847
+    second: rpg indoor tileset expansion 1 trans_98
+  - first:
+      213: 3779308723880561698
+    second: rpg indoor tileset expansion 1 trans_99
+  - first:
+      213: 70068638446614955
+    second: rpg indoor tileset expansion 1 trans_100
+  - first:
+      213: -2135421327780069832
+    second: rpg indoor tileset expansion 1 trans_101
+  - first:
+      213: -4948739531138545555
+    second: rpg indoor tileset expansion 1 trans_102
+  - first:
+      213: -4869988259635053106
+    second: rpg indoor tileset expansion 1 trans_103
+  - first:
+      213: -438643059285258351
+    second: rpg indoor tileset expansion 1 trans_104
+  - first:
+      213: 171956634348785440
+    second: rpg indoor tileset expansion 1 trans_105
+  - first:
+      213: 8047352732554851852
+    second: rpg indoor tileset expansion 1 trans_106
+  - first:
+      213: 592863072877339843
+    second: rpg indoor tileset expansion 1 trans_107
+  - first:
+      213: -2884032541923303807
+    second: rpg indoor tileset expansion 1 trans_108
+  - first:
+      213: -232895939457029903
+    second: rpg indoor tileset expansion 1 trans_109
+  - first:
+      213: 1350957387229623498
+    second: rpg indoor tileset expansion 1 trans_110
+  - first:
+      213: 6660564449666514723
+    second: rpg indoor tileset expansion 1 trans_111
+  - first:
+      213: 642918035037149715
+    second: rpg indoor tileset expansion 1 trans_112
+  - first:
+      213: -670266321402675438
+    second: rpg indoor tileset expansion 1 trans_113
+  - first:
+      213: 7096163746716232451
+    second: rpg indoor tileset expansion 1 trans_114
+  - first:
+      213: 7559761620215227246
+    second: rpg indoor tileset expansion 1 trans_115
+  - first:
+      213: 2490627915138728879
+    second: rpg indoor tileset expansion 1 trans_116
+  - first:
+      213: -352746731542642843
+    second: rpgIndoor_0
+  - first:
+      213: -8731253803574855716
+    second: rpgIndoor_1
+  - first:
+      213: 9187899011009286370
+    second: rpgIndoor_2
+  - first:
+      213: -7522487510453710361
+    second: rpgIndoor_3
+  - first:
+      213: 1536456894615865391
+    second: rpgIndoor_4
+  - first:
+      213: -3006056994373330383
+    second: rpgIndoor_5
+  - first:
+      213: -3595528026179336095
+    second: rpgIndoor_6
+  - first:
+      213: -7709064074409621326
+    second: rpgIndoor_7
+  - first:
+      213: -2063493760398973663
+    second: rpgIndoor_8
+  - first:
+      213: -7247913623572317827
+    second: rpgIndoor_9
+  - first:
+      213: -2683011472875900700
+    second: rpgIndoor_10
+  - first:
+      213: 2942029904830755995
+    second: rpgIndoor_11
+  - first:
+      213: -2208002070596995256
+    second: rpgIndoor_12
+  - first:
+      213: 1691605835087033766
+    second: rpgIndoor_13
+  - first:
+      213: 9027516798163843855
+    second: rpgIndoor_14
+  - first:
+      213: -3410489360687730043
+    second: rpgIndoor_15
+  - first:
+      213: 2162817234072597710
+    second: rpgIndoor_16
+  - first:
+      213: 6516181680388437028
+    second: rpgIndoor_17
+  - first:
+      213: 327570482471815851
+    second: rpgIndoor_18
+  - first:
+      213: -1040368361749183219
+    second: rpgIndoor_19
+  - first:
+      213: 2457146275851860517
+    second: rpgIndoor_20
+  - first:
+      213: 6439054280216102821
+    second: rpgIndoor_21
+  - first:
+      213: -1790147902870243500
+    second: rpgIndoor_22
+  - first:
+      213: -1317124701234954069
+    second: rpgIndoor_23
+  - first:
+      213: -7646253657803239484
+    second: rpgIndoor_24
+  - first:
+      213: 1544118725262591075
+    second: rpgIndoor_25
+  - first:
+      213: 5329554355814501146
+    second: rpgIndoor_26
+  - first:
+      213: -9095436427489940826
+    second: rpgIndoor_27
+  - first:
+      213: -1140887953307801552
+    second: rpgIndoor_28
+  - first:
+      213: -197540221287522785
+    second: rpgIndoor_29
+  - first:
+      213: -3755489321343586315
+    second: rpgIndoor_30
+  - first:
+      213: 4522835836057792955
+    second: rpgIndoor_31
+  - first:
+      213: 997904990555982388
+    second: rpgIndoor_32
+  - first:
+      213: 4366493983843833640
+    second: rpgIndoor_33
+  - first:
+      213: -2934688015554169760
+    second: rpgIndoor_34
+  - first:
+      213: -1884780286622958886
+    second: rpgIndoor_35
+  - first:
+      213: 854739295281598340
+    second: rpgIndoor_36
+  - first:
+      213: -3812258947276508091
+    second: rpgIndoor_37
+  - first:
+      213: -2458631752461810934
+    second: rpgIndoor_38
+  - first:
+      213: 4724734947076017216
+    second: rpgIndoor_39
+  - first:
+      213: 927922780883868961
+    second: rpgIndoor_40
+  - first:
+      213: 392530767895624936
+    second: rpgIndoor_41
+  - first:
+      213: -7638860067735793483
+    second: rpgIndoor_42
+  - first:
+      213: -3937636049749148418
+    second: rpgIndoor_43
+  - first:
+      213: -5072089107557392585
+    second: rpgIndoor_44
+  - first:
+      213: -7791556321650349601
+    second: rpgIndoor_45
+  - first:
+      213: 7558443636283841149
+    second: rpgIndoor_46
+  - first:
+      213: 6050135679559291865
+    second: rpgIndoor_47
+  - first:
+      213: 7346371655822217970
+    second: rpgIndoor_48
+  - first:
+      213: 8421293408143122560
+    second: rpgIndoor_49
+  - first:
+      213: 7267377396116346483
+    second: rpgIndoor_50
+  - first:
+      213: 382905418214257921
+    second: rpgIndoor_51
+  - first:
+      213: -607325266820474061
+    second: rpgIndoor_52
+  - first:
+      213: 6205129535688841618
+    second: rpgIndoor_53
+  - first:
+      213: -1571914046563119351
+    second: rpgIndoor_54
+  - first:
+      213: -2636628991421630761
+    second: rpgIndoor_55
+  - first:
+      213: -1193029676158073970
+    second: rpgIndoor_56
+  - first:
+      213: -1098546619295518745
+    second: rpgIndoor_57
+  - first:
+      213: 6418080743919678138
+    second: rpgIndoor_58
+  - first:
+      213: -4968365766784292544
+    second: rpgIndoor_59
+  - first:
+      213: -7659484287559287288
+    second: rpgIndoor_60
+  - first:
+      213: -4222633290653494567
+    second: rpgIndoor_61
+  - first:
+      213: 6781996744478924242
+    second: rpgIndoor_62
+  - first:
+      213: 6342881142659699453
+    second: rpgIndoor_63
+  - first:
+      213: 2138115079087168460
+    second: rpgIndoor_64
+  - first:
+      213: 3058573767020019260
+    second: rpgIndoor_65
+  - first:
+      213: 5519908549350451511
+    second: rpgIndoor_66
+  - first:
+      213: 5456561446623775687
+    second: rpgIndoor_67
+  - first:
+      213: 7484081115115531608
+    second: rpgIndoor_68
+  - first:
+      213: 7789333485307760556
+    second: rpgIndoor_69
+  - first:
+      213: -264084090830431746
+    second: rpgIndoor_70
+  - first:
+      213: -7888360244155715205
+    second: rpgIndoor_71
+  - first:
+      213: -4731420095106122444
+    second: rpgIndoor_72
+  - first:
+      213: -5921748908968568739
+    second: rpgIndoor_73
+  - first:
+      213: -4835930373390439388
+    second: rpgIndoor_74
+  - first:
+      213: 5288797701628344700
+    second: rpgIndoor_75
+  - first:
+      213: 3585489594269154135
+    second: rpgIndoor_76
+  - first:
+      213: 25593458600740300
+    second: rpgIndoor_77
+  - first:
+      213: -5752989617353447846
+    second: rpgIndoor_78
+  - first:
+      213: -2935548747446659295
+    second: rpgIndoor_79
+  - first:
+      213: -5732432329783633194
+    second: rpgIndoor_80
+  - first:
+      213: 5226714638254827664
+    second: rpgIndoor_81
+  - first:
+      213: -5115995060375571174
+    second: rpgIndoor_82
+  - first:
+      213: 5201432272706823191
+    second: rpgIndoor_83
+  - first:
+      213: -6613381283380066699
+    second: rpgIndoor_84
+  - first:
+      213: 893502452659149438
+    second: rpgIndoor_85
+  - first:
+      213: 3703577212193640106
+    second: rpgIndoor_86
+  - first:
+      213: -4302975314819002733
+    second: rpgIndoor_87
+  - first:
+      213: -5679908228426399132
+    second: rpgIndoor_88
+  - first:
+      213: 3302394026712076424
+    second: rpgIndoor_89
+  - first:
+      213: 4808194712738377724
+    second: rpgIndoor_90
+  - first:
+      213: 4016573155386338932
+    second: rpgIndoor_91
+  - first:
+      213: -7094598048528799107
+    second: rpgIndoor_92
+  - first:
+      213: 8771152143428609676
+    second: rpgIndoor_93
+  - first:
+      213: -4277882089210093530
+    second: rpgIndoor_94
+  - first:
+      213: 1080891087085279967
+    second: rpgIndoor_95
+  - first:
+      213: -5403384584758060494
+    second: rpgIndoor_96
+  - first:
+      213: -761546186566726529
+    second: rpgIndoor_97
+  - first:
+      213: -2943359490437142851
+    second: rpgIndoor_98
+  - first:
+      213: -5858689110133575931
+    second: rpgIndoor_99
+  - first:
+      213: 3693501912143968556
+    second: rpgIndoor_100
+  - first:
+      213: -8373579873913774950
+    second: rpgIndoor_101
+  - first:
+      213: 1395244490524608098
+    second: rpgIndoor_102
+  - first:
+      213: -5683859725101560689
+    second: rpgIndoor_103
+  - first:
+      213: 3686240950053070859
+    second: rpgIndoor_104
+  - first:
+      213: -1872232118227266833
+    second: rpgIndoor_105
+  - first:
+      213: -571623247305577873
+    second: rpgIndoor_106
+  - first:
+      213: 6795307932784702582
+    second: rpgIndoor_107
+  - first:
+      213: 1603825380694427302
+    second: rpgIndoor_108
+  - first:
+      213: -4432558162365482085
+    second: rpgIndoor_109
+  - first:
+      213: 5621367713160834447
+    second: rpgIndoor_110
+  - first:
+      213: -5527599897574086716
+    second: rpgIndoor_111
+  - first:
+      213: -5642206723416506965
+    second: rpgIndoor_112
+  - first:
+      213: 8223930569236556818
+    second: rpgIndoor_113
+  - first:
+      213: 6199502590763374810
+    second: rpgIndoor_114
+  - first:
+      213: -4909310745751979839
+    second: rpgIndoor_115
+  - first:
+      213: -7954302573933172663
+    second: rpgIndoor_116
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 2
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rpgIndoor_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f78b277baca1bf0800000000000000
+      internalID: -352746731542642843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd774220dea54d680800000000000000
+      internalID: -8731253803574855716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e01f5f8879f18f70800000000000000
+      internalID: 9187899011009286370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e118101771ca9790800000000000000
+      internalID: -7522487510453710361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f284748b767925510800000000000000
+      internalID: 1536456894615865391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a9cc327175846d0800000000000000
+      internalID: -3006056994373330383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1688e936f4e1a1ec0800000000000000
+      internalID: -3595528026179336095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8c6169117e30590800000000000000
+      internalID: -7709064074409621326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1252f279b5ffc53e0800000000000000
+      internalID: -2063493760398973663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79f140e5fc3a6b90800000000000000
+      internalID: -7247913623572317827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e03fe6d74704cad0800000000000000
+      internalID: -2683011472875900700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9473046c9034d820800000000000000
+      internalID: 2942029904830755995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8473db6b0d99b51e0800000000000000
+      internalID: -2208002070596995256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a537546b8ac97710800000000000000
+      internalID: 1691605835087033766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b7d66b2be284d70800000000000000
+      internalID: 9027516798163843855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58275f9fef18ba0d0800000000000000
+      internalID: -3410489360687730043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec47df6b0ded30e10800000000000000
+      internalID: 2162817234072597710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424f57fc6b02e6a50800000000000000
+      internalID: 6516181680388437028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_18
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baac2a64e93cb8400800000000000000
+      internalID: 327570482471815851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d058262bc7edf81f0800000000000000
+      internalID: -1040368361749183219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_20
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52af255f489891220800000000000000
+      internalID: 2457146275851860517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a74db590cd1c5950800000000000000
+      internalID: 6439054280216102821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457320a87fd1827e0800000000000000
+      internalID: -1790147902870243500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_23
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba08ff90012a8bde0800000000000000
+      internalID: -1317124701234954069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf4b105fcc03e590800000000000000
+      internalID: -7646253657803239484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_25
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3644e4eaccfcd6510800000000000000
+      internalID: 1544118725262591075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b857d037166f940800000000000000
+      internalID: 5329554355814501146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_27
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa605642c486c180800000000000000
+      internalID: -9095436427489940826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_28
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 038e09e7370ca20f0800000000000000
+      internalID: -1140887953307801552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e1e412732324df0800000000000000
+      internalID: -197540221287522785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_30
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffea831c52d1ebc0800000000000000
+      internalID: -3755489321343586315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_31
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1b1a9da3754ce30800000000000000
+      internalID: 4522835836057792955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_32
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43acda14d4549dd00800000000000000
+      internalID: 997904990555982388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_33
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82754e4c427e89c30800000000000000
+      internalID: 4366493983843833640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_34
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0643c4a6cc4e547d0800000000000000
+      internalID: -2934688015554169760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_35
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adafd28b05ae7d5e0800000000000000
+      internalID: -1884780286622958886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fc3d64cd4acdb00800000000000000
+      internalID: 854739295281598340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_37
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54477c78fa2281bc0800000000000000
+      internalID: -3812258947276508091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_38
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a038401927f21edd0800000000000000
+      internalID: -2458631752461810934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_39
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c0752d661a19140800000000000000
+      internalID: 4724734947076017216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d53955ad4a0ec00800000000000000
+      internalID: 927922780883868961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_41
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec74d757ac827500800000000000000
+      internalID: 392530767895624936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b011b5ad315df590800000000000000
+      internalID: -7638860067735793483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_43
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efcfdef00e4ba59c0800000000000000
+      internalID: -3937636049749148418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_44
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73fd9ea64d15c99b0800000000000000
+      internalID: -5072089107557392585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_45
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9e4909ec4ded390800000000000000
+      internalID: -7791556321650349601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_46
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a928bd07cf4e860800000000000000
+      internalID: 7558443636283841149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d35c07785666f350800000000000000
+      internalID: 6050135679559291865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_48
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f21845291e83f560800000000000000
+      internalID: 7346371655822217970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_49
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080a5bd9cb17ed470800000000000000
+      internalID: 8421293408143122560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_50
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376d730dc39ead460800000000000000
+      internalID: 7267377396116346483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_51
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105bb3bf27a505500800000000000000
+      internalID: 382905418214257921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_52
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33bdb0833e85297f0800000000000000
+      internalID: -607325266820474061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_53
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2999400cf6c0d1650800000000000000
+      internalID: 6205129535688841618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_54
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f8825c0807f2ae0800000000000000
+      internalID: -1571914046563119351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_55
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d631d9d6efc86bd0800000000000000
+      internalID: -2636628991421630761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_56
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83491a94d1817fe0800000000000000
+      internalID: -1193029676158073970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_57
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef2fab8bad21c0f0800000000000000
+      internalID: -1098546619295518745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab27b11ae6a911950800000000000000
+      internalID: 6418080743919678138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_59
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0496c9c98a1dc0bb0800000000000000
+      internalID: -4968365766784292544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_60
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80eb7554f9b04b590800000000000000
+      internalID: -7659484287559287288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_61
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d21cd505613665c0800000000000000
+      internalID: -4222633290653494567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_62
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd95864b1e7e1e50800000000000000
+      internalID: 6781996744478924242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_63
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df251c01bc0760850800000000000000
+      internalID: 6342881142659699453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_64
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb95e1165c1cad10800000000000000
+      internalID: 2138115079087168460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_65
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e7e86d2ac327a20800000000000000
+      internalID: 3058573767020019260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_66
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739eca47497aa9c40800000000000000
+      internalID: 5519908549350451511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_67
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb0a11c9b999bb40800000000000000
+      internalID: 5456561446623775687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85daba03f1cccd760800000000000000
+      internalID: 7484081115115531608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_69
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf03d40985491c60800000000000000
+      internalID: 7789333485307760556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_70
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef958372be8c55cf0800000000000000
+      internalID: -264084090830431746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_71
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71f8caf62ae68290800000000000000
+      internalID: -7888360244155715205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_72
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43dfd0cdd7e965eb0800000000000000
+      internalID: -4731420095106122444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_73
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d581fd7fdb8b1dda0800000000000000
+      internalID: -5921748908968568739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_74
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c6a8f72f253ecb0800000000000000
+      internalID: -4835930373390439388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_75
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c79b5760d75956940800000000000000
+      internalID: 5288797701628344700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_76
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75bb54c0ac732c130800000000000000
+      internalID: 3585489594269154135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_77
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc588707d1dea5000800000000000000
+      internalID: 25593458600740300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5623257c664920b0800000000000000
+      internalID: -5752989617353447846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_79
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1275997a7f5d247d0800000000000000
+      internalID: -2935548747446659295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_80
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da1844fa2f4270b0800000000000000
+      internalID: -5732432329783633194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_81
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098638b6545098840800000000000000
+      internalID: 5226714638254827664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_82
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1539a929955009b0800000000000000
+      internalID: -5115995060375571174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_83
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71461f9f7133f2840800000000000000
+      internalID: 5201432272706823191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_84
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5760aef03cc8834a0800000000000000
+      internalID: -6613381283380066699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_85
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a50b82fbb566c00800000000000000
+      internalID: 893502452659149438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_86
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae88032adfb56330800000000000000
+      internalID: 3703577212193640106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e40f2dfb2c844c0800000000000000
+      internalID: -4302975314819002733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_88
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46283d74f89ec21b0800000000000000
+      internalID: -5679908228426399132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_89
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8809b86ded574dd20800000000000000
+      internalID: 3302394026712076424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_90
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cffaea7cd932ab240800000000000000
+      internalID: 4808194712738377724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_91
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e2c2d010cbdb730800000000000000
+      internalID: 4016573155386338932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_92
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ae245e9acea8d90800000000000000
+      internalID: -7094598048528799107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_93
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86e7f3276469b970800000000000000
+      internalID: 8771152143428609676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_94
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62060a1b7e8e1a4c0800000000000000
+      internalID: -4277882089210093530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_95
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda9a9687b8100f00800000000000000
+      internalID: 1080891087085279967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_96
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a9ca839525305b0800000000000000
+      internalID: -5403384584758060494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_97
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c03a537c17e65f0800000000000000
+      internalID: -761546186566726529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_98
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6283653261727d0800000000000000
+      internalID: -2943359490437142851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_99
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50fe9058b41c1bea0800000000000000
+      internalID: -5858689110133575931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_100
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29319a8b64f14330800000000000000
+      internalID: 3693501912143968556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_101
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c520548711bcb80800000000000000
+      internalID: -8373579873913774950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_102
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2664a88c877ec5310800000000000000
+      internalID: 1395244490524608098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_103
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c0c24c1bfde11b0800000000000000
+      internalID: -5683859725101560689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_104
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0869601d98282330800000000000000
+      internalID: 3686240950053070859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_105
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe29cf7dece7406e0800000000000000
+      internalID: -1872232118227266833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_106
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6aeef66faf2118f0800000000000000
+      internalID: -571623247305577873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_107
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674b601df88cd4e50800000000000000
+      internalID: 6795307932784702582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_108
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a60c02bfaee14610800000000000000
+      internalID: 1603825380694427302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_109
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b72f506d36c72c0800000000000000
+      internalID: -4432558162365482085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_110
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d2dced62c130e40800000000000000
+      internalID: 5621367713160834447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_111
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c76c9cfd250a43b0800000000000000
+      internalID: -5527599897574086716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_112
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad3075f0ead2b1b0800000000000000
+      internalID: -5642206723416506965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_113
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c22dcc745412270800000000000000
+      internalID: 8223930569236556818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_114
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8909a82ce090650800000000000000
+      internalID: 6199502590763374810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_115
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8f17b23ef9edbb0800000000000000
+      internalID: -4909310745751979839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rpgIndoor_116
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948ecb4e3f3ac9190800000000000000
+      internalID: -7954302573933172663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
