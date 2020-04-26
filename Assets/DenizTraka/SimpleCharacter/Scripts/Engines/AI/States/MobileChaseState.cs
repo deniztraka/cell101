@@ -82,6 +82,10 @@ namespace DTWorld.Engines.AI.States
                 return WanderState();
             }
 
+            if(currentDistance < chaseDistance && MobileBehaviour.Mobile.Health < MobileBehaviour.FleeBelowHealth){
+                return FleeState();
+            }
+
             if (currentDistance <= 0.5)
             {
                 return AttackingState();
@@ -96,6 +100,11 @@ namespace DTWorld.Engines.AI.States
             {
                 return;
             }
+        }
+
+        private BaseMobileState FleeState()
+        {
+            return new MobileFleeState(MobileBehaviour, PlayerBehaviour, chaseDistance);
         }
 
         private BaseMobileState WanderState()

@@ -280,11 +280,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5471902547429326238, guid: f0030748a99f8ae49924655f629ac3aa,
-        type: 3}
-      propertyPath: FleeBelowHealth
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
 --- !u!1001 &133673825
@@ -296,11 +291,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 613171085, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.152
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 613171085, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1498050187, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
       propertyPath: Sounds.Array.data[2].Volume
@@ -314,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 265820723927644911, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5262476430616430532, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
@@ -375,6 +370,11 @@ PrefabInstance:
         type: 3}
       propertyPath: IsAggressive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471902547429326238, guid: f0030748a99f8ae49924655f629ac3aa,
+        type: 3}
+      propertyPath: FleeBelowHealth
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
@@ -2994,11 +2994,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 613171085, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.152
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 613171085, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1498050187, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
       propertyPath: Sounds.Array.data[2].Volume
@@ -3012,7 +3012,7 @@ PrefabInstance:
     - target: {fileID: 265820723927644911, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5262476430616430532, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
@@ -3073,6 +3073,11 @@ PrefabInstance:
         type: 3}
       propertyPath: IsAggressive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471902547429326238, guid: f0030748a99f8ae49924655f629ac3aa,
+        type: 3}
+      propertyPath: FleeBelowHealth
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5873758041299126407, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
@@ -6647,11 +6652,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 613171085, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.152
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 613171085, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1498050187, guid: f0030748a99f8ae49924655f629ac3aa, type: 3}
       propertyPath: Sounds.Array.data[2].Volume
@@ -6665,7 +6670,7 @@ PrefabInstance:
     - target: {fileID: 265820723927644911, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5262476430616430532, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
@@ -6720,6 +6725,11 @@ PrefabInstance:
     - target: {fileID: 5262476430616430532, guid: f0030748a99f8ae49924655f629ac3aa,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471902547429326238, guid: f0030748a99f8ae49924655f629ac3aa,
+        type: 3}
+      propertyPath: FleeBelowHealth
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
