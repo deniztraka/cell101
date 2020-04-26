@@ -137,7 +137,7 @@ namespace DTWorld.Behaviours.Mobiles
                 audioManager.Stop("Walking");
                 audioManager.Play("Dead");
             }
-            Destroy(gameObject, 3);
+            Destroy(gameObject, 1.5f);
         }
 
         public virtual void Update()
