@@ -1,4 +1,5 @@
-﻿using DTWorld.Behaviours.Items.Weapons;
+﻿using System;
+using DTWorld.Behaviours.Items.Weapons;
 using DTWorld.Behaviours.Mobiles.Human;
 using DTWorld.Core.Mobiles;
 using DTWorld.Engines.Input;
@@ -27,7 +28,7 @@ namespace DTWorld.Behaviours.Mobiles
                 playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
             }
 
-            playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
+            //playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
 
             this.Mobile = new Player(this.Speed, playerMovement);
         }
@@ -38,8 +39,12 @@ namespace DTWorld.Behaviours.Mobiles
             if (Input.GetKeyDown(KeyCode.Space))//if mobile can attack / timing is okey?
             {
                 Attack();
+            } else if (Input.GetKeyDown(KeyCode.E)){
+                Defend();
             }
         }
+
+        
 
         public override void FixedUpdate()
         {

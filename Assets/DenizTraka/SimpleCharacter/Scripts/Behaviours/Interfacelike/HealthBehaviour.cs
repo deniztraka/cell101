@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.Mobiles;
 using UnityEngine;
 namespace DTWorld.Behaviours.Interfacelike
 {
@@ -9,6 +10,8 @@ namespace DTWorld.Behaviours.Interfacelike
     {
         [SerializeField]
         private float health;
+
+        private BaseMobileBehaviour mobileBehaviour;
         public float Health
         {
             get { return health; }
@@ -30,11 +33,19 @@ namespace DTWorld.Behaviours.Interfacelike
         // Start is called before the first frame update
         void Start()
         {
-
+            mobileBehaviour = gameObject.GetComponent<BaseMobileBehaviour>();
         }
 
         public void TakeDamage(float damage)
         {
+            if (mobileBehaviour.ShieldBehaviour != null && mobileBehaviour.Mobile.IsDefending)
+            {
+                if (mobileBehaviour.ShieldBehaviour.TryParry(damage))
+                {
+                    return;
+                }
+            }
+
             Health -= damage;
 
             if (OnDamageTakenEvent != null)

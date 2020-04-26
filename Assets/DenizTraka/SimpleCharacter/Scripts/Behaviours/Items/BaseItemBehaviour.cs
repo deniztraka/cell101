@@ -8,6 +8,8 @@ namespace DTWorld.Behaviours.Items
     {
         public string Name;
 
+        public float Durability;
+
         public BaseItem Item;
 
         public virtual void Awake()

@@ -10,7 +10,7 @@ namespace DTWorld.Engines.AI.States
         float maxDecisionFrequency;
         float nextDecisionTime;
 
-        bool isMoving;
+        //bool isMoving;
 
         Vector2 movement;
 
@@ -19,7 +19,7 @@ namespace DTWorld.Engines.AI.States
             this.maxDecisionFrequency = maxDecisionFrequency;
             this.minDecisionFrequency = minDecisionFrequency;
             this.nextDecisionTime = Random.Range(minDecisionFrequency, maxDecisionFrequency);
-            this.isMoving = false;
+            //this.isMoving = false;
             this.movement = Vector2.zero;
         }
 
@@ -28,7 +28,7 @@ namespace DTWorld.Engines.AI.States
             this.maxDecisionFrequency = maxDecisionFrequency;
             this.minDecisionFrequency = minDecisionFrequency;
             this.nextDecisionTime = Random.Range(minDecisionFrequency, maxDecisionFrequency);
-            this.isMoving = false;
+            //this.isMoving = false;
             this.movement = Vector2.zero;
         }
 
@@ -37,7 +37,7 @@ namespace DTWorld.Engines.AI.States
             this.maxDecisionFrequency = maxDecisionFrequency;
             this.minDecisionFrequency = minDecisionFrequency;
             this.nextDecisionTime = Random.Range(minDecisionFrequency, maxDecisionFrequency);
-            this.isMoving = false;
+            //this.isMoving = false;
             this.movement = Vector2.zero;
         }
 

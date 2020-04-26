@@ -10,6 +10,7 @@ namespace DTWorld.Engines.Animation
         protected static readonly string[] idleAnimations = { "HumanIdleEast", "HumanIdleNorth", "HumanIdleWest", "HumanIdleSouth" };
         protected static readonly string[] walkingAnimations = { "HumanWalkingEast", "HumanWalkingNorth", "HumanWalkingWest", "HumanWalkingSouth" };
         protected static readonly string[] attackingAnimations = { "HumanAttackingEast", "HumanAttackingNorth", "HumanAttackingWest", "HumanAttackingSouth" };
+        protected static readonly string[] defendingAnimations = { "HumanDefendEast", "HumanDefendNorth", "HumanDefendWest", "HumanDefendSouth" };
         protected static readonly string[] deadAnimations = { "HumanDeadEast", "HumanDeadNorth", "HumanDeadWest", "HumanDeadSouth" };
         private Animator animator;
         private int lastDirectionIndex;
@@ -36,9 +37,11 @@ namespace DTWorld.Engines.Animation
             {
                 directionArray = attackingAnimations;
             }
-            else
-            //measure the magnitude of the input.
-            if (direction.magnitude < .01f)
+            else if (mobile.IsDefending)
+            {
+                directionArray = defendingAnimations;
+            }
+            else if (direction.magnitude < .01f)   //measure the magnitude of the input.
             {
                 //if we are basically standing still, we'll use the Static states
                 //we won't be able to calculate a direction if the user isn't pressing one, anyway!
@@ -68,7 +71,7 @@ namespace DTWorld.Engines.Animation
             }
 
             lastDirection = direction;
-            //play base character animation
+            //play base character animation            
             animator.Play(animationName, -1, 0);
             SetHandleSortIndex(lastDirectionIndex, mobile.IsAttacking);
             lastAnimationName = animationName;

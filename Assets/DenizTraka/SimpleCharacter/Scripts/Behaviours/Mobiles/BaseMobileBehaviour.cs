@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.Audio;
 using DTWorld.Behaviours.Interfacelike;
+using DTWorld.Behaviours.Items.Shields;
 using DTWorld.Behaviours.Items.Weapons;
 using DTWorld.Core.Mobiles;
 using DTWorld.Engines.Animation;
 using UnityEngine;
 using static DTWorld.Behaviours.Interfacelike.HealthBehaviour;
+using static DTWorld.Behaviours.Items.Shields.BaseShieldBehaviour;
 using static DTWorld.Behaviours.Items.Weapons.BaseWeaponBehaviour;
 
 namespace DTWorld.Behaviours.Mobiles
@@ -21,14 +24,20 @@ namespace DTWorld.Behaviours.Mobiles
         private bool isParalyzed;
         private AnimationHandler animationHandler;
         private AudioManager audioManager;
-        private float actionFrequency = 0.5f;
         private float nextActionTime = 0;
         private int lastDirectionIndex;
+
+        
+        private float tempShieldSwingSpeed;
+        private float tempWeaponSwingSpeed;
 
         public BaseMobile Mobile;
         public bool IsAggressive;
         public float ChaseDistance;
         public float FleeBelowHealth;
+
+        public float lastDefendTime = 0;
+        public float lastAttackTime = 0;
 
         public ParticleSystem DamageTakenEffect;
 
@@ -43,6 +52,7 @@ namespace DTWorld.Behaviours.Mobiles
         }
         public Rigidbody2D Rigidbody2D { get; set; }
         public BaseWeaponBehaviour WeaponBehaviour { get; set; }
+        public BaseShieldBehaviour ShieldBehaviour { get; set; }
 
         public GameObject RightHandle;
         public GameObject LeftHandle;
@@ -72,6 +82,16 @@ namespace DTWorld.Behaviours.Mobiles
                 }
             }
 
+            // add shield object in the handle
+            if (LeftHandle != null)
+            {
+                var shieldBehaviour = LeftHandle.GetComponentInChildren<BaseShieldBehaviour>();
+                if (shieldBehaviour != null)
+                {
+                    AddShield(shieldBehaviour);
+                }
+            }
+
             //set animation system
             var animationRig = gameObject.transform.Find("Rig");
             if (animationRig != null)
@@ -94,6 +114,8 @@ namespace DTWorld.Behaviours.Mobiles
             healthBehaviourComponent.OnDamageTakenEvent += new OnDamageTakenEventHandler(OnDamageTaken);
             healthBehaviourComponent.OnHealthBelowZeroEvent += new OnHealthBelowZeroEventHandler(OnDead);
         }
+
+
 
         IEnumerator SetParalyzed(float time)
         {
@@ -123,7 +145,7 @@ namespace DTWorld.Behaviours.Mobiles
 
             if (audioManager != null)
             {
-                if (Random.Range(0, 10) > 8)
+                if (UnityEngine.Random.Range(0, 10) > 8)
                 {
                     audioManager.Play("Hurt");
                 }
@@ -176,10 +198,49 @@ namespace DTWorld.Behaviours.Mobiles
             }
         }
 
-        public float GetAttackRate()
+        public float GetSwingSpeed()
         {
             //Attack rate only depends on weapon speed for now
-            return 1 / WeaponBehaviour.Item.SwingSpeed;
+            return WeaponBehaviour.Item.SwingSpeed;
+        }
+
+        public float GetDefendSpeed()
+        {
+            //Defend rate only depends on weapon speed for now
+            return ShieldBehaviour.Item.SwingSpeed;
+        }
+
+        protected bool CanDefend()
+        {
+
+            if (Mobile.Health <= 0)
+            {
+                return false;
+            }
+
+            if (ShieldBehaviour == null)
+            {
+                return false;
+            }
+
+
+            if (Time.time > nextActionTime)
+            {
+                var calculatedDefendRate = GetDefendSpeed();
+                //Debug.Log(calculatedDefendRate);
+                if (calculatedDefendRate <= Mobile.ActionRate)
+                {
+                    nextActionTime = Time.time + Mobile.ActionRate;
+                    return Mobile.CanDefend();
+
+                }
+                else
+                {
+                    nextActionTime = Time.time + Mobile.ActionRate;
+                    return Mobile.CanDefend(calculatedDefendRate);
+                }
+            }
+            return false;
         }
 
         protected bool CanAttack()
@@ -196,16 +257,16 @@ namespace DTWorld.Behaviours.Mobiles
 
             if (Time.time > nextActionTime)
             {
-                var calculatedAttackRate = GetAttackRate();
-                if (calculatedAttackRate <= Mobile.AttackRate)
+                var calculatedAttackRate = GetSwingSpeed();
+                if (calculatedAttackRate <= Mobile.ActionRate)
                 {
-                    nextActionTime = Time.time + actionFrequency;
+                    nextActionTime = Time.time + Mobile.ActionRate;
                     return Mobile.CanAttack();
 
                 }
                 else
                 {
-                    nextActionTime = Time.time + actionFrequency;
+                    nextActionTime = Time.time + Mobile.ActionRate;
                     return Mobile.CanAttack(calculatedAttackRate);
                 }
             }
@@ -223,17 +284,68 @@ namespace DTWorld.Behaviours.Mobiles
             }
         }
 
+        private void AddShield(BaseShieldBehaviour shieldBehaviour)
+        {
+            if (LeftHandle != null)
+            {
+                ShieldBehaviour = shieldBehaviour;
+                ShieldBehaviour.OwnerMobileBehaviour = this;
+                ShieldBehaviour.BeforeDefendingEvent += new BeforeDefendingEventHandler(SetDefendSpeedBefore);
+                ShieldBehaviour.AfterDefendEvent += new AfterDefendEventHandler(SetDefendSpeedAfter);
+            }
+        }
+
+        private void SetDefendSpeedBefore()
+        {
+            var defendRate = GetDefendSpeed();            
+            animationHandler.SetCurrentAnimationSpeedMultiplier(1 / defendRate);
+            
+            tempShieldSwingSpeed = ShieldBehaviour.Item.SwingSpeed;
+            //ShieldBehaviour.SetSwingSpeed(1 / defendRate);
+        }
+
+        private void SetDefendSpeedAfter()
+        {
+            animationHandler.SetCurrentAnimationSpeedMultiplier(1f);
+            //Todo set swingspeed to old value
+            ShieldBehaviour.SetSwingSpeed(tempShieldSwingSpeed);
+        }
+
         private void SetAttackSpeedBefore()
         {
-            var attackRate = GetAttackRate();
-            animationHandler.SetCurrentAnimationSpeedMultiplier(attackRate);
-            WeaponBehaviour.SetAttackSpeed(attackRate);
+            var attackRate = GetSwingSpeed();
+            animationHandler.SetCurrentAnimationSpeedMultiplier(1 / attackRate);
+            tempWeaponSwingSpeed = WeaponBehaviour.Item.SwingSpeed;
+            WeaponBehaviour.SetSwingSpeed(1 / attackRate);
         }
 
         private void SetAttackSpeedAfter()
         {
             animationHandler.SetCurrentAnimationSpeedMultiplier(1f);
-            WeaponBehaviour.SetAttackSpeed(1f);
+            //Todo set swingspeed to old value
+            WeaponBehaviour.SetSwingSpeed(tempWeaponSwingSpeed);
+        }
+
+        public void Defend()
+        {
+            if (CanDefend() && LeftHandle != null && LeftHandle.transform.childCount > 0)
+            {
+                //lastDefendTime = Time.time;
+                if (ShieldBehaviour == null)
+                {
+                    ShieldBehaviour = RightHandle.GetComponentInChildren<BaseShieldBehaviour>();
+                    if (WeaponBehaviour != null)
+                    {
+                        lastAttackTime = Time.time;
+                        ShieldBehaviour.Defend();
+                    }
+                }
+                else
+                {
+                    //lastDefendTime = Time.time;
+                    ShieldBehaviour.Defend();
+                }
+            }
         }
 
         public void Attack()
@@ -246,11 +358,13 @@ namespace DTWorld.Behaviours.Mobiles
                     WeaponBehaviour = RightHandle.GetComponentInChildren<BaseWeaponBehaviour>();
                     if (WeaponBehaviour != null)
                     {
+                        //lastAttackTime = Time.time;
                         WeaponBehaviour.Attack();
                     }
                 }
                 else
                 {
+                    //lastAttackTime = Time.time;
                     WeaponBehaviour.Attack();
                 }
             }

@@ -11,13 +11,13 @@ namespace DTWorld.Behaviours.Items.Weapons
 {
     public abstract class BaseWeaponBehaviour : BaseItemBehaviour
     {
-        private float attackSpeed;
         private TrailRenderer trailRenderer;
 
         public new BaseWeapon Item;
         public BaseMobileBehaviour OwnerMobileBehaviour;
 
         private AudioManager audioManager;
+
 
         public float Damage;
         public float SwingSpeed;
@@ -57,7 +57,7 @@ namespace DTWorld.Behaviours.Items.Weapons
                 audioManager.Play("Swing");
             }
             
-            yield return new WaitForSeconds(1 / (attackSpeed + 0.2f));
+            yield return new WaitForSeconds(1 / SwingSpeed);
 
             if (task != null)
             {
@@ -138,9 +138,9 @@ namespace DTWorld.Behaviours.Items.Weapons
             audioManager.Play("Hit");
         }
 
-        public void SetAttackSpeed(float value)
+        public void SetSwingSpeed(float value)
         {
-            attackSpeed = value;
+            SwingSpeed = value;
         }
     }
 }

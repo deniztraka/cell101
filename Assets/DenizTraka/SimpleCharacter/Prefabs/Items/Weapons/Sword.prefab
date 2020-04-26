@@ -284,9 +284,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Regular Sword
+  Durability: 0
   OwnerMobileBehaviour: {fileID: 0}
   Damage: 5
-  SwingSpeed: 0.5
+  SwingSpeed: 1
 --- !u!114 &2904453139003939461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,11 +303,11 @@ MonoBehaviour:
   Sounds:
   - Name: Hit
     Clip: {fileID: 8300000, guid: a3dbc4bbd929f1048bc28c55c0dc4f72, type: 3}
-    Volume: 1
+    Volume: 0.47
     Pitch: 0.5
     Source: {fileID: 0}
   - Name: Swing
     Clip: {fileID: 8300000, guid: 87d1a46450392be4288f6baf80a56520, type: 3}
-    Volume: 1
+    Volume: 0.34
     Pitch: 0.8
     Source: {fileID: 0}

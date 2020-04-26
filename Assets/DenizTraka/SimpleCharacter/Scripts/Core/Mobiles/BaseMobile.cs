@@ -8,8 +8,8 @@ namespace DTWorld.Core.Mobiles
 {
     public abstract class BaseMobile : IHealth
     {
-        private float attackRate;
-        private float nextAttackTime;
+        private float actionRate;
+        private float nextActionTime;
         private bool isAttacking;
         // private IWeapon weapon;
 
@@ -38,19 +38,22 @@ namespace DTWorld.Core.Mobiles
 
         protected float Speed;
         protected IMovementType MovementType;
-        public float AttackRate
+        public float ActionRate
         {
-            get { return attackRate; }
-            set { attackRate = value; }
+            get { return actionRate; }
+            set { actionRate = value; }
         }
+
+        public bool IsDefending { get; internal set; }
 
         public BaseMobile(float Speed, IMovementType movementType)
         {
             this.Speed = Speed;
             this.MovementType = movementType;
-            this.attackRate = 0.5f;
-            this.nextAttackTime = 0;
+            this.actionRate = 0.5f;
+            this.nextActionTime = 0;
             this.Health = 100;
+            this.IsDefending = false;
         }
 
         public void SetSpeed(float speed)
@@ -60,20 +63,48 @@ namespace DTWorld.Core.Mobiles
 
         public virtual Vector2 Move()
         {
-            if (!isAttacking && this.MovementType != null)
+            if (!isAttacking && !IsDefending && this.MovementType != null)
             {
                 return this.MovementType.Move(Speed);
             }
             return Vector2.zero;
         }
 
+        internal bool CanDefend()
+        {
+            var canDefend = false;
+            if (Time.time >= nextActionTime)
+            {
+                canDefend = true;
+                nextActionTime = Time.time + actionRate;
+            }
+
+            return canDefend;
+        }
+
+        public void SetNextActionTime(float time){
+            nextActionTime = time;
+        }
+
+        internal bool CanDefend(float newActionRate)
+        {
+            var canAttack = false;
+            if (Time.time >= nextActionTime)
+            {
+                canAttack = true;
+                nextActionTime = Time.time + newActionRate;
+            }
+
+            return canAttack;
+        }
+
         internal bool CanAttack()
         {
             var canAttack = false;
-            if (Time.time >= nextAttackTime)
+            if (Time.time >= nextActionTime)
             {
                 canAttack = true;
-                nextAttackTime = Time.time + attackRate;
+                nextActionTime = Time.time + actionRate;
             }
 
             return canAttack;
@@ -82,10 +113,10 @@ namespace DTWorld.Core.Mobiles
         internal bool CanAttack(float newAttackRate)
         {
             var canAttack = false;
-            if (Time.time >= nextAttackTime)
+            if (Time.time >= nextActionTime)
             {
                 canAttack = true;
-                nextAttackTime = Time.time + newAttackRate;
+                nextActionTime = Time.time + newAttackRate;
             }
 
             return canAttack;
@@ -104,6 +135,8 @@ namespace DTWorld.Core.Mobiles
         {
             this.health = health;
         }
+
+
     }
 }
 

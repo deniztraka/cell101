@@ -7,16 +7,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1469971444185460044, guid: f94227f1b1788734c96c74fb1542a23a,
+    - target: {fileID: 1399703235806714903, guid: f94227f1b1788734c96c74fb1542a23a,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8259955811328810584, guid: 5b6dbc863106aba4db06182ea4c6f050,
+      propertyPath: DefendRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399703235806714903, guid: f94227f1b1788734c96c74fb1542a23a,
         type: 3}
+      propertyPath: SwingSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3409912506925236516, guid: f94227f1b1788734c96c74fb1542a23a,
         type: 3}
       propertyPath: m_Name
-      value: SmallRoundShield
+      value: SmallRoundShield Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3409912506925236517, guid: f94227f1b1788734c96c74fb1542a23a,
         type: 3}
