@@ -51,6 +51,12 @@ namespace DTWorld.Engines.AI.States
             return movement.y;
         }
 
+        public override void OnStateEnter()
+        {
+            //Debug.Log("Wander");
+            base.OnStateEnter();
+        }
+
         public override BaseMobileState OnStateUpdate()
         {
             var baseResult = base.OnStateUpdate();

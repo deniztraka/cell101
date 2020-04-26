@@ -4,48 +4,39 @@ using DTWorld.Behaviours.Mobiles;
 using UnityEngine;
 namespace DTWorld.Engines.AI.States
 {
-    public class MobileChaseState : BaseMobileState
+    public class MobileFleeState : BaseMobileState
     {
         private BaseMobileBehaviour target;
         private Vector2 delta;
         private float currentDistance;
-        private float chaseDistance;
+        private float fleeDistance;
 
-        public MobileChaseState(BaseMobileBehaviour mobile, BaseMobileBehaviour target, float chaseDistance) : base(mobile)
+        public MobileFleeState(BaseMobileBehaviour mobile, BaseMobileBehaviour target, float fleeDistance) : base(mobile)
         {
             this.target = target;
-            this.chaseDistance = chaseDistance;
+            this.fleeDistance = fleeDistance;
             delta = Vector2.zero;
         }
 
         public override float GetXAxis()
-        {
-            if (currentDistance <= 0.5)
-            {
-                return 0;
-            }
+        {            
 
             if ((delta.x >= 0 && delta.x <= 0.01f) || (delta.x <= 0 && delta.x >= -0.01f))
             {
                 return 0;
             }
 
-            return delta.x > 0 ? -1 : 1;
+            return delta.x < 0 ? -1 : 1;
         }
 
         public override float GetYAxis()
-        {
-            if (currentDistance <= 0.5)
-            {
-                return 0;
-            }
-
+        {            
             if (delta.y == 0)
             {
                 return 0;
             }
 
-            return delta.y > 0 ? -1 : 1;
+            return delta.y < 0 ? -1 : 1;
         }
 
         public override void OnStateExit()
@@ -58,7 +49,7 @@ namespace DTWorld.Engines.AI.States
 
         public override void OnStateEnter()
         {
-            //Debug.Log("Chase!");
+            //Debug.Log("flee");
             base.OnStateEnter();
             if (MobileBehaviour != null)
             {
@@ -77,14 +68,9 @@ namespace DTWorld.Engines.AI.States
 
             currentDistance = Vector2.Distance(MobileBehaviour.transform.position, target.transform.position);
 
-            if (currentDistance > chaseDistance)
+            if (currentDistance > fleeDistance || MobileBehaviour.Mobile.Health > MobileBehaviour.FleeBelowHealth)
             {
                 return WanderState();
-            }
-
-            if (currentDistance <= 0.5)
-            {
-                return AttackingState();
             }
 
             return null;
@@ -100,12 +86,7 @@ namespace DTWorld.Engines.AI.States
 
         private BaseMobileState WanderState()
         {
-            return new MobileWanderState(MobileBehaviour, 1, 5, true, chaseDistance);
-        }
-
-        private BaseMobileState AttackingState()
-        {
-            return new MobileAttackingState(MobileBehaviour, target, true, chaseDistance);
+            return new MobileWanderState(MobileBehaviour, 1, 5, true, fleeDistance);
         }
     }
 }

@@ -28,6 +28,7 @@ namespace DTWorld.Behaviours.Mobiles
         public BaseMobile Mobile;
         public bool IsAggressive;
         public float ChaseDistance;
+        public float FleeBelowHealth;
 
         public ParticleSystem DamageTakenEffect;
 
@@ -98,17 +99,14 @@ namespace DTWorld.Behaviours.Mobiles
         {
             if (isParalyzed)
             {
-                Debug.Log("no paralyze");
                 yield return new WaitForSeconds(time);
             }
             else
             {
-                Debug.Log("paralyzed");
                 isParalyzed = true;
                 yield return new WaitForSeconds(time);
             }
 
-            Debug.Log("paralyzed released");
             isParalyzed = false;
         }
 

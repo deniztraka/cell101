@@ -1,4 +1,5 @@
-﻿using DTWorld.Behaviours.Mobiles;
+﻿using System;
+using DTWorld.Behaviours.Mobiles;
 using UnityEngine;
 namespace DTWorld.Engines.AI.States
 {
@@ -30,6 +31,7 @@ namespace DTWorld.Engines.AI.States
 
         public override void OnStateEnter()
         {
+            //Debug.Log("Idle");
             base.OnStateEnter();
         }
 
@@ -39,10 +41,18 @@ namespace DTWorld.Engines.AI.States
             {
                 if (PlayerBehaviour.Mobile.Health > 0 && IsAggressive && CheckChaseState())
                 {
+                    if(MobileBehaviour.Mobile.Health < MobileBehaviour.FleeBelowHealth){
+                        return FleeState();
+                    }
                     return ChaseState();
                 }
             }
             return null;
+        }
+
+        private BaseMobileState FleeState()
+        {
+            return new MobileFleeState(MobileBehaviour, PlayerBehaviour, ChaseDistance);
         }
 
         public override float GetXAxis()
@@ -70,5 +80,7 @@ namespace DTWorld.Engines.AI.States
         {
             return new MobileChaseState(MobileBehaviour, PlayerBehaviour, ChaseDistance);
         }
+
+        
     }
 }
