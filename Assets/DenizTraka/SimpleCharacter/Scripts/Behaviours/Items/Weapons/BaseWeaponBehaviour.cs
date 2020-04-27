@@ -56,8 +56,12 @@ namespace DTWorld.Behaviours.Items.Weapons
             {
                 audioManager.Play("Swing");
             }
-            
+
+            var lastTime = Time.time;
             yield return new WaitForSeconds(1 / SwingSpeed);
+
+            //Debug.Log(Time.time - lastTime);
+
 
             if (task != null)
             {

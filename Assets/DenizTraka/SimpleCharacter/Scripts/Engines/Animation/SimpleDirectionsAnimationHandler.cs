@@ -50,7 +50,7 @@ namespace DTWorld.Engines.Animation
                 if (directionIndex == 0)
                 {
                     rightHandleSortingGroup.sortingOrder = 7;
-                    leftHandleSortingGroup.sortingOrder = isAttacking ? -1 : 6;
+                    leftHandleSortingGroup.sortingOrder = -1;
                 }
                 else if (directionIndex == 1)
                 {

@@ -55,9 +55,7 @@ namespace DTWorld.Behaviours.Items.Shields
                 audioManager.Play("Swing");
             }
 
-            //Debug.Log(OwnerMobileBehaviour.Mobile.IsDefending);
-
-            yield return new WaitForSeconds(SwingSpeed);
+            yield return new WaitForSeconds(1/SwingSpeed);
 
             if (task != null)
             {

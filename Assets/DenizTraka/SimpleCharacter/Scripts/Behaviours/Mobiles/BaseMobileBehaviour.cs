@@ -301,7 +301,7 @@ namespace DTWorld.Behaviours.Mobiles
             animationHandler.SetCurrentAnimationSpeedMultiplier(1 / defendRate);
             
             tempShieldSwingSpeed = ShieldBehaviour.Item.SwingSpeed;
-            //ShieldBehaviour.SetSwingSpeed(1 / defendRate);
+            ShieldBehaviour.SetSwingSpeed(1 / defendRate);
         }
 
         private void SetDefendSpeedAfter()
@@ -330,7 +330,8 @@ namespace DTWorld.Behaviours.Mobiles
         {
             if (CanDefend() && LeftHandle != null && LeftHandle.transform.childCount > 0)
             {
-                //lastDefendTime = Time.time;
+                //Debug.Log(Time.time - lastDefendTime);
+                lastDefendTime = Time.time;
                 if (ShieldBehaviour == null)
                 {
                     ShieldBehaviour = RightHandle.GetComponentInChildren<BaseShieldBehaviour>();
@@ -342,7 +343,7 @@ namespace DTWorld.Behaviours.Mobiles
                 }
                 else
                 {
-                    //lastDefendTime = Time.time;
+                    lastDefendTime = Time.time;
                     ShieldBehaviour.Defend();
                 }
             }
@@ -353,18 +354,18 @@ namespace DTWorld.Behaviours.Mobiles
             //attack with weapon if mobile has any weapon 
             if (CanAttack() && RightHandle != null && RightHandle.transform.childCount > 0)
             {
+                //Debug.Log(Time.time - lastAttackTime);
+                lastAttackTime = Time.time;
                 if (WeaponBehaviour == null)
                 {
                     WeaponBehaviour = RightHandle.GetComponentInChildren<BaseWeaponBehaviour>();
                     if (WeaponBehaviour != null)
                     {
-                        //lastAttackTime = Time.time;
                         WeaponBehaviour.Attack();
                     }
                 }
                 else
                 {
-                    //lastAttackTime = Time.time;
                     WeaponBehaviour.Attack();
                 }
             }
