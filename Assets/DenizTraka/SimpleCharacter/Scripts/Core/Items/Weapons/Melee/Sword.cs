@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using DTWorld.Core.Mobiles;
 using UnityEngine;
-namespace DTWorld.Core.Items.Weapons
+namespace DTWorld.Core.Items.Weapons.Melee
 {
-    public class Sword : BaseWeapon
+    public class Sword : BaseMeleeWeapon
     {
         public Sword(string name) : base(name)
         {

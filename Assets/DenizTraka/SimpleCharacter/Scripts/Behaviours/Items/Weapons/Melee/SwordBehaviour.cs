@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using DTWorld.Core.Items.Weapons;
-using UnityEngine;
-namespace DTWorld.Behaviours.Items.Weapons
+﻿using DTWorld.Core.Items.Weapons.Melee;
+namespace DTWorld.Behaviours.Items.Weapons.Melee
 {
-    public class SwordBehaviour : BaseWeaponBehaviour
+    public class SwordBehaviour : BaseMeleeWeaponBehaviour
     {
         public override void Awake()
         {

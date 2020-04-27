@@ -16,7 +16,7 @@ namespace DTWorld.Behaviours.Items.Weapons
         public new BaseWeapon Item;
         public BaseMobileBehaviour OwnerMobileBehaviour;
 
-        private AudioManager audioManager;
+        protected AudioManager AudioManager;
 
 
         public float Damage;
@@ -28,9 +28,12 @@ namespace DTWorld.Behaviours.Items.Weapons
         public override void Start()
         {
             base.Start();
-            audioManager = gameObject.GetComponent<AudioManager>();
+            AudioManager = gameObject.GetComponent<AudioManager>();
             trailRenderer = gameObject.transform.GetComponentInChildren<TrailRenderer>();
-            trailRenderer.enabled = false;
+            if (trailRenderer != null)
+            {
+                trailRenderer.enabled = false;
+            }
             this.BeforeAttackingEvent += new BeforeAttackingEventHandler(BeforeAttacking);
             this.AfterAttackedEvent += new AfterAttackedEventHandler(AfterAttacked);
         }
@@ -41,7 +44,7 @@ namespace DTWorld.Behaviours.Items.Weapons
             base.Update();
         }
 
-        private IEnumerator ExecuteAfterTime(Action task)
+        protected IEnumerator ExecuteAfterTime(Action task)
         {
             if (BeforeAttackingEvent != null)
             {
@@ -50,11 +53,14 @@ namespace DTWorld.Behaviours.Items.Weapons
             if (OwnerMobileBehaviour != null)
             {
                 OwnerMobileBehaviour.Mobile.IsAttacking = true;
-                trailRenderer.enabled = true;
+                if (trailRenderer != null)
+                {
+                    trailRenderer.enabled = true;
+                }
             }
-            if (audioManager != null)
+            if (AudioManager != null)
             {
-                audioManager.Play("Swing");
+                AudioManager.Play("Swing");
             }
 
             var lastTime = Time.time;
@@ -70,7 +76,55 @@ namespace DTWorld.Behaviours.Items.Weapons
 
             if (OwnerMobileBehaviour != null)
             {
-                trailRenderer.enabled = false;
+                if (trailRenderer != null)
+                {
+                    trailRenderer.enabled = false;
+                }
+                OwnerMobileBehaviour.Mobile.IsAttacking = false;
+            }
+
+            if (AfterAttackedEvent != null)
+            {
+                AfterAttackedEvent.Invoke();
+            }
+        }
+
+        protected IEnumerator ExecuteBeforeTime(Action task)
+        {
+            if (BeforeAttackingEvent != null)
+            {
+                BeforeAttackingEvent.Invoke();
+            }
+            if (OwnerMobileBehaviour != null)
+            {
+                OwnerMobileBehaviour.Mobile.IsAttacking = true;
+                if (trailRenderer != null)
+                {
+                    trailRenderer.enabled = true;
+                }
+            }
+            if (AudioManager != null)
+            {
+                AudioManager.Play("Swing");
+            }
+
+            if (task != null)
+            {
+                task();
+            }
+
+            var lastTime = Time.time;
+
+            yield return new WaitForSeconds(1 / SwingSpeed);
+
+            //Debug.Log(Time.time - lastTime);
+
+            if (OwnerMobileBehaviour != null)
+            {
+                if (trailRenderer != null)
+                {
+                    trailRenderer.enabled = false;
+                }
                 OwnerMobileBehaviour.Mobile.IsAttacking = false;
             }
 
@@ -92,7 +146,7 @@ namespace DTWorld.Behaviours.Items.Weapons
             //Debug.Log("after attacking base weapon");            
         }
 
-        public void Attack()
+        public virtual void Attack()
         {
             StartCoroutine(ExecuteAfterTime(() =>
             {
@@ -101,46 +155,7 @@ namespace DTWorld.Behaviours.Items.Weapons
             }));
         }
 
-        void OnTriggerEnter2D(Collider2D other)
-        {
-            //preventing from getting damage from owner
-            if (OwnerMobileBehaviour != null && other.gameObject.GetInstanceID() == OwnerMobileBehaviour.gameObject.GetInstanceID())
-            {
-                return;
-            }
 
-            //is owner currently attacking
-            if (OwnerMobileBehaviour != null && !OwnerMobileBehaviour.Mobile.IsAttacking)
-            {
-                return;
-            }
-
-            //check if it has health behaviour?
-            var otherEntityHealth = other.GetComponent<HealthBehaviour>();
-            if (otherEntityHealth == null)
-            {
-                return;
-            }
-
-            if (otherEntityHealth.Health <= 0)
-            {
-                return;
-            }
-
-            Hit(otherEntityHealth);
-
-            // if (OwnerMobileBehaviour != null)
-            // {
-            //     //pereventing hitting multiple times from each swing
-            //     OwnerMobileBehaviour.Mobile.IsAttacking = false;
-            // }
-        }
-
-        private void Hit(HealthBehaviour otherEntityHealth)
-        {
-            otherEntityHealth.TakeDamage(Item.Damage);
-            audioManager.Play("Hit");
-        }
 
         public void SetSwingSpeed(float value)
         {

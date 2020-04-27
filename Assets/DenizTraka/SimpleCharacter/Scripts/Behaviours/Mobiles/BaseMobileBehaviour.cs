@@ -190,6 +190,10 @@ namespace DTWorld.Behaviours.Mobiles
 
         }
 
+        public int GetLastDirectionIndex(){
+            return lastDirectionIndex;
+        }
+
         void OnValidate()
         {
             if (Mobile != null)
