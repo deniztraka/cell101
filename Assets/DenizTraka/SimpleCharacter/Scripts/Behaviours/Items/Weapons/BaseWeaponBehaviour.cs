@@ -18,7 +18,7 @@ namespace DTWorld.Behaviours.Items.Weapons
 
         protected AudioManager AudioManager;
 
-
+        public float AttackDistance = 0.5f;
         public float Damage;
         public float SwingSpeed;
         public delegate void BeforeAttackingEventHandler();

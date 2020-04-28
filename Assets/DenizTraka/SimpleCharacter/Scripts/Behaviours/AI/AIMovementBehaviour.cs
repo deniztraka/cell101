@@ -26,7 +26,7 @@ namespace DTWorld.Behaviours.AI
 
         internal void SetMovement(Vector2 currentMovement)
         {
-            Debug.Log(currentMovement);
+            //Debug.Log(currentMovement);
             this.currentMovement = currentMovement;
         }
     }

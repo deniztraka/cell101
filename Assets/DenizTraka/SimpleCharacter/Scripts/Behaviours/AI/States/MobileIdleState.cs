@@ -23,18 +23,13 @@ namespace DTWorld.Behaviours.AI.States
             {
                 //Debug.Log("TimeToMakeDecision");
                 //Time to make decision
-                if (Random.value > WanderChance)
+                if (Random.value < WanderChance)
                 {
                     animator.SetTrigger("Wander");
                 }
 
                 nextDecisionTime = Time.time + randomDecisionDelay;
-            }
-
-            //Check chasing if mobile is aggressive
-            if(MobileBehaviour.IsAggressive && GetDistanceFrom(PlayerBehaviour.transform.position) <= MobileBehaviour.ChaseDistance){
-                animator.SetTrigger("Chase");
-            }
+            }            
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

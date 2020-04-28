@@ -21,7 +21,7 @@ namespace DTWorld.Behaviours.AI.States
             var randomDecisionDelay = Random.Range(MinDecisionDelay, MaxDecisionDelay);
             if (Time.time > nextDecisionTime)
             {
-                if (Random.value < WanderChance)
+                if (Random.value > WanderChance)
                 {
                     animator.SetTrigger("Idle");
                 }
