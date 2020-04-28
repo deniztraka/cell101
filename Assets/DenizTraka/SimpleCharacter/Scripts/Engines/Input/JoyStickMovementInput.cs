@@ -21,6 +21,6 @@ namespace DTWorld.Engines.Input
         public float GetYAxis()
         {
             return joystick.Direction.y;
-        }        
+        }
     }
 }

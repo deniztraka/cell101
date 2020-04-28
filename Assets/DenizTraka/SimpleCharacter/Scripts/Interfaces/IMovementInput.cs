@@ -1,4 +1,6 @@
-﻿namespace DTWorld.Interfaces
+﻿using UnityEngine;
+
+namespace DTWorld.Interfaces
 {
     public interface IMovementInput
     {

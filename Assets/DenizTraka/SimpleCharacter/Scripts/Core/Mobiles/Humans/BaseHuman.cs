@@ -8,5 +8,9 @@ namespace DTWorld.Core.Mobiles.Humans
         {
         }
 
+        public BaseHuman(float speed) : base(speed)
+        {
+        }
+
     }
 }
