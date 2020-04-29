@@ -358,7 +358,7 @@ namespace DTWorld.Behaviours.Mobiles
             //attack with weapon if mobile has any weapon 
             if (CanAttack() && RightHandle != null && RightHandle.transform.childCount > 0)
             {
-                //Debug.Log(Time.time - lastAttackTime);
+                Debug.Log(Time.time - lastAttackTime);
                 lastAttackTime = Time.time;
                 if (WeaponBehaviour == null)
                 {

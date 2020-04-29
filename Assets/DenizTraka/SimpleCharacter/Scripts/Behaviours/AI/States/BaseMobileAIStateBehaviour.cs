@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.Mobiles;
 using DTWorld.Interfaces;
 using UnityEngine;
@@ -9,9 +10,10 @@ namespace DTWorld.Behaviours.AI.States
     public abstract class BaseMobileAIStateBehaviour : StateMachineBehaviour
     {
         protected BaseMobileBehaviour MobileBehaviour;
+        protected HealthBehaviour MobileHealth;
         protected PlayerBehaviour PlayerBehaviour;
         protected AIMovementBehaviour AIBehaviour;
-        protected Vector2 CurrentMovement;        
+        protected Vector2 CurrentMovement;
         protected float CurrentDistanceFromPlayer = 0f;
 
         public float MinDecisionDelay = 1f;
@@ -22,23 +24,36 @@ namespace DTWorld.Behaviours.AI.States
         {
             AIBehaviour = animator.GetComponent<AIMovementBehaviour>();
             MobileBehaviour = animator.GetComponent<BaseMobileBehaviour>();
+            MobileHealth = animator.GetComponent<HealthBehaviour>();
             PlayerBehaviour = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
-        }
-
-        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
+            animator.SetBool("IsRanged", MobileBehaviour.WeaponBehaviour.IsRanged);
+            animator.SetFloat("Health", MobileHealth.Health);
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             CurrentDistanceFromPlayer = GetDistanceFrom(PlayerBehaviour.transform.position);
+            animator.SetFloat("Health", MobileHealth.Health);
             AIBehaviour.SetMovement(CurrentMovement);
 
-            //Debug.Log("ChaseDistance:" + MobileBehaviour.ChaseDistance + " DistanceFromPlayer:" + CurrentDistanceFromPlayer);
-            //Check chasing if mobile is aggressive
-            if (!stateInfo.IsName("Chase") && MobileBehaviour.IsAggressive && CurrentDistanceFromPlayer <= MobileBehaviour.ChaseDistance)
+            if (MobileBehaviour.IsAggressive &&
+            CurrentDistanceFromPlayer <= MobileBehaviour.WeaponBehaviour.AttackDistance)
             {
-                animator.SetTrigger("Chase");
+                if (!stateInfo.IsName("Attack"))
+                {
+                    animator.SetTrigger("Attack");
+                }
+            }
+            else if (MobileBehaviour.IsAggressive && CurrentDistanceFromPlayer <= MobileBehaviour.ChaseDistance)
+            {
+                if (!stateInfo.IsName("Chase") && MobileHealth.Health >= MobileBehaviour.FleeBelowHealth)
+                {
+                    animator.SetTrigger("Chase");
+                }
+                else if (!stateInfo.IsName("Flee") && MobileHealth.Health < MobileBehaviour.FleeBelowHealth)
+                {
+                    animator.SetTrigger("Flee");
+                }
             }
         }
 

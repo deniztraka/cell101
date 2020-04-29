@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 namespace DTWorld.Behaviours.AI.States
 {
-    public class MobileChaseState : BaseMobileAIStateBehaviour
+    public class MobileFleeState : BaseMobileAIStateBehaviour
     {
-        private Vector2 deltaVector;
 
+        private Vector2 deltaVector;
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateEnter(animator, stateInfo, layerIndex);
-            deltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
             MobileBehaviour.Speed = MobileBehaviour.Speed * 2f;
         }
 
@@ -23,20 +20,15 @@ namespace DTWorld.Behaviours.AI.States
             CheckIdleTransition(animator, stateInfo, layerIndex);
 
             ProcessState(animator, stateInfo, layerIndex);
+
         }
 
         private void ProcessState(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             deltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
 
-            if (CurrentDistanceFromPlayer <= MobileBehaviour.WeaponBehaviour.AttackDistance)
-            {
-                animator.SetTrigger("Attack");
-            }
-            else
-            {
-                CurrentMovement = new Vector2(GetXAxis(), GetYAxis());
-            }
+            CurrentMovement = new Vector2(GetXAxis() * -1, GetYAxis() * -1);
+
         }
 
         private void CheckIdleTransition(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -45,12 +37,6 @@ namespace DTWorld.Behaviours.AI.States
             {
                 animator.SetTrigger("Idle");
             }
-        }
-
-        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-            //base.OnStateExit(animator, stateInfo, layerIndex);
-            MobileBehaviour.Speed = MobileBehaviour.Speed / 2f;
         }
 
         private float GetXAxis()
@@ -83,5 +69,12 @@ namespace DTWorld.Behaviours.AI.States
 
             return deltaVector.y > 0 ? -1 : 1;
         }
+
+        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            base.OnStateExit(animator, stateInfo, layerIndex);
+            MobileBehaviour.Speed = MobileBehaviour.Speed / 2f;
+        }
+
     }
 }

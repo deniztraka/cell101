@@ -101,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 5963900862626778125, guid: 05a83f6f3e07f1445a6386a89605ab9d,
         type: 3}
       propertyPath: SwingSpeed
-      value: 0.5
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 5963900862626778125, guid: 05a83f6f3e07f1445a6386a89605ab9d,
         type: 3}

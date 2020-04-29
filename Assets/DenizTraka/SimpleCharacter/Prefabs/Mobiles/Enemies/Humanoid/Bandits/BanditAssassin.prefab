@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 6090023680206792433}
   - component: {fileID: 752355200781386531}
   m_Layer: 0
-  m_Name: EnemyBandit
+  m_Name: BanditAssassin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
   speed: 0.25
   IsAggressive: 1
   ChaseDistance: 2
-  FleeBelowHealth: 0
+  FleeBelowHealth: 30
   lastDefendTime: 0
   lastAttackTime: 0
   DamageTakenEffect: {fileID: 2266443268727889717}
