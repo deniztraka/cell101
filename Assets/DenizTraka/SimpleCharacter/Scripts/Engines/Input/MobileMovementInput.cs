@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using DTWorld.Behaviours.AI;
-using DTWorld.Engines.AI;
+﻿using DTWorld.Behaviours.AI;
 using DTWorld.Interfaces;
-using UnityEngine;
 namespace DTWorld.Engines.Input
 {
     public abstract class MobileMovementInput : IMovementInput

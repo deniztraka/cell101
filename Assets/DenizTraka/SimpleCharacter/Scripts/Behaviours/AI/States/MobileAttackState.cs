@@ -15,7 +15,6 @@ namespace DTWorld.Behaviours.AI.States
             base.OnStateUpdate(animator, stateInfo, layerIndex);
 
             MobileBehaviour.Attack();
-
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

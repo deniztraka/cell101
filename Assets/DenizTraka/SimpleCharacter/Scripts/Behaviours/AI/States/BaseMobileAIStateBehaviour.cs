@@ -15,6 +15,8 @@ namespace DTWorld.Behaviours.AI.States
         protected AIMovementBehaviour AIBehaviour;
         protected Vector2 CurrentMovement;
         protected float CurrentDistanceFromPlayer = 0f;
+        protected float ChaseDistance;
+        protected Vector2 DeltaVector;
 
         public float MinDecisionDelay = 1f;
         public float MaxDecisionDelay = 5f;
@@ -25,9 +27,15 @@ namespace DTWorld.Behaviours.AI.States
             AIBehaviour = animator.GetComponent<AIMovementBehaviour>();
             MobileBehaviour = animator.GetComponent<BaseMobileBehaviour>();
             MobileHealth = animator.GetComponent<HealthBehaviour>();
-            PlayerBehaviour = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
+            var playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                PlayerBehaviour = playerObj.GetComponent<PlayerBehaviour>();
+            }
             animator.SetBool("IsRanged", MobileBehaviour.WeaponBehaviour.IsRanged);
             animator.SetFloat("Health", MobileHealth.Health);
+            ChaseDistance = MobileBehaviour.WeaponBehaviour.IsRanged ? MobileBehaviour.WeaponBehaviour.AttackDistance + MobileBehaviour.ChaseDistance / 2 : MobileBehaviour.ChaseDistance;
+            DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -35,18 +43,25 @@ namespace DTWorld.Behaviours.AI.States
             CurrentDistanceFromPlayer = GetDistanceFrom(PlayerBehaviour.transform.position);
             animator.SetFloat("Health", MobileHealth.Health);
             AIBehaviour.SetMovement(CurrentMovement);
+            DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
+
+            //Debug.Log(CurrentDistanceFromPlayer);
 
             if (MobileBehaviour.IsAggressive &&
-            CurrentDistanceFromPlayer <= MobileBehaviour.WeaponBehaviour.AttackDistance)
+            CurrentDistanceFromPlayer <= MobileBehaviour.WeaponBehaviour.AttackDistance
+            && MobileHealth.Health >= MobileBehaviour.FleeBelowHealth)
             {
+
+
                 if (!stateInfo.IsName("Attack"))
                 {
                     animator.SetTrigger("Attack");
                 }
+
             }
-            else if (MobileBehaviour.IsAggressive && CurrentDistanceFromPlayer <= MobileBehaviour.ChaseDistance)
+            else if (MobileBehaviour.IsAggressive && CurrentDistanceFromPlayer <= ChaseDistance)
             {
-                if (!stateInfo.IsName("Chase") && MobileHealth.Health >= MobileBehaviour.FleeBelowHealth)
+                if (!(stateInfo.IsName("Chase") || stateInfo.IsName("RangedChase")) && MobileHealth.Health >= MobileBehaviour.FleeBelowHealth)
                 {
                     animator.SetTrigger("Chase");
                 }
