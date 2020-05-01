@@ -39,12 +39,19 @@ namespace DTWorld.Behaviours.Mobiles
             if (Input.GetKeyDown(KeyCode.Space))//if mobile can attack / timing is okey?
             {
                 Attack();
-            } else if (Input.GetKeyDown(KeyCode.E)){
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
                 Defend();
+            }
+
+            if (Input.GetKeyDown(KeyCode.F))//if mobile can attack / timing is okey?
+            {
+                SetLastDirection(Vector2.up);
             }
         }
 
-        
+
 
         public override void FixedUpdate()
         {

@@ -17,66 +17,45 @@ namespace DTWorld.Behaviours.AI.States
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
 
-            CheckIdleTransition(animator, stateInfo, layerIndex);
-
-            ProcessState(animator, stateInfo, layerIndex);
-        }
-
-        private void ProcessState(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-            // if (CurrentDistanceFromPlayer <= MobileBehaviour.WeaponBehaviour.AttackDistance)
-            // {
-            //     animator.SetTrigger("Attack");
-            // }
-            // else
-            // {
-                CurrentMovement = new Vector2(GetXAxis(), GetYAxis());
-            //}
-        }
-
-        private void CheckIdleTransition(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-            if (CurrentDistanceFromPlayer > MobileBehaviour.ChaseDistance)
-            {
-                animator.SetTrigger("Idle");
-            }
+             CurrentMovement = GetMovement();
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            //base.OnStateExit(animator, stateInfo, layerIndex);
+            base.OnStateExit(animator, stateInfo, layerIndex);
             MobileBehaviour.Speed = MobileBehaviour.Speed / 2f;
         }
 
-        private float GetXAxis()
+        private Vector2 GetMeleeMovement()
         {
-            if ((DeltaVector.x >= 0 && DeltaVector.x <= 0.01f) || (DeltaVector.x <= 0 && DeltaVector.x >= -0.01f))
+            var movementVector = Vector2.zero;
+            if (!((DeltaVector.x >= 0 && DeltaVector.x <= 0.01f) || (DeltaVector.x <= 0 && DeltaVector.x >= -0.01f)) && DeltaVector.x != 0)
             {
-                return 0;
+                movementVector.x = DeltaVector.x > 0 ? -1 : 1;
             }
 
-            if (DeltaVector.x == 0)
+            if (!((DeltaVector.y >= 0 && DeltaVector.y <= 0.01f) || (DeltaVector.y <= 0 && DeltaVector.y >= -0.01f)) && DeltaVector.y != 0)
             {
-                return 0;
+                movementVector.y = DeltaVector.y > 0 ? -1 : 1;
             }
 
-            return DeltaVector.x > 0 ? -1 : 1;
+            return movementVector;
         }
 
-
-        private float GetYAxis()
+        private Vector2 GetMovement()
         {
-            if ((DeltaVector.y >= 0 && DeltaVector.y <= 0.01f) || (DeltaVector.y <= 0 && DeltaVector.y >= -0.01f))
+            var movementVector = Vector2.zero;
+            if (!((DeltaVector.x >= 0 && DeltaVector.x <= 0.01f) || (DeltaVector.x <= 0 && DeltaVector.x >= -0.01f)) && DeltaVector.x != 0)
             {
-                return 0;
+                movementVector.x = DeltaVector.x > 0 ? -1 : 1;
             }
 
-            if (DeltaVector.y == 0)
+            if (!((DeltaVector.y >= 0 && DeltaVector.y <= 0.01f) || (DeltaVector.y <= 0 && DeltaVector.y >= -0.01f)) && DeltaVector.y != 0)
             {
-                return 0;
+                movementVector.y = DeltaVector.y > 0 ? -1 : 1;
             }
 
-            return DeltaVector.y > 0 ? -1 : 1;
+            return movementVector;
         }
     }
 }

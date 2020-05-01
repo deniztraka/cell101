@@ -16,7 +16,7 @@ namespace DTWorld.Behaviours.Mobiles.Human
 
         public override void Start()
         {
-            base.Start();                     
+            base.Start();
             this.Mobile = new Bandit(this.Speed, new FreeFormMovement(Rigidbody2D, GetComponent<AIMovementBehaviour>()));
         }
 
@@ -30,6 +30,29 @@ namespace DTWorld.Behaviours.Mobiles.Human
         {
             //banditAI.FixedUpdate();
             base.FixedUpdate();
+        }
+
+        void OnDrawGizmos()
+        {
+            if (WeaponBehaviour != null)
+            {
+                // Draw a yellow sphere at the transform's position
+                var chaseDistanceColor = Color.yellow;
+                chaseDistanceColor.a = 0.25f;
+                Gizmos.color = chaseDistanceColor;
+                Gizmos.DrawSphere(transform.position, ChaseDistance);
+
+
+                var attackRangeColor = Color.red;
+                attackRangeColor.a = 0.25f;
+                Gizmos.color = attackRangeColor;
+                Gizmos.DrawSphere(transform.position, WeaponBehaviour.AttackDistance);
+
+                var fleeRangeColor = Color.white;
+                fleeRangeColor.a = 0.25f;
+                Gizmos.color = fleeRangeColor;
+                Gizmos.DrawSphere(transform.position, FleeDistance);
+            }
         }
     }
 }

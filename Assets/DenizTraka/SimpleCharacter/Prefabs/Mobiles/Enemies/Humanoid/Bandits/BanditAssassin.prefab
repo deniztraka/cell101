@@ -79,7 +79,7 @@ PrefabInstance:
     - target: {fileID: 2072892432533545344, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}
       propertyPath: m_Name
-      value: Bandit
+      value: BanditAssassin
       objectReference: {fileID: 0}
     - target: {fileID: 2266443269831992546, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}
@@ -91,10 +91,20 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6090023680206792433, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: ChaseDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090023680206792433, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: FleeBelowHealth
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6231878300900727979, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.25
+      value: 2.58
       objectReference: {fileID: 0}
     - target: {fileID: 6231878300900727979, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}

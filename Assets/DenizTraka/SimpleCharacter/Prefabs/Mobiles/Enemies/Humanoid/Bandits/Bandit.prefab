@@ -354,7 +354,8 @@ MonoBehaviour:
   speed: 0.25
   IsAggressive: 1
   ChaseDistance: 2
-  FleeBelowHealth: 30
+  FleeBelowHealth: -1
+  FleeDistance: 0
   lastDefendTime: 0
   lastAttackTime: 0
   DamageTakenEffect: {fileID: 2266443268727889717}

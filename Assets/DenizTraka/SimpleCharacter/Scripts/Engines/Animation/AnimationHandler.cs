@@ -85,6 +85,10 @@ namespace DTWorld.Engines.Animation
 
         }
 
+        public void SetLastDirection(Vector2 lastDirection){
+            this.lastDirection = lastDirection;
+        }
+
         public Vector2 GetLastDirection()
         {
             return lastDirection;

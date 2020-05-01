@@ -15,12 +15,9 @@ namespace DTWorld.Behaviours.AI.States
         protected AIMovementBehaviour AIBehaviour;
         protected Vector2 CurrentMovement;
         protected float CurrentDistanceFromPlayer = 0f;
-        protected float ChaseDistance;
         protected Vector2 DeltaVector;
 
-        public float MinDecisionDelay = 1f;
-        public float MaxDecisionDelay = 5f;
-        public float WanderChance = 0.5f;
+
 
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
@@ -31,45 +28,38 @@ namespace DTWorld.Behaviours.AI.States
             if (playerObj != null)
             {
                 PlayerBehaviour = playerObj.GetComponent<PlayerBehaviour>();
+                DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
             }
             animator.SetBool("IsRanged", MobileBehaviour.WeaponBehaviour.IsRanged);
             animator.SetFloat("Health", MobileHealth.Health);
-            ChaseDistance = MobileBehaviour.WeaponBehaviour.IsRanged ? MobileBehaviour.WeaponBehaviour.AttackDistance + MobileBehaviour.ChaseDistance / 2 : MobileBehaviour.ChaseDistance;
-            DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
+            animator.SetFloat("ChaseDistance", MobileBehaviour.ChaseDistance);
+            animator.SetFloat("AttackDistance", MobileBehaviour.WeaponBehaviour.AttackDistance);
+            animator.SetFloat("FleeBelowHealth", MobileBehaviour.FleeBelowHealth);
+            animator.SetFloat("FleeDistance", MobileBehaviour.FleeDistance);
+
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            CurrentDistanceFromPlayer = GetDistanceFrom(PlayerBehaviour.transform.position);
+            if (PlayerBehaviour != null)
+            {
+                CurrentDistanceFromPlayer = GetDistanceFrom(PlayerBehaviour.transform.position);
+                DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
+            }
+            else
+            {
+                CurrentDistanceFromPlayer = 99999f;
+                DeltaVector = new Vector2(9999f, 9999f);
+            }
+
+            animator.SetFloat("CurrentDistanceFromPlayer", CurrentDistanceFromPlayer);
+            animator.SetBool("InChaseRange", CurrentDistanceFromPlayer <= MobileBehaviour.ChaseDistance);
+            animator.SetBool("InFleeRange", CurrentDistanceFromPlayer < MobileBehaviour.FleeDistance);
+            animator.SetBool("InAttackRange", CurrentDistanceFromPlayer <= MobileBehaviour.WeaponBehaviour.AttackDistance);
             animator.SetFloat("Health", MobileHealth.Health);
+            animator.SetBool("IsHealthBelowFleeHealth", MobileHealth.Health < MobileBehaviour.FleeBelowHealth);
             AIBehaviour.SetMovement(CurrentMovement);
-            DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
 
-            //Debug.Log(CurrentDistanceFromPlayer);
-
-            if (MobileBehaviour.IsAggressive &&
-            CurrentDistanceFromPlayer <= MobileBehaviour.WeaponBehaviour.AttackDistance
-            && MobileHealth.Health >= MobileBehaviour.FleeBelowHealth)
-            {
-
-
-                if (!stateInfo.IsName("Attack"))
-                {
-                    animator.SetTrigger("Attack");
-                }
-
-            }
-            else if (MobileBehaviour.IsAggressive && CurrentDistanceFromPlayer <= ChaseDistance)
-            {
-                if (!(stateInfo.IsName("Chase") || stateInfo.IsName("RangedChase")) && MobileHealth.Health >= MobileBehaviour.FleeBelowHealth)
-                {
-                    animator.SetTrigger("Chase");
-                }
-                else if (!stateInfo.IsName("Flee") && MobileHealth.Health < MobileBehaviour.FleeBelowHealth)
-                {
-                    animator.SetTrigger("Flee");
-                }
-            }
         }
 
         public float GetDistanceFrom(Vector2 position)

@@ -27,7 +27,7 @@ namespace DTWorld.Behaviours.Mobiles
         private float nextActionTime = 0;
         private int lastDirectionIndex;
 
-        
+
         private float tempShieldSwingSpeed;
         private float tempWeaponSwingSpeed;
 
@@ -35,6 +35,7 @@ namespace DTWorld.Behaviours.Mobiles
         public bool IsAggressive;
         public float ChaseDistance;
         public float FleeBelowHealth;
+        public float FleeDistance;
 
         public float lastDefendTime = 0;
         public float lastAttackTime = 0;
@@ -113,6 +114,9 @@ namespace DTWorld.Behaviours.Mobiles
             var healthBehaviourComponent = gameObject.GetComponent<HealthBehaviour>();
             healthBehaviourComponent.OnDamageTakenEvent += new OnDamageTakenEventHandler(OnDamageTaken);
             healthBehaviourComponent.OnHealthBelowZeroEvent += new OnHealthBelowZeroEventHandler(OnDead);
+
+            ChaseDistance = (WeaponBehaviour.AttackDistance / 4) + ChaseDistance;
+            FleeDistance = WeaponBehaviour.IsRanged ? WeaponBehaviour.AttackDistance / 2 : 0;
         }
 
 
@@ -190,8 +194,14 @@ namespace DTWorld.Behaviours.Mobiles
 
         }
 
-        public int GetLastDirectionIndex(){
+        public int GetLastDirectionIndex()
+        {
             return lastDirectionIndex;
+        }
+
+        public void SetLastDirection(Vector2 lastDirection)
+        {
+            lastDirectionIndex = animationHandler.SetCurrentAnimation(lastDirection, Mobile);
         }
 
         void OnValidate()
@@ -301,9 +311,9 @@ namespace DTWorld.Behaviours.Mobiles
 
         private void SetDefendSpeedBefore()
         {
-            var defendRate = GetDefendSpeed();            
+            var defendRate = GetDefendSpeed();
             animationHandler.SetCurrentAnimationSpeedMultiplier(1 / defendRate);
-            
+
             tempShieldSwingSpeed = ShieldBehaviour.Item.SwingSpeed;
             ShieldBehaviour.SetSwingSpeed(1 / defendRate);
         }
@@ -378,5 +388,7 @@ namespace DTWorld.Behaviours.Mobiles
         internal void SetMovement(Vector2 zero)
         {
         }
+
+
     }
 }

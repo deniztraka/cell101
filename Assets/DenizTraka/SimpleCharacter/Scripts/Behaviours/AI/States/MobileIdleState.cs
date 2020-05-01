@@ -6,6 +6,9 @@ namespace DTWorld.Behaviours.AI.States
     public class MobileIdleState : BaseMobileAIStateBehaviour
     {
         private float nextDecisionTime;
+        public float MinDecisionDelay = 1f;
+        public float MaxDecisionDelay = 5f;
+        public float WanderChance = 0.5f;
 
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
@@ -17,19 +20,17 @@ namespace DTWorld.Behaviours.AI.States
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
-            
+
             var randomDecisionDelay = Random.Range(MinDecisionDelay, MaxDecisionDelay);
             if (Time.time > nextDecisionTime)
             {
-                //Debug.Log("TimeToMakeDecision");
-                //Time to make decision
                 if (Random.value < WanderChance)
                 {
                     animator.SetTrigger("Wander");
                 }
 
                 nextDecisionTime = Time.time + randomDecisionDelay;
-            }            
+            }
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
