@@ -6,6 +6,7 @@ namespace DTWorld.Behaviours.AI.States
 {
     public class MobileAttackState : BaseMobileAIStateBehaviour
     {
+        private float aimRange = 0.15f;
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateEnter(animator, stateInfo, layerIndex);
@@ -19,8 +20,8 @@ namespace DTWorld.Behaviours.AI.States
             if (MobileBehaviour.WeaponBehaviour != null && MobileBehaviour.WeaponBehaviour.IsRanged && PlayerBehaviour != null)
             {
 
-                var isAlignedOnYAxis = Math.Abs(MobileBehaviour.transform.position.x - PlayerBehaviour.transform.position.x) < 0.1f;
-                var isAlignedOnXAxis = Math.Abs(MobileBehaviour.transform.position.y - PlayerBehaviour.transform.position.y) < 0.1f;
+                var isAlignedOnYAxis = Math.Abs(MobileBehaviour.transform.position.x - PlayerBehaviour.transform.position.x) < aimRange;
+                var isAlignedOnXAxis = Math.Abs(MobileBehaviour.transform.position.y - PlayerBehaviour.transform.position.y) < aimRange;
                 if (isAlignedOnYAxis || isAlignedOnXAxis)
                 {
                     if (isAlignedOnXAxis)
@@ -67,7 +68,7 @@ namespace DTWorld.Behaviours.AI.States
         {
             var movementVector = Vector2.zero;
 
-            if (!((DeltaVector.x >= 0 && DeltaVector.x <= 0.01f) || (DeltaVector.x <= 0 && DeltaVector.x >= -0.01f)) && DeltaVector.x != 0)
+            if (!((DeltaVector.x >= 0 && DeltaVector.x <= aimRange) || (DeltaVector.x <= 0 && DeltaVector.x >= -aimRange)) && DeltaVector.x != 0)
             {
                 // if y axis is closer than x axis
                 if (Math.Abs(DeltaVector.x) <= Math.Abs(DeltaVector.y))
@@ -83,7 +84,7 @@ namespace DTWorld.Behaviours.AI.States
                 }
             }
 
-            if (!((DeltaVector.y >= 0 && DeltaVector.y <= 0.01f) || (DeltaVector.y <= 0 && DeltaVector.y >= -0.01f)) && DeltaVector.y != 0)
+            if (!((DeltaVector.y >= 0 && DeltaVector.y <= aimRange) || (DeltaVector.y <= 0 && DeltaVector.y >= -aimRange)) && DeltaVector.y != 0)
             {
                 // if x axis is closer than y axis
                 if (Math.Abs(DeltaVector.y) <= Math.Abs(DeltaVector.x))

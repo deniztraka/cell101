@@ -29,6 +29,7 @@ namespace DTWorld.Behaviours.Items.Ammo
 
         void OnTriggerEnter2D(Collider2D other)
         {
+            //Debug.Log(other.name);
             //preventing from getting damage from owner
             if (OwnerWeaponBehaviour.OwnerMobileBehaviour != null && other.gameObject.GetInstanceID() == OwnerWeaponBehaviour.OwnerMobileBehaviour.gameObject.GetInstanceID())
             {

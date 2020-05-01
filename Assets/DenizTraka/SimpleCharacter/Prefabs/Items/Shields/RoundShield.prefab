@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Round Shield
-  Durability: 20
+  Durability: 100
   SwingSpeed: 0.5
   DefendRate: 0.66
   OwnerMobileBehaviour: {fileID: 0}
