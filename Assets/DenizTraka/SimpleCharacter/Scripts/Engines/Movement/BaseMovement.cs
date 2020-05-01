@@ -35,7 +35,7 @@ namespace DTWorld.Engines.Movement
         public BaseMovement(Rigidbody2D rigidbody)
         {
             this.rigidbody = rigidbody;
-            this.movementInput = new KeyboardMovementInput();
+            this.movementInput = null;
         }
         #endregion
 

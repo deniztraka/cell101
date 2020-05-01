@@ -11,14 +11,14 @@ namespace DTWorld.Behaviours.Items.Ammo
     public class BaseAmmoBehaviour : BaseItemBehaviour
     {
         public BaseWeaponBehaviour OwnerWeaponBehaviour;
-
+        protected Collider2D Coll;
         private AudioManager audioManager;
         public new BaseAmmo Item;
 
         public override void Start()
         {
             base.Start();
-
+            Coll = gameObject.GetComponent<Collider2D>();
             audioManager = gameObject.GetComponent<AudioManager>();
         }
 
@@ -36,6 +36,7 @@ namespace DTWorld.Behaviours.Items.Ammo
             }
 
             Hit(other.GetComponent<HealthBehaviour>());
+            Coll.enabled = false;
         }
 
         private void Hit(HealthBehaviour otherEntityHealth)

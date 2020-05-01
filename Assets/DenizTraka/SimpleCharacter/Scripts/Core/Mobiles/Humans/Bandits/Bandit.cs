@@ -11,5 +11,10 @@ namespace DTWorld.Core.Mobiles.Humans.Bandits
         {
 
         }
+
+        public Bandit(float speed) : base(speed)
+        {
+
+        }
     }
 }

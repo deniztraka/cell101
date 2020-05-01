@@ -374,5 +374,9 @@ namespace DTWorld.Behaviours.Mobiles
                 }
             }
         }
+
+        internal void SetMovement(Vector2 zero)
+        {
+        }
     }
 }

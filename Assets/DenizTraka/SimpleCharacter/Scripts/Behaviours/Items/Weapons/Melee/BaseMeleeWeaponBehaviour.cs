@@ -8,9 +8,12 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
 
     public abstract class BaseMeleeWeaponBehaviour : BaseWeaponBehaviour
     {
+
+        protected Collider2D Coll;
         public override void Start()
         {
             base.Start();
+            Coll = gameObject.GetComponent<Collider2D>();
         }
 
         // Update is called once per frame
@@ -46,6 +49,8 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
             }
 
             Hit(otherEntityHealth);
+            Coll.enabled = false;
+
 
             // if (OwnerMobileBehaviour != null)
             // {
@@ -58,6 +63,26 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
         {
             otherEntityHealth.TakeDamage(Item.Damage);
             AudioManager.Play("Hit");
+        }
+
+        public override void BeforeAttacking()
+        {
+            base.BeforeAttacking();
+            //Debug.Log("before attacking base weapon");
+            //timeBeforeHit = Time.time;
+            //Debug.Log(timeBeforeHit);
+        }
+
+        public override void AfterAttacked()
+        {
+            base.AfterAttacked();
+            if (!Coll.enabled)
+            {
+                Coll.enabled = true;
+            }
+            //Debug.Log("before attacking base weapon");
+            //timeBeforeHit = Time.time;
+            //Debug.Log(timeBeforeHit);
         }
     }
 }

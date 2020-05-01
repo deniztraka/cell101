@@ -19,6 +19,9 @@ namespace DTWorld.Behaviours.Items.Weapons
         protected AudioManager AudioManager;
 
 
+        public bool IsRanged;
+
+        public float AttackDistance = 0.5f;
         public float Damage;
         public float SwingSpeed;
         public delegate void BeforeAttackingEventHandler();
@@ -27,9 +30,10 @@ namespace DTWorld.Behaviours.Items.Weapons
         public event AfterAttackedEventHandler AfterAttackedEvent;
         public override void Start()
         {
-            base.Start();
+            base.Start();            
             AudioManager = gameObject.GetComponent<AudioManager>();
             trailRenderer = gameObject.transform.GetComponentInChildren<TrailRenderer>();
+            IsRanged = false;
             if (trailRenderer != null)
             {
                 trailRenderer.enabled = false;

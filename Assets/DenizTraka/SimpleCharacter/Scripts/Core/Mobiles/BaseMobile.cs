@@ -56,6 +56,15 @@ namespace DTWorld.Core.Mobiles
             this.IsDefending = false;
         }
 
+        public BaseMobile(float Speed)
+        {
+            this.Speed = Speed;
+            this.actionRate = 0.5f;
+            this.nextActionTime = 0;
+            this.Health = 100;
+            this.IsDefending = false;
+        }
+
         public void SetSpeed(float speed)
         {
             this.Speed = speed;
@@ -135,8 +144,6 @@ namespace DTWorld.Core.Mobiles
         {
             this.health = health;
         }
-
-
     }
 }
 

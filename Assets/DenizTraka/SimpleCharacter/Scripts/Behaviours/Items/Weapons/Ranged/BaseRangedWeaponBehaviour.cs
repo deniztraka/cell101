@@ -15,6 +15,7 @@ namespace DTWorld.Behaviours.Items.Weapons.Ranged
         public override void Start()
         {
             base.Start();
+            IsRanged = true;
             PrepareAmmoPool();
         }
 
