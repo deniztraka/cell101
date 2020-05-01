@@ -28,7 +28,7 @@ namespace DTWorld.Behaviours.Mobiles
                 playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
             }
 
-            playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
+            //playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
 
             this.Mobile = new Player(this.Speed, playerMovement);
         }
@@ -43,11 +43,6 @@ namespace DTWorld.Behaviours.Mobiles
             else if (Input.GetKeyDown(KeyCode.E))
             {
                 Defend();
-            }
-
-            if (Input.GetKeyDown(KeyCode.F))//if mobile can attack / timing is okey?
-            {
-                SetLastDirection(Vector2.up);
             }
         }
 
