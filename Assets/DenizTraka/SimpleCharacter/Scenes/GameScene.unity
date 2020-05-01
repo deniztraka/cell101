@@ -220,17 +220,17 @@ PrefabInstance:
     - target: {fileID: 4332836075184664260, guid: 6490f28148ae159429aeddccff8d11d1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4580497263545674662, guid: 6490f28148ae159429aeddccff8d11d1,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.152
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4580497263545674662, guid: 6490f28148ae159429aeddccff8d11d1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8545900871593481199, guid: 6490f28148ae159429aeddccff8d11d1,
         type: 3}
@@ -6925,11 +6925,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 441826821802331902, guid: 5e6c590c2fbdbbe4ab79d9ff83f27ebd,
-        type: 3}
-      propertyPath: AmmoSpeed
-      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 2802310672537238403, guid: 5e6c590c2fbdbbe4ab79d9ff83f27ebd,
         type: 3}

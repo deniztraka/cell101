@@ -16,15 +16,31 @@ namespace DTWorld.Behaviours.AI.States
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
-            if (MobileBehaviour.WeaponBehaviour != null && MobileBehaviour.WeaponBehaviour.IsRanged)
+            if (MobileBehaviour.WeaponBehaviour != null && MobileBehaviour.WeaponBehaviour.IsRanged && PlayerBehaviour != null)
             {
 
-
-                if ((Math.Abs(MobileBehaviour.transform.position.x - PlayerBehaviour.transform.position.x) < 0.1f) ||
-                Math.Abs(MobileBehaviour.transform.position.y - PlayerBehaviour.transform.position.y) < 0.1f)
+                var isAlignedOnYAxis = Math.Abs(MobileBehaviour.transform.position.x - PlayerBehaviour.transform.position.x) < 0.1f;
+                var isAlignedOnXAxis = Math.Abs(MobileBehaviour.transform.position.y - PlayerBehaviour.transform.position.y) < 0.1f;
+                if (isAlignedOnYAxis || isAlignedOnXAxis)
                 {
-
-                    
+                    if (isAlignedOnXAxis)
+                    {
+                        if (MobileBehaviour.transform.position.x < PlayerBehaviour.transform.position.x)
+                            MobileBehaviour.SetLastDirection(Vector2.right);
+                        else
+                        {
+                            MobileBehaviour.SetLastDirection(Vector2.left);
+                        }
+                    }
+                    else
+                    {
+                        if (MobileBehaviour.transform.position.y < PlayerBehaviour.transform.position.y)
+                            MobileBehaviour.SetLastDirection(Vector2.up);
+                        else
+                        {
+                            MobileBehaviour.SetLastDirection(Vector2.down);
+                        }
+                    }
 
                     MobileBehaviour.Attack();
                 }

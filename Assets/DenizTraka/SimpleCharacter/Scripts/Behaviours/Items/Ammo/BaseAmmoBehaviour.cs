@@ -35,6 +35,12 @@ namespace DTWorld.Behaviours.Items.Ammo
                 return;
             }
 
+            //enemy should not hit other enemies
+            if (OwnerWeaponBehaviour.OwnerMobileBehaviour.tag == "Enemy" && other.tag == "Enemy")
+            {
+                return;
+            }
+
             Hit(other.GetComponent<HealthBehaviour>());
             Coll.enabled = false;
         }

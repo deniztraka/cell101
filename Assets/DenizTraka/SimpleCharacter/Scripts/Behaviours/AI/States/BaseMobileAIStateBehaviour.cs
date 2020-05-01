@@ -28,6 +28,7 @@ namespace DTWorld.Behaviours.AI.States
             if (playerObj != null)
             {
                 PlayerBehaviour = playerObj.GetComponent<PlayerBehaviour>();
+                DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
             }
             animator.SetBool("IsRanged", MobileBehaviour.WeaponBehaviour.IsRanged);
             animator.SetFloat("Health", MobileHealth.Health);
@@ -35,12 +36,22 @@ namespace DTWorld.Behaviours.AI.States
             animator.SetFloat("AttackDistance", MobileBehaviour.WeaponBehaviour.AttackDistance);
             animator.SetFloat("FleeBelowHealth", MobileBehaviour.FleeBelowHealth);
             animator.SetFloat("FleeDistance", MobileBehaviour.FleeDistance);
-            DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
+
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            CurrentDistanceFromPlayer = GetDistanceFrom(PlayerBehaviour.transform.position);
+            if (PlayerBehaviour != null)
+            {
+                CurrentDistanceFromPlayer = GetDistanceFrom(PlayerBehaviour.transform.position);
+                DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
+            }
+            else
+            {
+                CurrentDistanceFromPlayer = 99999f;
+                DeltaVector = new Vector2(9999f, 9999f);
+            }
+
             animator.SetFloat("CurrentDistanceFromPlayer", CurrentDistanceFromPlayer);
             animator.SetBool("InChaseRange", CurrentDistanceFromPlayer <= MobileBehaviour.ChaseDistance);
             animator.SetBool("InFleeRange", CurrentDistanceFromPlayer < MobileBehaviour.FleeDistance);
@@ -48,7 +59,7 @@ namespace DTWorld.Behaviours.AI.States
             animator.SetFloat("Health", MobileHealth.Health);
             animator.SetBool("IsHealthBelowFleeHealth", MobileHealth.Health < MobileBehaviour.FleeBelowHealth);
             AIBehaviour.SetMovement(CurrentMovement);
-            DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;            
+
         }
 
         public float GetDistanceFrom(Vector2 position)

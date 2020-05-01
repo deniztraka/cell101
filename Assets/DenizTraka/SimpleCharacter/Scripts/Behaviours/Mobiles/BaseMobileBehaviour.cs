@@ -199,6 +199,11 @@ namespace DTWorld.Behaviours.Mobiles
             return lastDirectionIndex;
         }
 
+        public void SetLastDirection(Vector2 lastDirection)
+        {
+            lastDirectionIndex = animationHandler.SetCurrentAnimation(lastDirection, Mobile);
+        }
+
         void OnValidate()
         {
             if (Mobile != null)
@@ -384,6 +389,6 @@ namespace DTWorld.Behaviours.Mobiles
         {
         }
 
-        
+
     }
 }

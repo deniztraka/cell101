@@ -24,8 +24,6 @@ namespace DTWorld.Behaviours.AI.States
             var randomDecisionDelay = Random.Range(MinDecisionDelay, MaxDecisionDelay);
             if (Time.time > nextDecisionTime)
             {
-                //Debug.Log("TimeToMakeDecision");
-                //Time to make decision
                 if (Random.value < WanderChance)
                 {
                     animator.SetTrigger("Wander");

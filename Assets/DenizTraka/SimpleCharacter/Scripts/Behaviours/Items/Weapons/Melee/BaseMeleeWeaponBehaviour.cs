@@ -36,6 +36,12 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
                 return;
             }
 
+             //enemy should not hit other enemies
+            if (OwnerMobileBehaviour.tag == "Enemy" && other.tag == "Enemy")
+            {
+                return;
+            }
+
             //check if it has health behaviour?
             var otherEntityHealth = other.GetComponent<HealthBehaviour>();
             if (otherEntityHealth == null)
