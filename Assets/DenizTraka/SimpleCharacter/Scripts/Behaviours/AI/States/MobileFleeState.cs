@@ -14,25 +14,12 @@ namespace DTWorld.Behaviours.AI.States
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
-
-            CheckIdleTransition(animator, stateInfo, layerIndex);
-
             ProcessState(animator, stateInfo, layerIndex);
-
         }
 
         private void ProcessState(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             CurrentMovement = new Vector2(GetXAxis() * -1, GetYAxis() * -1);
-
-        }
-
-        private void CheckIdleTransition(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-            if (CurrentDistanceFromPlayer > MobileBehaviour.ChaseDistance)
-            {
-                animator.SetTrigger("Idle");
-            }
         }
 
         private float GetXAxis()
@@ -49,7 +36,6 @@ namespace DTWorld.Behaviours.AI.States
 
             return DeltaVector.x > 0 ? -1 : 1;
         }
-
 
         private float GetYAxis()
         {

@@ -17,34 +17,17 @@ namespace DTWorld.Behaviours.AI.States
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
 
-            CheckIdleTransition(animator, stateInfo, layerIndex);
-
             ProcessState(animator, stateInfo, layerIndex);
         }
 
         private void ProcessState(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            // if (CurrentDistanceFromPlayer <= MobileBehaviour.WeaponBehaviour.AttackDistance)
-            // {
-            //     animator.SetTrigger("Attack");
-            // }
-            // else
-            // {
-                CurrentMovement = new Vector2(GetXAxis(), GetYAxis());
-            //}
-        }
-
-        private void CheckIdleTransition(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-            if (CurrentDistanceFromPlayer > MobileBehaviour.ChaseDistance)
-            {
-                animator.SetTrigger("Idle");
-            }
+            CurrentMovement = new Vector2(GetXAxis(), GetYAxis());
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            //base.OnStateExit(animator, stateInfo, layerIndex);
+            base.OnStateExit(animator, stateInfo, layerIndex);
             MobileBehaviour.Speed = MobileBehaviour.Speed / 2f;
         }
 

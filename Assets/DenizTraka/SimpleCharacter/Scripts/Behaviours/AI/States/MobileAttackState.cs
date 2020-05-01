@@ -19,6 +19,7 @@ namespace DTWorld.Behaviours.AI.States
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            base.OnStateExit(animator, stateInfo, layerIndex);
         }
     }
 }
