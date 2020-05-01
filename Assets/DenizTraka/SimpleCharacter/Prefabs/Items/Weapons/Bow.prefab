@@ -99,8 +99,8 @@ MonoBehaviour:
   Name: Bow
   Durability: 100
   OwnerMobileBehaviour: {fileID: 0}
-  IsRanged: 0
-  AttackDistance: 2
+  IsRanged: 1
+  AttackDistance: 3
   Damage: 10
   SwingSpeed: 0.5
   AmmoSpeed: 100

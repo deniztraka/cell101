@@ -17,12 +17,55 @@ namespace DTWorld.Behaviours.AI.States
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
 
-            ProcessState(animator, stateInfo, layerIndex);
+            // if (MobileBehaviour.WeaponBehaviour != null && !MobileBehaviour.WeaponBehaviour.IsRanged)
+            // {
+            //     CurrentMovement = GetMeleeMovement();
+            // }
+            // else
+            // {
+            //     CurrentMovement = GetRangedMovement();
+            // }
+
+             CurrentMovement = GetMovement();
         }
 
-        private void ProcessState(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        private Vector2 GetRangedMovement()
         {
-            CurrentMovement = new Vector2(GetXAxis(), GetYAxis());
+            var movementVector = Vector2.zero;
+
+            if (!((DeltaVector.x >= 0 && DeltaVector.x <= 0.01f) || (DeltaVector.x <= 0 && DeltaVector.x >= -0.01f)) && DeltaVector.x != 0)
+            {
+                // if y axis is closer than x axis
+                if (Math.Abs(DeltaVector.x) <= Math.Abs(DeltaVector.y))
+                {
+                    if (PlayerBehaviour.transform.position.x <= MobileBehaviour.transform.position.x)
+                    {
+                        movementVector.x = -1;
+                    }
+                    else
+                    {
+                        movementVector.x = 1;
+                    }
+                }
+            }
+
+            if (!((DeltaVector.y >= 0 && DeltaVector.y <= 0.01f) || (DeltaVector.y <= 0 && DeltaVector.y >= -0.01f)) && DeltaVector.y != 0)
+            {
+                // if x axis is closer than y axis
+                if (Math.Abs(DeltaVector.y) <= Math.Abs(DeltaVector.x))
+                {
+                    if (PlayerBehaviour.transform.position.y <= MobileBehaviour.transform.position.y)
+                    {
+                        movementVector.y = -1;
+                    }
+                    else
+                    {
+                        movementVector.y = 1;
+                    }
+                }
+            }
+
+            return movementVector;
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -31,35 +74,36 @@ namespace DTWorld.Behaviours.AI.States
             MobileBehaviour.Speed = MobileBehaviour.Speed / 2f;
         }
 
-        private float GetXAxis()
+        private Vector2 GetMeleeMovement()
         {
-            if ((DeltaVector.x >= 0 && DeltaVector.x <= 0.01f) || (DeltaVector.x <= 0 && DeltaVector.x >= -0.01f))
+            var movementVector = Vector2.zero;
+            if (!((DeltaVector.x >= 0 && DeltaVector.x <= 0.01f) || (DeltaVector.x <= 0 && DeltaVector.x >= -0.01f)) && DeltaVector.x != 0)
             {
-                return 0;
+                movementVector.x = DeltaVector.x > 0 ? -1 : 1;
             }
 
-            if (DeltaVector.x == 0)
+            if (!((DeltaVector.y >= 0 && DeltaVector.y <= 0.01f) || (DeltaVector.y <= 0 && DeltaVector.y >= -0.01f)) && DeltaVector.y != 0)
             {
-                return 0;
+                movementVector.y = DeltaVector.y > 0 ? -1 : 1;
             }
 
-            return DeltaVector.x > 0 ? -1 : 1;
+            return movementVector;
         }
 
-
-        private float GetYAxis()
+        private Vector2 GetMovement()
         {
-            if ((DeltaVector.y >= 0 && DeltaVector.y <= 0.01f) || (DeltaVector.y <= 0 && DeltaVector.y >= -0.01f))
+            var movementVector = Vector2.zero;
+            if (!((DeltaVector.x >= 0 && DeltaVector.x <= 0.01f) || (DeltaVector.x <= 0 && DeltaVector.x >= -0.01f)) && DeltaVector.x != 0)
             {
-                return 0;
+                movementVector.x = DeltaVector.x > 0 ? -1 : 1;
             }
 
-            if (DeltaVector.y == 0)
+            if (!((DeltaVector.y >= 0 && DeltaVector.y <= 0.01f) || (DeltaVector.y <= 0 && DeltaVector.y >= -0.01f)) && DeltaVector.y != 0)
             {
-                return 0;
+                movementVector.y = DeltaVector.y > 0 ? -1 : 1;
             }
 
-            return DeltaVector.y > 0 ? -1 : 1;
+            return movementVector;
         }
     }
 }

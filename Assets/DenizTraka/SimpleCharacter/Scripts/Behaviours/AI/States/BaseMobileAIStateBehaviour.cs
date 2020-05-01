@@ -15,7 +15,6 @@ namespace DTWorld.Behaviours.AI.States
         protected AIMovementBehaviour AIBehaviour;
         protected Vector2 CurrentMovement;
         protected float CurrentDistanceFromPlayer = 0f;
-        protected float ChaseDistance;
         protected Vector2 DeltaVector;
 
 
@@ -32,10 +31,10 @@ namespace DTWorld.Behaviours.AI.States
             }
             animator.SetBool("IsRanged", MobileBehaviour.WeaponBehaviour.IsRanged);
             animator.SetFloat("Health", MobileHealth.Health);
-            ChaseDistance = MobileBehaviour.WeaponBehaviour.IsRanged ? MobileBehaviour.WeaponBehaviour.AttackDistance + MobileBehaviour.ChaseDistance / 2 : MobileBehaviour.ChaseDistance;
-            animator.SetFloat("ChaseDistance", ChaseDistance);
+            animator.SetFloat("ChaseDistance", MobileBehaviour.ChaseDistance);
             animator.SetFloat("AttackDistance", MobileBehaviour.WeaponBehaviour.AttackDistance);
             animator.SetFloat("FleeBelowHealth", MobileBehaviour.FleeBelowHealth);
+            animator.SetFloat("FleeDistance", MobileBehaviour.FleeDistance);
             DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
         }
 
@@ -43,7 +42,8 @@ namespace DTWorld.Behaviours.AI.States
         {
             CurrentDistanceFromPlayer = GetDistanceFrom(PlayerBehaviour.transform.position);
             animator.SetFloat("CurrentDistanceFromPlayer", CurrentDistanceFromPlayer);
-            animator.SetBool("InChaseRange", CurrentDistanceFromPlayer <= ChaseDistance);
+            animator.SetBool("InChaseRange", CurrentDistanceFromPlayer <= MobileBehaviour.ChaseDistance);
+            animator.SetBool("InFleeRange", CurrentDistanceFromPlayer < MobileBehaviour.FleeDistance);
             animator.SetBool("InAttackRange", CurrentDistanceFromPlayer <= MobileBehaviour.WeaponBehaviour.AttackDistance);
             animator.SetFloat("Health", MobileHealth.Health);
             animator.SetBool("IsHealthBelowFleeHealth", MobileHealth.Health < MobileBehaviour.FleeBelowHealth);
