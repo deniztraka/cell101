@@ -286,6 +286,7 @@ MonoBehaviour:
   Name: Regular Sword
   Durability: 0
   OwnerMobileBehaviour: {fileID: 0}
+  IsRanged: 0
   AttackDistance: 0.5
   Damage: 5
   SwingSpeed: 0.75
