@@ -101,7 +101,7 @@ MonoBehaviour:
   OwnerMobileBehaviour: {fileID: 0}
   IsRanged: 1
   AttackDistance: 3
-  Damage: 10
+  Damage: 2
   SwingSpeed: 0.5
   AmmoSpeed: 250
   AmmoCount: 50

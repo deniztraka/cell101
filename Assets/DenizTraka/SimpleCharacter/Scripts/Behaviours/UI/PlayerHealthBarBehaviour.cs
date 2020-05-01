@@ -33,7 +33,8 @@ namespace DTWorld.Behaviours.UI
         {
             UpdateSliders(currentHealth);
             if(HealthText != null){
-                HealthText.text = currentHealth.ToString();
+                
+                HealthText.text = currentHealth <= 0 ? "0" : currentHealth.ToString();
             }
 
             if(Animator != null){
