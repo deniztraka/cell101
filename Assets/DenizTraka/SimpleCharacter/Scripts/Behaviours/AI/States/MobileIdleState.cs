@@ -14,7 +14,6 @@ namespace DTWorld.Behaviours.AI.States
         {
             base.OnStateEnter(animator, stateInfo, layerIndex);
             nextDecisionTime = 0;
-            MobileBehaviour.SetMovement(Vector2.zero);
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

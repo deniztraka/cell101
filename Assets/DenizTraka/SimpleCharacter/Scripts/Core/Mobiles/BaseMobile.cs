@@ -37,7 +37,7 @@ namespace DTWorld.Core.Mobiles
         // }
 
         protected float Speed;
-        protected IMovementType MovementType;
+        public IMovementType MovementType;
         public float ActionRate
         {
             get { return actionRate; }

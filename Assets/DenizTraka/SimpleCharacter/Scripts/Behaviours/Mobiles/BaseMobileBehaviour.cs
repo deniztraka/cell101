@@ -114,9 +114,11 @@ namespace DTWorld.Behaviours.Mobiles
             var healthBehaviourComponent = gameObject.GetComponent<HealthBehaviour>();
             healthBehaviourComponent.OnDamageTakenEvent += new OnDamageTakenEventHandler(OnDamageTaken);
             healthBehaviourComponent.OnHealthBelowZeroEvent += new OnHealthBelowZeroEventHandler(OnDead);
-
-            ChaseDistance = (WeaponBehaviour.AttackDistance / 4) + ChaseDistance;
-            FleeDistance = WeaponBehaviour.IsRanged ? WeaponBehaviour.AttackDistance / 2 : 0;
+            if (WeaponBehaviour != null)
+            {
+                ChaseDistance = (WeaponBehaviour.AttackDistance / 4) + ChaseDistance;
+                FleeDistance = WeaponBehaviour.IsRanged ? WeaponBehaviour.AttackDistance / 2 : 0;
+            }
         }
 
 
@@ -385,10 +387,9 @@ namespace DTWorld.Behaviours.Mobiles
             }
         }
 
-        internal void SetMovement(Vector2 zero)
+        public void SetParalyzed(bool val)
         {
+            isParalyzed = val;
         }
-
-
     }
 }

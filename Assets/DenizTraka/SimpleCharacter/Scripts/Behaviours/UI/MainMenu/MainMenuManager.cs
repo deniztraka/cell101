@@ -10,7 +10,7 @@ namespace DTWorld.Behaviours.UI.MainMenu
         // Start is called before the first frame update
         public void StartGame()
         {
-            SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("CharacterScene", LoadSceneMode.Single);
         }
 
         // Update is called once per frame

@@ -21,14 +21,22 @@ namespace DTWorld.Behaviours.Mobiles
             if (joyStickObj != null)
             {
                 var joyStick = joyStickObj.GetComponent<Joystick>();
-                playerMovement = new FreeFormMovement(this.Rigidbody2D, new JoyStickMovementInput(joyStick));
+                playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
+#if UNITY_ANDROID || UNITY_IOS
+                if (!Application.isEditor)
+                {
+                    playerMovement = new FreeFormMovement(this.Rigidbody2D, new JoyStickMovementInput(joyStick));
+                }
+#endif
+
             }
             else
             {
                 playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
             }
 
-            //playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
+
+
 
             this.Mobile = new Player(this.Speed, playerMovement);
         }

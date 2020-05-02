@@ -4,27 +4,57 @@ using System.Collections.Generic;
 using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.Mobiles;
 using UnityEngine;
-
-public class GameManager : MonoBehaviour
+namespace DTWorld.Behaviours.Utils
 {
-    HealthBehaviour playerHealth;
-    public GameObject OnDeathCanvas;
-    // Start is called before the first frame update
-    void Start()
+    public class GameManager : MonoBehaviour
     {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBehaviour>();
-        playerHealth.OnHealthBelowZeroEvent += new HealthBehaviour.OnHealthBelowZeroEventHandler(OnDeath);
-        //Application.targetFrameRate = 30;
-    }
+        public GameObject ArcherCharacter;
+        public GameObject MeleeCharacter;
 
-    private void OnDeath()
-    {
-        OnDeathCanvas.SetActive(true);
-    }
+        private BaseMobileBehaviour selectedCharacter;
+        private AppManager appManager;
 
-    // Update is called once per frame
-    void Update()
-    {
+        HealthBehaviour playerHealth;
+        public GameObject OnDeathCanvas;
+        // Start is called before the first frame update
 
+        void Awake()
+        {
+            appManager = GameObject.FindGameObjectWithTag("AppManager").GetComponent<AppManager>();
+            InitGame();
+        }
+
+        void InitGame()
+        {
+            selectedCharacter = appManager.GetSelectedCharacter();
+            if (selectedCharacter.WeaponBehaviour.IsRanged)
+            {
+                ArcherCharacter.SetActive(true);
+                selectedCharacter = ArcherCharacter.GetComponent<BaseMobileBehaviour>();
+            }
+            else
+            {
+                MeleeCharacter.SetActive(true);
+                selectedCharacter = MeleeCharacter.GetComponent<BaseMobileBehaviour>();
+            }
+
+            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBehaviour>();
+            playerHealth.OnHealthBelowZeroEvent += new HealthBehaviour.OnHealthBelowZeroEventHandler(OnDeath);            
+        }
+
+        void Start()
+        {
+            
+        }
+
+        private IEnumerator StartGame()
+        {
+            yield return new WaitForSeconds(1);
+        }
+
+        private void OnDeath()
+        {
+            OnDeathCanvas.SetActive(true);
+        }
     }
 }
