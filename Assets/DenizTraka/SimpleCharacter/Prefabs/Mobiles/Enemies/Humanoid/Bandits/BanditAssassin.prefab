@@ -91,6 +91,36 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4975803394341621479, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7885881
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975803394341621479, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7924528
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975803394341621479, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5644357
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151892023726571132, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5377358
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151892023726571132, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.44895867
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151892023726571132, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.44895867
+      objectReference: {fileID: 0}
     - target: {fileID: 6090023680206792433, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}
       propertyPath: ChaseDistance

@@ -3737,18 +3737,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702747236}
   m_CullTransparentMesh: 0
---- !u!114 &766134628 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8078710613285584881, guid: 5e6c590c2fbdbbe4ab79d9ff83f27ebd,
-    type: 3}
-  m_PrefabInstance: {fileID: 5923259746585834007}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7001e422907664d4a81423cf337e8113, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &769108688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 410364731668542647, guid: f5aec04e73d22e44ab44041c24158bc1,
@@ -3912,6 +3900,7 @@ GameObject:
   - component: {fileID: 829191355}
   - component: {fileID: 829191354}
   - component: {fileID: 829191353}
+  - component: {fileID: 829191356}
   m_Layer: 5
   m_Name: AttackButton
   m_TagString: Untagged
@@ -3981,18 +3970,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829191354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 766134628}
-        m_MethodName: Attack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &829191354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4030,6 +4008,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829191351}
   m_CullTransparentMesh: 0
+--- !u!114 &829191356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829191351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d526b550f6134ab94bfeaf8d8a089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &843141104
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4208,7 @@ GameObject:
   - component: {fileID: 879094119}
   - component: {fileID: 879094118}
   - component: {fileID: 879094117}
+  - component: {fileID: 879094120}
   m_Layer: 5
   m_Name: DefendButton
   m_TagString: Untagged
@@ -4287,18 +4278,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 879094118}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 766134628}
-        m_MethodName: Defend
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &879094118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4336,6 +4316,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879094115}
   m_CullTransparentMesh: 0
+--- !u!114 &879094120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879094115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fe0a79b5fae7d42bf985d80ac74042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1029198102 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7201333182121686002, guid: ec8550b2923f0d14197dedb6b8bc1815,

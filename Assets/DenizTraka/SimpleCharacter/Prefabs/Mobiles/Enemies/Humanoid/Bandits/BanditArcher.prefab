@@ -91,6 +91,36 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4975803394341621479, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975803394341621479, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975803394341621479, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151892023726571132, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.38190898
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151892023726571132, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151892023726571132, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6090023680206792433, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}
       propertyPath: ChaseDistance
@@ -155,6 +185,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186281091119451665, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186281091119451665, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.97217745
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186281091119451665, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73bf121eae938f8428c907e6aeef5618, type: 3}

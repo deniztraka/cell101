@@ -36,9 +36,12 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
 
         public void StartGame()
         {
-            var appManager = GameObject.FindGameObjectWithTag("AppManager").GetComponent<AppManager>();
-            appManager.SetSelectedCharacter(SelectedRigidBody.gameObject.GetComponent<BaseMobileBehaviour>());
-            SceneManager.LoadScene("GameScene", LoadSceneMode.Single);            
+            if (SelectedRigidBody != null)
+            {
+                var appManager = GameObject.FindGameObjectWithTag("AppManager").GetComponent<AppManager>();
+                appManager.SetSelectedCharacter(SelectedRigidBody.gameObject.GetComponent<BaseMobileBehaviour>());
+                SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+            }
         }
 
         public void Back()
