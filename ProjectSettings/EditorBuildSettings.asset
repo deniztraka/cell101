@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/DenizTraka/SimpleCharacter/Scenes/MainMenuScene.unity
     guid: 78bf79bd8d9fee84f8517ff92129ebab
   - enabled: 1
