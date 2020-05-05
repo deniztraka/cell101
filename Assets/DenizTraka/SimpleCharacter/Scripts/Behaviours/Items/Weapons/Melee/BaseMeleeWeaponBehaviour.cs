@@ -36,7 +36,7 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
                 return;
             }
 
-             //enemy should not hit other enemies
+            //enemy should not hit other enemies
             if (OwnerMobileBehaviour.tag == "Enemy" && other.tag == "Enemy")
             {
                 return;
@@ -67,8 +67,26 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
 
         private void Hit(HealthBehaviour otherEntityHealth)
         {
-            otherEntityHealth.TakeDamage(Item.Damage);
-            AudioManager.Play("Hit");
+            if (otherEntityHealth != null)
+            {
+                if (otherEntityHealth.Health > 0)
+                {
+                    TrySkillGain();
+                    otherEntityHealth.TakeDamage(Item.Damage);
+                    AudioManager.Play("Hit");
+                }
+            }
+        }
+
+        public void TrySkillGain()
+        {
+            Debug.Log("TrySkillGain melee");
+            if (OwnerMobileBehaviour.tag == "Player")
+            {
+                var props = OwnerMobileBehaviour.GetComponent<PropsBehaviour>();
+                props.Melee.Gain(1);
+                Debug.Log("skillgained melee");
+            }
         }
 
         public override void BeforeAttacking()

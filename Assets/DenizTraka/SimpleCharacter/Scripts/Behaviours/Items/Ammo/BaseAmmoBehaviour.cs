@@ -40,10 +40,22 @@ namespace DTWorld.Behaviours.Items.Ammo
             if (OwnerWeaponBehaviour.OwnerMobileBehaviour.tag == "Enemy" && other.tag == "Enemy")
             {
                 return;
-            }
+            }            
 
             Hit(other.GetComponent<HealthBehaviour>());
             Coll.enabled = false;
+        }
+
+        public void TrySkillGain()
+        {
+            Debug.Log("TrySkillGain ranged");
+            //Player skill gain
+            if (OwnerWeaponBehaviour.OwnerMobileBehaviour.tag == "Player")
+            {
+                var props = OwnerWeaponBehaviour.OwnerMobileBehaviour.GetComponent<PropsBehaviour>();
+                props.Ranged.Gain(1);
+                Debug.Log("skillgained ranged");
+            }
         }
 
         private void Hit(HealthBehaviour otherEntityHealth)
@@ -52,6 +64,7 @@ namespace DTWorld.Behaviours.Items.Ammo
             {
                 if (otherEntityHealth.Health > 0)
                 {
+                    TrySkillGain();
                     otherEntityHealth.TakeDamage(OwnerWeaponBehaviour.Damage + Item.Damage);
                 }
             }
