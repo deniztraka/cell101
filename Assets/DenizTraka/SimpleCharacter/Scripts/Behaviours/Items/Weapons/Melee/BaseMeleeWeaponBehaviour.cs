@@ -80,12 +80,10 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
 
         public void TrySkillGain()
         {
-            Debug.Log("TrySkillGain melee");
             if (OwnerMobileBehaviour.tag == "Player")
             {
                 var props = OwnerMobileBehaviour.GetComponent<PropsBehaviour>();
-                props.Melee.Gain(1);
-                Debug.Log("skillgained melee");
+                props.Melee.Gain(0.1f);
             }
         }
 

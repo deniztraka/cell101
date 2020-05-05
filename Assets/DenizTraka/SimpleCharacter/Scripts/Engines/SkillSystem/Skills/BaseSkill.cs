@@ -32,10 +32,15 @@ namespace DTWorld.Engines.SkillSystem.Skills
 
         public virtual void Gain(float val)
         {
-            currentVal += val;
-            if (OnSkillChangedEvent != null)
+            Debug.Log("gain try");
+            if (Random.value < GainFactor)
             {
-                OnSkillChangedEvent();
+                currentVal += val;
+                Debug.Log("gain success");
+                if (OnSkillChangedEvent != null)
+                {
+                    OnSkillChangedEvent();
+                }
             }
         }
     }

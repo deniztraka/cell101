@@ -48,12 +48,11 @@ namespace DTWorld.Behaviours.Items.Ammo
 
         public void TrySkillGain()
         {
-            Debug.Log("TrySkillGain ranged");
             //Player skill gain
             if (OwnerWeaponBehaviour.OwnerMobileBehaviour.tag == "Player")
             {
                 var props = OwnerWeaponBehaviour.OwnerMobileBehaviour.GetComponent<PropsBehaviour>();
-                props.Ranged.Gain(1);
+                props.Ranged.Gain(0.1f);
                 Debug.Log("skillgained ranged");
             }
         }
