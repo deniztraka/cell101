@@ -1,22 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace DTWorld.Behaviours.UI.MainMenu
 {
     public class MainMenuManager : MonoBehaviour
     {
-        // Start is called before the first frame update
-        public void StartGame()
+        public GameObject Door;
+        public void Start()
         {
-            SceneManager.LoadScene("CharacterScene", LoadSceneMode.Single);
+            Door.SetActive(false);
+
+            StartCoroutine(ExecuteAfterSeconds(Random.Range(2,5), () =>
+             {
+                 OpenDoor();
+             }));
+
         }
 
-        // Update is called once per frame
-        public void QuitGame()
+        IEnumerator ExecuteAfterSeconds(float seconds, Action task)
         {
-            Application.Quit();
+            yield return new WaitForSeconds(seconds);
+            task();
+        }
+
+        public void OpenDoor()
+        {
+            Door.SetActive(true);
+        }
+
+        public void StartGame()
+        {
+            SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
         }
     }
 }

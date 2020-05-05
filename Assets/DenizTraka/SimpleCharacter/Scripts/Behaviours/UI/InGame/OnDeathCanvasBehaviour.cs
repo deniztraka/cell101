@@ -14,7 +14,7 @@ namespace DTWorld.Behaviours.UI.InGame
 
         public void QuitButtonClicked()
         {
-            SceneManager.LoadScene("MainMenuScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("CharacterScene", LoadSceneMode.Single);
         }
     }
 }

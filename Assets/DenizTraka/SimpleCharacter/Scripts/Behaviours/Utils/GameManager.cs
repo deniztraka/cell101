@@ -26,8 +26,7 @@ namespace DTWorld.Behaviours.Utils
 
         void InitGame()
         {
-            selectedCharacter = appManager.GetSelectedCharacter();
-            if (selectedCharacter.WeaponBehaviour.IsRanged)
+            if (appManager.IsRanged())
             {
                 ArcherCharacter.SetActive(true);
                 selectedCharacter = ArcherCharacter.GetComponent<BaseMobileBehaviour>();

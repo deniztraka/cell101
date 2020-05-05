@@ -4,10 +4,13 @@ using DTWorld.Behaviours.AI;
 using UnityEngine;
 namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
 {
+
     public class CharacterAttributesCanvasManager : MonoBehaviour
     {
-
-        public void CloseBook(){
+        public CharacterBookBehaviour BookBehaviour;
+        public void CloseBook()
+        {            
+            BookBehaviour.SetIsOpen(false);
             gameObject.SetActive(false);
         }
     }

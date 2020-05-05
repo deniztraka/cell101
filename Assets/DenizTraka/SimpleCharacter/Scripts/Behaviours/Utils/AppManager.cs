@@ -6,20 +6,20 @@ namespace DTWorld.Behaviours.Utils
 {
     public class AppManager : MonoBehaviour
     {
-        private BaseMobileBehaviour selectedMobile;
+        private bool isRanged;
         void Awake()
         {
             DontDestroyOnLoad(gameObject);
         }
 
-        public BaseMobileBehaviour GetSelectedCharacter()
+        public bool IsRanged()
         {
-            return selectedMobile;
+            return isRanged;
         }
 
-        public void SetSelectedCharacter(BaseMobileBehaviour mobile)
+        public void SetIsRanged(bool val)
         {
-            selectedMobile = mobile;
+            isRanged = val;
         }
     }
 }
