@@ -12,7 +12,6 @@ namespace DTWorld.Behaviours.Utils
         public GameObject MeleeCharacter;
 
         private BaseMobileBehaviour selectedCharacter;
-        private AppManager appManager;
 
         HealthBehaviour playerHealth;
         public GameObject OnDeathCanvas;
@@ -20,13 +19,13 @@ namespace DTWorld.Behaviours.Utils
 
         void Awake()
         {
-            appManager = GameObject.FindGameObjectWithTag("AppManager").GetComponent<AppManager>();
             InitGame();
         }
 
         void InitGame()
         {
-            if (appManager.IsRanged())
+            
+            if (AppManager.Instance.IsRanged)
             {
                 ArcherCharacter.SetActive(true);
                 selectedCharacter = ArcherCharacter.GetComponent<BaseMobileBehaviour>();
@@ -39,11 +38,6 @@ namespace DTWorld.Behaviours.Utils
 
             playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBehaviour>();
             playerHealth.OnHealthBelowZeroEvent += new HealthBehaviour.OnHealthBelowZeroEventHandler(OnDeath);            
-        }
-
-        void Start()
-        {
-            
         }
 
         private IEnumerator StartGame()

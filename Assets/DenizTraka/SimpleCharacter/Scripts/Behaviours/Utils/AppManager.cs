@@ -4,22 +4,28 @@ using DTWorld.Behaviours.Mobiles;
 using UnityEngine;
 namespace DTWorld.Behaviours.Utils
 {
+
     public class AppManager : MonoBehaviour
     {
-        private bool isRanged;
-        void Awake()
+        public static AppManager Instance { get; private set; }
+        public bool IsRanged;
+        private void Awake()
         {
-            DontDestroyOnLoad(gameObject);
-        }
-
-        public bool IsRanged()
-        {
-            return isRanged;
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public void SetIsRanged(bool val)
         {
-            isRanged = val;
+            Debug.Log(val);
+            IsRanged = val;
         }
     }
 }

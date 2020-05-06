@@ -282,7 +282,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Name: Walking
     Clip: {fileID: 8300000, guid: 5c1c358e34a2f854f8c712ac288dd6ed, type: 3}
-    Volume: 0.01
+    Volume: 0.28
     Pitch: 1
     Source: {fileID: 0}
 --- !u!61 &5696335285076214535
