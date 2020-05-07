@@ -5425,6 +5425,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67d4836e3a35a842ae21eb13d62c2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RangedSkill: 0
+  MeleeSkill: 0
+  StrengthAttribute: 0
+  DexterityAttribute: 0
+  isNPC: 0
 --- !u!1 &8154525312022652974
 GameObject:
   m_ObjectHideFlags: 0

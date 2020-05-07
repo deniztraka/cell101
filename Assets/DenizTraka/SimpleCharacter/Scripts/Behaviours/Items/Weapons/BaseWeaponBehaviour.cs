@@ -12,6 +12,7 @@ namespace DTWorld.Behaviours.Items.Weapons
     public abstract class BaseWeaponBehaviour : BaseItemBehaviour
     {
         private TrailRenderer trailRenderer;
+        public PropsBehaviour OwnerMobileProps;
 
         public new BaseWeapon Item;
         public BaseMobileBehaviour OwnerMobileBehaviour;
@@ -30,7 +31,7 @@ namespace DTWorld.Behaviours.Items.Weapons
         public event AfterAttackedEventHandler AfterAttackedEvent;
         public override void Start()
         {
-            base.Start();            
+            base.Start();
             AudioManager = gameObject.GetComponent<AudioManager>();
             trailRenderer = gameObject.transform.GetComponentInChildren<TrailRenderer>();
             IsRanged = false;
@@ -40,6 +41,7 @@ namespace DTWorld.Behaviours.Items.Weapons
             }
             this.BeforeAttackingEvent += new BeforeAttackingEventHandler(BeforeAttacking);
             this.AfterAttackedEvent += new AfterAttackedEventHandler(AfterAttacked);
+            
         }
 
         // Update is called once per frame
@@ -143,6 +145,7 @@ namespace DTWorld.Behaviours.Items.Weapons
             //Debug.Log("before attacking base weapon");
             //timeBeforeHit = Time.time;
             //Debug.Log(timeBeforeHit);
+            
         }
 
         public virtual void AfterAttacked()

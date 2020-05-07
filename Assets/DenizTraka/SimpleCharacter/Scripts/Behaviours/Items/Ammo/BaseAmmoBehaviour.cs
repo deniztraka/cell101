@@ -41,7 +41,7 @@ namespace DTWorld.Behaviours.Items.Ammo
             {
                 return;
             }
-            
+
             Coll.enabled = false;
 
             var hitSucceed = Hit(other.GetComponent<HealthBehaviour>());
@@ -49,7 +49,7 @@ namespace DTWorld.Behaviours.Items.Ammo
             if (hitSucceed)
             {
                 TrySkillGain();
-                
+
             }
 
             StartCoroutine(DeactivateAfter(0.1f));
@@ -65,23 +65,36 @@ namespace DTWorld.Behaviours.Items.Ammo
             }
         }
 
+        private float CalculateTotalDamage()
+        {
+            var ownerRangedSkill = OwnerWeaponBehaviour.OwnerMobileProps.Ranged.CurrentValue;
+            var ownerDexterity = OwnerWeaponBehaviour.OwnerMobileProps.Dexterity.CurrentValue;
+            var ownerStrength = OwnerWeaponBehaviour.OwnerMobileProps.Strength.CurrentValue;
+            var weaponDamage = OwnerWeaponBehaviour.Damage;
+
+            var temp = (Item.Damage + (ownerRangedSkill / 10)); //ranged skill factor + 
+            temp = ((temp * ownerDexterity) / 10) + temp; // dexterity factor +
+            temp = ((ownerStrength * weaponDamage) / 10) + temp; // weapoin damage factor + 
+            return temp;
+        }
+
         private bool Hit(HealthBehaviour otherEntityHealth)
         {
             if (otherEntityHealth != null)
             {
                 if (otherEntityHealth.Health > 0)
                 {
-                    otherEntityHealth.TakeDamage(OwnerWeaponBehaviour.Damage + Item.Damage);
+                    otherEntityHealth.TakeDamage(OwnerWeaponBehaviour.Damage + Item.Damage + (OwnerWeaponBehaviour.OwnerMobileProps.Ranged.CurrentValue / 10));
                     return true;
                 }
             }
 
             if (audioManager != null)
-            {                
+            {
                 audioManager.Play("Hit");
             }
 
-            
+
 
             return false;
         }

@@ -8,6 +8,16 @@ namespace DTWorld.Behaviours.Interfacelike
 {
     public class PropsBehaviour : MonoBehaviour
     {
+        public float baseAttributePointsGainFactor = 0.05f;
+        public float RangedSkill;
+        public float MeleeSkill;
+        public int StrengthAttribute;
+        public int DexterityAttribute;
+
+        public int TotalAvaliableAttributePoints;
+
+        public bool isNPC = true;
+
         public Dictionary<string, BaseSkill> Skills;
         public Dictionary<string, BaseAttribute> Attributes;
 
@@ -37,10 +47,25 @@ namespace DTWorld.Behaviours.Interfacelike
             Attributes.Add("Dexterity", new Dexterity());
             Attributes.Add("Strength", new Strength());
 
-            Skills["Ranged"].CurrentValue = PlayerPrefs.GetFloat("Ranged");
-            Skills["Melee"].CurrentValue = PlayerPrefs.GetFloat("Melee");
-            Attributes["Dexterity"].CurrentValue = PlayerPrefs.GetInt("Dexterity");
-            Attributes["Strength"].CurrentValue = PlayerPrefs.GetInt("Strength");
+            RangedSkill = Skills["Ranged"].CurrentValue = isNPC ? RangedSkill : PlayerPrefs.GetFloat("Ranged");
+            MeleeSkill = Skills["Melee"].CurrentValue = isNPC ? MeleeSkill : PlayerPrefs.GetFloat("Melee");
+            DexterityAttribute = Attributes["Dexterity"].CurrentValue = isNPC ? DexterityAttribute : PlayerPrefs.GetInt("Dexterity");
+            StrengthAttribute = Attributes["Strength"].CurrentValue = isNPC ? StrengthAttribute : PlayerPrefs.GetInt("Strength");
+
+            TotalAvaliableAttributePoints = PlayerPrefs.GetInt("TotalAvaliableAttributePoints");
+            Ranged.OnSkillChangedEvent += new BaseSkill.OnSkillChangedEventHandler(TryGainBaseAttribute);
+            Melee.OnSkillChangedEvent += new BaseSkill.OnSkillChangedEventHandler(TryGainBaseAttribute);
+
+
+        }
+
+        public void TryGainBaseAttribute(float val)
+        {
+            if (UnityEngine.Random.value < baseAttributePointsGainFactor)
+            {
+                TotalAvaliableAttributePoints++;
+                PlayerPrefs.SetInt("TotalAvaliableAttributePoints", TotalAvaliableAttributePoints);
+            }
         }
     }
 }

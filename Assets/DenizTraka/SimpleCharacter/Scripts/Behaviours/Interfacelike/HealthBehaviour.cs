@@ -68,7 +68,7 @@ namespace DTWorld.Behaviours.Interfacelike
         {
             var floatingDamage = Instantiate(FloatingDamagesPrefab, transform.position, Quaternion.identity, transform);
             var textMesh = floatingDamage.GetComponent<TextMesh>();
-            textMesh.text = damage.ToString();
+            textMesh.text =  String.Format("{0:0.0}", damage);
         }
     }
 }

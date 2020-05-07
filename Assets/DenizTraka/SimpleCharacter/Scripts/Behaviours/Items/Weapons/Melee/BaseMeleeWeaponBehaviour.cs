@@ -16,6 +16,8 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
             Coll = gameObject.GetComponent<Collider2D>();
         }
 
+
+
         // Update is called once per frame
         public override void Update()
         {
@@ -53,7 +55,7 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
             {
                 return;
             }
-            
+
             Coll.enabled = false;
 
             var hitSucceed = Hit(otherEntityHealth);
@@ -65,13 +67,24 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
 
         }
 
+        private float CalculateTotalDamage()
+        {
+            var ownerMeleeSkill = OwnerMobileProps.Melee.CurrentValue;
+            var ownerStrength = OwnerMobileProps.Strength.CurrentValue;
+            var weaponDamage = Damage;
+
+            var temp = (Item.Damage + (ownerMeleeSkill / 10)); //ranged skill factor + 
+            temp = ((ownerStrength * weaponDamage) / 10) + temp; // weapoin damage factor + 
+            return temp;
+        }
+
         private bool Hit(HealthBehaviour otherEntityHealth)
         {
             if (otherEntityHealth != null)
             {
                 if (otherEntityHealth.Health > 0)
                 {
-                    otherEntityHealth.TakeDamage(Item.Damage);
+                    otherEntityHealth.TakeDamage(CalculateTotalDamage());
                     AudioManager.Play("Hit");
                     return true;
                 }

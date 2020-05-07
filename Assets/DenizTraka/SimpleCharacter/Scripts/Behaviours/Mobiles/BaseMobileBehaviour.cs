@@ -296,7 +296,8 @@ namespace DTWorld.Behaviours.Mobiles
                 WeaponBehaviour = weaponBehaviour;
                 WeaponBehaviour.OwnerMobileBehaviour = this;
                 WeaponBehaviour.BeforeAttackingEvent += new BeforeAttackingEventHandler(SetAttackSpeedBefore);
-                WeaponBehaviour.AfterAttackedEvent += new AfterAttackedEventHandler(SetAttackSpeedAfter);
+                WeaponBehaviour.AfterAttackedEvent += new AfterAttackedEventHandler(SetAttackSpeedAfter);                
+                WeaponBehaviour.OwnerMobileProps = gameObject.GetComponent<PropsBehaviour>(); 
             }
         }
 
