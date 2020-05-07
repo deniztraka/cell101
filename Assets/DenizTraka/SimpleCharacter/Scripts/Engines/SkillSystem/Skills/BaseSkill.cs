@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Interfaces;
 using UnityEngine;
 namespace DTWorld.Engines.SkillSystem.Skills
 {
+    [Serializable]
     public abstract class BaseSkill : ISkill
     {
         private string name;
@@ -27,19 +29,17 @@ namespace DTWorld.Engines.SkillSystem.Skills
             set { gainFactor = value; }
         }
 
-        public delegate void OnSkillChangedEventHandler();
+        public delegate void OnSkillChangedEventHandler(float gainVal);
         public event OnSkillChangedEventHandler OnSkillChangedEvent;
 
         public virtual void Gain(float val)
         {
-            Debug.Log("gain try");
-            if (Random.value < GainFactor)
+            if (UnityEngine.Random.value < GainFactor)
             {
                 currentVal += val;
-                Debug.Log("gain success");
                 if (OnSkillChangedEvent != null)
                 {
-                    OnSkillChangedEvent();
+                    OnSkillChangedEvent(val);
                 }
             }
         }

@@ -53,29 +53,31 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
             {
                 return;
             }
-
-            Hit(otherEntityHealth);
+            
             Coll.enabled = false;
 
+            var hitSucceed = Hit(otherEntityHealth);
 
-            // if (OwnerMobileBehaviour != null)
-            // {
-            //     //pereventing hitting multiple times from each swing
-            //     OwnerMobileBehaviour.Mobile.IsAttacking = false;
-            // }
+            if (hitSucceed)
+            {
+                TrySkillGain();
+            }
+
         }
 
-        private void Hit(HealthBehaviour otherEntityHealth)
+        private bool Hit(HealthBehaviour otherEntityHealth)
         {
             if (otherEntityHealth != null)
             {
                 if (otherEntityHealth.Health > 0)
                 {
-                    TrySkillGain();
                     otherEntityHealth.TakeDamage(Item.Damage);
                     AudioManager.Play("Hit");
+                    return true;
                 }
             }
+
+            return false;
         }
 
         public void TrySkillGain()

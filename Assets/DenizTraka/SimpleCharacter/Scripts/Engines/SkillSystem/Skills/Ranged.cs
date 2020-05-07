@@ -7,7 +7,7 @@ namespace DTWorld.Engines.SkillSystem.Skills
     {
         public Ranged() : base()
         {
-            GainFactor = 0.1f;
+            GainFactor = 0.01f;
         }
 
         public override void Gain(float val)

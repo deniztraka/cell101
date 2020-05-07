@@ -40,10 +40,19 @@ namespace DTWorld.Behaviours.Items.Ammo
             if (OwnerWeaponBehaviour.OwnerMobileBehaviour.tag == "Enemy" && other.tag == "Enemy")
             {
                 return;
-            }            
-
-            Hit(other.GetComponent<HealthBehaviour>());
+            }
+            
             Coll.enabled = false;
+
+            var hitSucceed = Hit(other.GetComponent<HealthBehaviour>());
+
+            if (hitSucceed)
+            {
+                TrySkillGain();
+                
+            }
+
+            StartCoroutine(DeactivateAfter(0.1f));
         }
 
         public void TrySkillGain()
@@ -53,28 +62,28 @@ namespace DTWorld.Behaviours.Items.Ammo
             {
                 var props = OwnerWeaponBehaviour.OwnerMobileBehaviour.GetComponent<PropsBehaviour>();
                 props.Ranged.Gain(0.1f);
-                Debug.Log("skillgained ranged");
             }
         }
 
-        private void Hit(HealthBehaviour otherEntityHealth)
+        private bool Hit(HealthBehaviour otherEntityHealth)
         {
             if (otherEntityHealth != null)
             {
                 if (otherEntityHealth.Health > 0)
                 {
-                    TrySkillGain();
                     otherEntityHealth.TakeDamage(OwnerWeaponBehaviour.Damage + Item.Damage);
+                    return true;
                 }
             }
 
             if (audioManager != null)
-            {
-                //Debug.Log("Hit");
+            {                
                 audioManager.Play("Hit");
             }
 
-            StartCoroutine(DeactivateAfter(0.1f));
+            
+
+            return false;
         }
 
         private IEnumerator DeactivateAfter(float seconds)

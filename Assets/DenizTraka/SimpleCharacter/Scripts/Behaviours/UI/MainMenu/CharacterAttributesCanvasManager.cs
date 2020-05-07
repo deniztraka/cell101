@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.AI;
 using DTWorld.Behaviours.Interfacelike;
@@ -25,8 +26,8 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
             PropsBehaviour = menuCharacterBehaviour.GetComponent<PropsBehaviour>();
             StrengthValue.text = PropsBehaviour.Strength.CurrentValue.ToString();
             DexterityValue.text = PropsBehaviour.Dexterity.CurrentValue.ToString();
-            MeleeValue.text = PropsBehaviour.Melee.CurrentValue.ToString();
-            RangedValue.text = PropsBehaviour.Ranged.CurrentValue.ToString();
+            MeleeValue.text = String.Format("{0:0.0}", PropsBehaviour.Melee.CurrentValue);
+            RangedValue.text = String.Format("{0:0.0}", PropsBehaviour.Ranged.CurrentValue);
         }
         public void CloseBook()
         {

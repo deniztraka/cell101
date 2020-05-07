@@ -31,9 +31,5 @@ namespace DTWorld.Behaviours.UI.MainMenu
             Door.SetActive(true);
         }
 
-        public void StartGame()
-        {
-            SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
-        }
     }
 }
