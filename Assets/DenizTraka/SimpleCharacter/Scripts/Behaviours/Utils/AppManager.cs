@@ -9,6 +9,8 @@ namespace DTWorld.Behaviours.Utils
     {
         public static AppManager Instance { get; private set; }
         public bool IsRanged;
+
+
         private void Awake()
         {
             if (Instance == null)
@@ -22,10 +24,8 @@ namespace DTWorld.Behaviours.Utils
             }
         }
 
-        public void SetIsRanged(bool val)
-        {
-            Debug.Log(val);
-            IsRanged = val;
+        public void PrepareRandomFightValues(){
+
         }
     }
 }
