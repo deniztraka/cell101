@@ -16,22 +16,25 @@ namespace DTWorld.Behaviours.Interfacelike
 
         void Start()
         {
-            CurrentLevel  = isNPC ? CurrentLevel : PlayerPrefs.GetInt("CurrentLevel");
-            TotalExperienceGained  = isNPC ? TotalExperienceGained : PlayerPrefs.GetInt("TotalExperienceGained");
+            CurrentLevel = isNPC ? CurrentLevel : PlayerPrefs.GetInt("CurrentLevel");
+            TotalExperienceGained = isNPC ? TotalExperienceGained : PlayerPrefs.GetInt("TotalExperienceGained");
         }
 
         public float GetRequiredExpAmountForNextLevel()
         {
-            return 2 * Mathf.Sqrt((float)CurrentLevel + 1);
+            return 3 * Mathf.Pow(CurrentLevel + 1,2);
         }
 
         public void GainExperience(int exp)
         {
             TotalExperienceGained += exp;
+            PlayerPrefs.SetInt("TotalExperienceGained", TotalExperienceGained);
 
             if (TotalExperienceGained >= GetRequiredExpAmountForNextLevel())
             {
                 CurrentLevel++;
+                PlayerPrefs.SetInt("CurrentLevel", CurrentLevel);
+                
                 if (OnLevelChangedEvent != null)
                 {
                     OnLevelChangedEvent(attributePointsForEachLevel);

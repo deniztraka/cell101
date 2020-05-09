@@ -41,6 +41,11 @@ namespace DTWorld.Behaviours.LevelSystem
             CurrentFightIndex++;
             PlayerPrefs.SetInt("CurrentFightIndex", CurrentFightIndex);
 
+            if (Levels.List.Count == CurrentFightIndex)
+            {
+                PlayerPrefs.SetInt("IsGameFinished", 1);
+            }
+
             LevelFinishedCanvas.SetActive(true);
         }
     }

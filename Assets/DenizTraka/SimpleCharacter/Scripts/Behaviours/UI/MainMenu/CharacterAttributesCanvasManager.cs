@@ -40,7 +40,7 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
             propsBehaviour = menuCharacterBehaviour.GetComponent<PropsBehaviour>();
             mobileLevel = menuCharacterBehaviour.GetComponent<MobileLevel>();
             LevelText.text = String.Format("Level: {0}", mobileLevel.CurrentLevel);
-            XpText.text = String.Format("Current Experience: {0} ({1})", mobileLevel.TotalExperienceGained, mobileLevel.GetRequiredExpAmountForNextLevel());
+            XpText.text = String.Format("Current Experience: {0} \n( Required xp for next level :{1})", mobileLevel.TotalExperienceGained, mobileLevel.GetRequiredExpAmountForNextLevel());
             StrengthValue.text = propsBehaviour.Strength.CurrentValue.ToString();
             DexterityValue.text = propsBehaviour.Dexterity.CurrentValue.ToString();
             MeleeValue.text = String.Format("{0:0.0}", propsBehaviour.Melee.CurrentValue);

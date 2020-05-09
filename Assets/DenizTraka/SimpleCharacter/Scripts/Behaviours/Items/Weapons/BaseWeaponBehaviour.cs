@@ -70,7 +70,7 @@ namespace DTWorld.Behaviours.Items.Weapons
             }
 
             var lastTime = Time.time;
-            yield return new WaitForSeconds(1 / SwingSpeed);
+            yield return new WaitForSeconds(SwingSpeed);
 
             //Debug.Log(Time.time - lastTime);
 
@@ -121,7 +121,7 @@ namespace DTWorld.Behaviours.Items.Weapons
 
             var lastTime = Time.time;
 
-            yield return new WaitForSeconds(1 / SwingSpeed);
+            yield return new WaitForSeconds(SwingSpeed);
 
             //Debug.Log(Time.time - lastTime);
 

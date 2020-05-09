@@ -285,11 +285,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Regular Sword
   Durability: 0
+  OwnerMobileProps: {fileID: 0}
   OwnerMobileBehaviour: {fileID: 0}
   IsRanged: 0
-  AttackDistance: 0.5
-  Damage: 5
-  SwingSpeed: 0.75
+  AttackDistance: 0.6
+  Damage: 2
+  SwingSpeed: 1.5
 --- !u!114 &2904453139003939461
 MonoBehaviour:
   m_ObjectHideFlags: 0

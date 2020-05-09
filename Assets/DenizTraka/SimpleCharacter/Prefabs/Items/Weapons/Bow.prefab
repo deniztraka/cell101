@@ -98,11 +98,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Bow
   Durability: 100
+  OwnerMobileProps: {fileID: 0}
   OwnerMobileBehaviour: {fileID: 0}
   IsRanged: 1
   AttackDistance: 3
-  Damage: 2
-  SwingSpeed: 0.5
+  Damage: 1
+  SwingSpeed: 2
   AmmoSpeed: 250
   AmmoCount: 50
   Ammo: {fileID: 2978308348743670858, guid: c15d53c4f959c5c4fabef05cdf491e0b, type: 3}

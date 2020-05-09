@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.AI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorBehaviour : MonoBehaviour
 {
@@ -13,7 +14,11 @@ public class DoorBehaviour : MonoBehaviour
     private bool isPlayerClose;
     private bool bookIsOpen;
 
+    public Text SpeechText;
+
     private bool isClosedExternally;
+
+    private bool isFinished;
 
     internal void SetIsOpen(bool v)
     {
@@ -26,12 +31,12 @@ public class DoorBehaviour : MonoBehaviour
     {
         characterMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScreenMovementBehaviour>();
         SetOpenStatus(false);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        if (PlayerPrefs.GetInt("IsGameFinished") == 1)
+        {
+            isFinished = true;
+            SpeechText.text = "You are free";
+        }
     }
 
     private void SetOpenStatus(bool val)
@@ -45,8 +50,14 @@ public class DoorBehaviour : MonoBehaviour
 
         if (isPlayerClose && !bookIsOpen && !isClosedExternally)
         {
-            WeaponSelectionCanvasStatus(true);
-
+            if (!isFinished)
+            {
+                WeaponSelectionCanvasStatus(true);
+            }
+            else
+            {
+                //Debug.Log("todo: go to world scene");
+            }
         }
         else if (!isPlayerClose && bookIsOpen)
         {
@@ -58,7 +69,14 @@ public class DoorBehaviour : MonoBehaviour
     {
         if (isPlayerClose)
         {
-            WeaponSelectionCanvasStatus(true);
+            if (!isFinished)
+            {
+                WeaponSelectionCanvasStatus(true);
+            }
+            else
+            {
+                //Debug.Log("todo: go to world scene");
+            }
         }
         else
         {

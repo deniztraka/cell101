@@ -106,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 4928371391592842199, guid: af1be9a8fb0241045a2b280fc463cf1e,
         type: 3}
       propertyPath: Damage
-      value: 7.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4928371391592842199, guid: af1be9a8fb0241045a2b280fc463cf1e,
         type: 3}
@@ -116,12 +116,12 @@ PrefabInstance:
     - target: {fileID: 4928371391592842199, guid: af1be9a8fb0241045a2b280fc463cf1e,
         type: 3}
       propertyPath: SwingSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4928371391592842199, guid: af1be9a8fb0241045a2b280fc463cf1e,
         type: 3}
       propertyPath: AttackDistance
-      value: 0.6
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af1be9a8fb0241045a2b280fc463cf1e, type: 3}

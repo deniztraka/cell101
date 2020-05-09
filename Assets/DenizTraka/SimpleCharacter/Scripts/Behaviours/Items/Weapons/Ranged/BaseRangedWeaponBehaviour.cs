@@ -46,7 +46,7 @@ namespace DTWorld.Behaviours.Items.Weapons.Ranged
 
         public override void Attack()
         {
-            StartCoroutine(ExecuteBeforeTime(() =>
+            StartCoroutine(ExecuteAfterTime(() =>
             {
                 Shoot();
             }));
