@@ -1,41 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.Interfacelike;
+using DTWorld.Behaviours.UI.InGame;
 using DTWorld.Behaviours.Utils;
 using UnityEngine;
 namespace DTWorld.Behaviours.LevelSystem
 {
     public class LevelManager : MonoBehaviour
     {
-        public List<Level> Levels;
+        public LevelList Levels;
+        public GameObject LevelFinishedCanvas;
+        public GameObject FightCanvas;
+
+        private int CurrentFightIndex;
+
+        private Level currentLevel;
 
         // Start is called before the first frame update
         void Start()
         {
-            Time.timeScale = 0f;
+            SetCurrentLevel();
+            currentLevel.OnLevelFinishedEvent += new Level.OnLevelFinishedEventHandler(LevelFinished);
+            FightCanvas.SetActive(true);
         }
 
-        public Level PickLevel()
+        public Level GetCurrentLevel()
         {
-            var choosenLevelIndex = Random.Range(0, Levels.Count);
-            var chosenLevel = Levels[choosenLevelIndex];
-            return chosenLevel;
+            return currentLevel;
         }
 
-        public void StartLevel()
+        public void SetCurrentLevel()
         {
-            GameObject.Find("FightCanvas").SetActive(false);
-
-            var chosenLevel = PickLevel();
-            chosenLevel.OnLevelFinishedEvent += new Level.OnLevelFinishedEventHandler(LevelFinished);
-            chosenLevel.Spawn();
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            CurrentFightIndex = PlayerPrefs.GetInt("CurrentFightIndex");
+            currentLevel = Levels.List[CurrentFightIndex];
         }
-
         public void LevelFinished()
         {
-            var gameManager = gameObject.GetComponent<GameManager>();
-            gameManager.LevelFinishedCanvas.SetActive(true);
+            var playerLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<MobileLevel>();
+            playerLevel.GainExperience((int)currentLevel.XPGain);
+            CurrentFightIndex++;
+            PlayerPrefs.SetInt("CurrentFightIndex", CurrentFightIndex);
+
+            LevelFinishedCanvas.SetActive(true);
         }
     }
 }

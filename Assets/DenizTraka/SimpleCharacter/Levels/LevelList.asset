@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd7461808046954c8fe2545e425bc8b, type: 3}
-  m_Name: LevelBanditAssassinEasy
+  m_Script: {fileID: 11500000, guid: d8ce77d889a3f5846b8f0777340e883c, type: 3}
+  m_Name: LevelList
   m_EditorClassIdentifier: 
-  Enemies:
-  - {fileID: 5938540121551636996, guid: 702aeec05baa5014abbae21680672bdb, type: 3}
-  SpawnPoints:
-  - {x: 0, y: 1.26, z: 1}
-  Difficulty: 1
-  XPGain: 3
+  List:
+  - {fileID: 11400000, guid: 7115e7ae22c5d194d81b50169568b01b, type: 2}
+  - {fileID: 11400000, guid: 25f89839e8756054d87baf083f7faf27, type: 2}

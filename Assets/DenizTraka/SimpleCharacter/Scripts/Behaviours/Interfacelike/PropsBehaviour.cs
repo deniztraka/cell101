@@ -56,10 +56,15 @@ namespace DTWorld.Behaviours.Interfacelike
             StrengthAttribute = Attributes["Strength"].CurrentValue = isNPC ? StrengthAttribute : PlayerPrefs.GetInt("Strength");
 
             TotalAvaliableAttributePoints = PlayerPrefs.GetInt("TotalAvaliableAttributePoints");
-            Ranged.OnSkillChangedEvent += new BaseSkill.OnSkillChangedEventHandler(TryGainBaseAttribute);
-            Melee.OnSkillChangedEvent += new BaseSkill.OnSkillChangedEventHandler(TryGainBaseAttribute);
+            // Ranged.OnSkillChangedEvent += new BaseSkill.OnSkillChangedEventHandler(TryGainBaseAttribute);
+            // Melee.OnSkillChangedEvent += new BaseSkill.OnSkillChangedEventHandler(TryGainBaseAttribute);
 
 
+        }
+
+        void Start(){
+            var mobileLevel = GetComponent<MobileLevel>();
+            mobileLevel.OnLevelChangedEvent += new MobileLevel.OnLevelChangedEventHandler(AddBaseAttributePoints);
         }
 
         public void TryGainBaseAttribute(float val)
@@ -72,6 +77,16 @@ namespace DTWorld.Behaviours.Interfacelike
                 {
                     OnAttributePointsGainedEvent();
                 }
+            }
+        }
+
+        public void AddBaseAttributePoints(int val)
+        {
+            TotalAvaliableAttributePoints += val;
+            PlayerPrefs.SetInt("TotalAvaliableAttributePoints", TotalAvaliableAttributePoints);
+            if (OnAttributePointsGainedEvent != null)
+            {
+                OnAttributePointsGainedEvent();
             }
         }
     }

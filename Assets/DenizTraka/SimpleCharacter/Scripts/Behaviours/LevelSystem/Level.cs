@@ -23,6 +23,8 @@ namespace DTWorld.Behaviours.LevelSystem
 
         public LevelDifficulty Difficulty;
 
+        public int XPGain;
+
         public delegate void OnLevelFinishedEventHandler();
         public event OnLevelFinishedEventHandler OnLevelFinishedEvent;
 

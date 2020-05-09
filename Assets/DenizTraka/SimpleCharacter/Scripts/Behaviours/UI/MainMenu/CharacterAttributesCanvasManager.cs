@@ -22,24 +22,31 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
         public Text RangedValue;
         public Text TotalAttributePointsText;
 
+        public Text LevelText;
+        public Text XpText;
+
         public GameObject StrPlusButton;
         public GameObject StrMinusButton;
         public GameObject DexPlusButton;
         public GameObject DexMinusButton;
         public MenuCharacterBehaviour menuCharacterBehaviour;
-        private PropsBehaviour PropsBehaviour;
+        private PropsBehaviour propsBehaviour;
+        private MobileLevel mobileLevel;
         public CharacterBookBehaviour BookBehaviour;
 
         public void Start()
         {
             menuCharacterBehaviour = GameObject.FindGameObjectWithTag("Player").GetComponent<MenuCharacterBehaviour>();
-            PropsBehaviour = menuCharacterBehaviour.GetComponent<PropsBehaviour>();
-            StrengthValue.text = PropsBehaviour.Strength.CurrentValue.ToString();
-            DexterityValue.text = PropsBehaviour.Dexterity.CurrentValue.ToString();
-            MeleeValue.text = String.Format("{0:0.0}", PropsBehaviour.Melee.CurrentValue);
-            RangedValue.text = String.Format("{0:0.0}", PropsBehaviour.Ranged.CurrentValue);
-            TotalAttributePointsText.text = PropsBehaviour.TotalAvaliableAttributePoints.ToString();
-            if (PropsBehaviour.TotalAvaliableAttributePoints <= 0)
+            propsBehaviour = menuCharacterBehaviour.GetComponent<PropsBehaviour>();
+            mobileLevel = menuCharacterBehaviour.GetComponent<MobileLevel>();
+            LevelText.text = String.Format("Level: {0}", mobileLevel.CurrentLevel);
+            XpText.text = String.Format("Current Experience: {0} ({1})", mobileLevel.TotalExperienceGained, mobileLevel.GetRequiredExpAmountForNextLevel());
+            StrengthValue.text = propsBehaviour.Strength.CurrentValue.ToString();
+            DexterityValue.text = propsBehaviour.Dexterity.CurrentValue.ToString();
+            MeleeValue.text = String.Format("{0:0.0}", propsBehaviour.Melee.CurrentValue);
+            RangedValue.text = String.Format("{0:0.0}", propsBehaviour.Ranged.CurrentValue);
+            TotalAttributePointsText.text = propsBehaviour.TotalAvaliableAttributePoints.ToString();
+            if (propsBehaviour.TotalAvaliableAttributePoints <= 0)
             {
                 StrPlusButton.SetActive(false);
                 StrMinusButton.SetActive(false);
@@ -47,9 +54,9 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
                 DexMinusButton.SetActive(false);
             }
 
-            tempStr = PropsBehaviour.Strength.CurrentValue;
-            tempDex = PropsBehaviour.Dexterity.CurrentValue;
-            tempTotalAvaliableAttributePoints = PropsBehaviour.TotalAvaliableAttributePoints;
+            tempStr = propsBehaviour.Strength.CurrentValue;
+            tempDex = propsBehaviour.Dexterity.CurrentValue;
+            tempTotalAvaliableAttributePoints = propsBehaviour.TotalAvaliableAttributePoints;
             RecalculateBasicAttributesPanel();
             //isChanged = false;
         }
@@ -61,23 +68,23 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
 
         public void SaveBasicPoints()
         {
-            PropsBehaviour.Strength.CurrentValue = tempStr;
-            PropsBehaviour.Dexterity.CurrentValue = tempDex;
-            PropsBehaviour.TotalAvaliableAttributePoints = tempTotalAvaliableAttributePoints;
-            PlayerPrefs.SetInt("Strength", PropsBehaviour.Strength.CurrentValue);
-            PlayerPrefs.SetInt("Dexterity", PropsBehaviour.Dexterity.CurrentValue);
-            PlayerPrefs.SetInt("TotalAvaliableAttributePoints", PropsBehaviour.TotalAvaliableAttributePoints);
+            propsBehaviour.Strength.CurrentValue = tempStr;
+            propsBehaviour.Dexterity.CurrentValue = tempDex;
+            propsBehaviour.TotalAvaliableAttributePoints = tempTotalAvaliableAttributePoints;
+            PlayerPrefs.SetInt("Strength", propsBehaviour.Strength.CurrentValue);
+            PlayerPrefs.SetInt("Dexterity", propsBehaviour.Dexterity.CurrentValue);
+            PlayerPrefs.SetInt("TotalAvaliableAttributePoints", propsBehaviour.TotalAvaliableAttributePoints);
             RecalculateBasicAttributesPanel();
             CloseBook();
         }
 
         public void ResetBasicPoints()
         {
-            tempStr = PropsBehaviour.Strength.CurrentValue;
-            tempDex = PropsBehaviour.Dexterity.CurrentValue;
-            tempTotalAvaliableAttributePoints = PropsBehaviour.TotalAvaliableAttributePoints;
-            StrengthValue.text = PropsBehaviour.Strength.CurrentValue.ToString();
-            DexterityValue.text = PropsBehaviour.Dexterity.CurrentValue.ToString();
+            tempStr = propsBehaviour.Strength.CurrentValue;
+            tempDex = propsBehaviour.Dexterity.CurrentValue;
+            tempTotalAvaliableAttributePoints = propsBehaviour.TotalAvaliableAttributePoints;
+            StrengthValue.text = propsBehaviour.Strength.CurrentValue.ToString();
+            DexterityValue.text = propsBehaviour.Dexterity.CurrentValue.ToString();
             RecalculateBasicAttributesPanel();
         }
 
@@ -116,9 +123,9 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
         public void RecalculateBasicAttributesPanel()
         {
             TotalAttributePointsText.text = tempTotalAvaliableAttributePoints.ToString();
-            StrMinusButton.SetActive(tempStr > 0 && PropsBehaviour.Strength.CurrentValue < tempStr);
+            StrMinusButton.SetActive(tempStr > 0 && propsBehaviour.Strength.CurrentValue < tempStr);
             StrPlusButton.SetActive(tempTotalAvaliableAttributePoints > 0);
-            DexMinusButton.SetActive(tempDex > 0 && PropsBehaviour.Dexterity.CurrentValue < tempDex);
+            DexMinusButton.SetActive(tempDex > 0 && propsBehaviour.Dexterity.CurrentValue < tempDex);
             DexPlusButton.SetActive(tempTotalAvaliableAttributePoints > 0);
         }
     }
