@@ -38,6 +38,10 @@ namespace DTWorld.Behaviours.Interfacelike
 
         public void TakeDamage(float damage)
         {
+            if(Health <= 0){
+                return;
+            }
+            
             if (mobileBehaviour.ShieldBehaviour != null && mobileBehaviour.Mobile.IsDefending)
             {
                 if (mobileBehaviour.ShieldBehaviour.TryParry(damage))

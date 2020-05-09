@@ -38,6 +38,9 @@ namespace DTWorld.Behaviours.Interfacelike
             get { return Attributes["Dexterity"]; }
         }
 
+        public delegate void OnAttributePointsGainedEventHandler();
+        public event OnAttributePointsGainedEventHandler OnAttributePointsGainedEvent;
+
         public void Awake()
         {
             Skills = new Dictionary<string, BaseSkill>();
@@ -65,6 +68,10 @@ namespace DTWorld.Behaviours.Interfacelike
             {
                 TotalAvaliableAttributePoints++;
                 PlayerPrefs.SetInt("TotalAvaliableAttributePoints", TotalAvaliableAttributePoints);
+                if (OnAttributePointsGainedEvent != null)
+                {
+                    OnAttributePointsGainedEvent();
+                }
             }
         }
     }

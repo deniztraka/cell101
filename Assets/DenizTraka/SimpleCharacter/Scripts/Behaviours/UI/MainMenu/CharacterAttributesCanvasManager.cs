@@ -12,7 +12,7 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
 
     public class CharacterAttributesCanvasManager : MonoBehaviour
     {
-        private bool isChanged;
+        //private bool isChanged;
         private int tempTotalAvaliableAttributePoints;
         private int tempStr;
         private int tempDex;
@@ -51,7 +51,7 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
             tempDex = PropsBehaviour.Dexterity.CurrentValue;
             tempTotalAvaliableAttributePoints = PropsBehaviour.TotalAvaliableAttributePoints;
             RecalculateBasicAttributesPanel();
-            isChanged = false;
+            //isChanged = false;
         }
         public void CloseBook()
         {
@@ -79,7 +79,6 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
             StrengthValue.text = PropsBehaviour.Strength.CurrentValue.ToString();
             DexterityValue.text = PropsBehaviour.Dexterity.CurrentValue.ToString();
             RecalculateBasicAttributesPanel();
-
         }
 
         public void PlusStr()

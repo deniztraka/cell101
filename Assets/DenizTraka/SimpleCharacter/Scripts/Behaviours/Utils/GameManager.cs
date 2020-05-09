@@ -15,6 +15,9 @@ namespace DTWorld.Behaviours.Utils
 
         HealthBehaviour playerHealth;
         public GameObject OnDeathCanvas;
+
+        
+        public GameObject LevelFinishedCanvas;
         // Start is called before the first frame update
 
         void Awake()
@@ -37,7 +40,7 @@ namespace DTWorld.Behaviours.Utils
             }
 
             playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBehaviour>();
-            playerHealth.OnHealthBelowZeroEvent += new HealthBehaviour.OnHealthBelowZeroEventHandler(OnDeath);            
+            playerHealth.OnHealthBelowZeroEvent += new HealthBehaviour.OnHealthBelowZeroEventHandler(OnDeath);
         }
 
         private IEnumerator StartGame()
