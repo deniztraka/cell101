@@ -31,6 +31,8 @@ namespace DTWorld.Behaviours.Mobiles
         private float tempShieldSwingSpeed;
         private float tempWeaponSwingSpeed;
 
+        private PropsBehaviour propsBehaviour;
+
         public BaseMobile Mobile;
         public bool IsAggressive;
         public float ChaseDistance;
@@ -119,6 +121,8 @@ namespace DTWorld.Behaviours.Mobiles
                 ChaseDistance = (WeaponBehaviour.AttackDistance / 4) + ChaseDistance;
                 FleeDistance = WeaponBehaviour.IsRanged ? WeaponBehaviour.AttackDistance / 2 : 0;
             }
+
+            propsBehaviour = gameObject.GetComponent<PropsBehaviour>();
         }
 
 
@@ -217,7 +221,14 @@ namespace DTWorld.Behaviours.Mobiles
         public float GetSwingSpeed()
         {
             //Attack rate only depends on weapon speed for now
-            return WeaponBehaviour.Item.SwingSpeed;
+            return WeaponBehaviour.Item.SwingSpeed + (propsBehaviour.Dexterity.CurrentValue / 10);
+        }
+
+        public float GetSwingRate()
+        {
+            var swingSpeed = GetSwingSpeed();
+
+            return 1 / swingSpeed;
         }
 
         public float GetDefendSpeed()
@@ -273,7 +284,7 @@ namespace DTWorld.Behaviours.Mobiles
 
             if (Time.time > nextActionTime)
             {
-                var calculatedAttackRate = GetSwingSpeed();
+                var calculatedAttackRate = GetSwingRate();
                 if (calculatedAttackRate <= Mobile.ActionRate)
                 {
                     nextActionTime = Time.time + Mobile.ActionRate;
@@ -296,8 +307,8 @@ namespace DTWorld.Behaviours.Mobiles
                 WeaponBehaviour = weaponBehaviour;
                 WeaponBehaviour.OwnerMobileBehaviour = this;
                 WeaponBehaviour.BeforeAttackingEvent += new BeforeAttackingEventHandler(SetAttackSpeedBefore);
-                WeaponBehaviour.AfterAttackedEvent += new AfterAttackedEventHandler(SetAttackSpeedAfter);                
-                WeaponBehaviour.OwnerMobileProps = gameObject.GetComponent<PropsBehaviour>(); 
+                WeaponBehaviour.AfterAttackedEvent += new AfterAttackedEventHandler(SetAttackSpeedAfter);
+                WeaponBehaviour.OwnerMobileProps = gameObject.GetComponent<PropsBehaviour>();
             }
         }
 
@@ -314,8 +325,7 @@ namespace DTWorld.Behaviours.Mobiles
 
         private void SetDefendSpeedBefore()
         {
-            var defendRate = GetDefendSpeed();
-            animationHandler.SetCurrentAnimationSpeedMultiplier(1 / defendRate);
+            animationHandler.SetCurrentAnimationSpeedMultiplier(1 / GetDefendSpeed());
 
             tempShieldSwingSpeed = ShieldBehaviour.Item.SwingSpeed;
             //ShieldBehaviour.SetSwingSpeed(1 / defendRate);
@@ -330,8 +340,7 @@ namespace DTWorld.Behaviours.Mobiles
 
         private void SetAttackSpeedBefore()
         {
-            var attackRate = GetSwingSpeed();
-            animationHandler.SetCurrentAnimationSpeedMultiplier(1 / attackRate);
+            animationHandler.SetCurrentAnimationSpeedMultiplier(1 / GetSwingRate());
             tempWeaponSwingSpeed = WeaponBehaviour.Item.SwingSpeed;
             //WeaponBehaviour.SetSwingSpeed(1 / attackRate);
         }
@@ -378,12 +387,12 @@ namespace DTWorld.Behaviours.Mobiles
                     WeaponBehaviour = RightHandle.GetComponentInChildren<BaseWeaponBehaviour>();
                     if (WeaponBehaviour != null)
                     {
-                        WeaponBehaviour.Attack();
+                        WeaponBehaviour.Attack(GetSwingRate());
                     }
                 }
                 else
                 {
-                    WeaponBehaviour.Attack();
+                    WeaponBehaviour.Attack(GetSwingRate());
                 }
             }
         }

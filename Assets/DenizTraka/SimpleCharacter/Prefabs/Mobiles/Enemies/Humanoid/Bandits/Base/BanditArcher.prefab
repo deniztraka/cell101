@@ -94,17 +94,17 @@ PrefabInstance:
     - target: {fileID: 2931981683871188420, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}
       propertyPath: RangedSkill
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2931981683871188420, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}
       propertyPath: StrengthAttribute
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2931981683871188420, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}
       propertyPath: DexterityAttribute
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4975803394341621479, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}

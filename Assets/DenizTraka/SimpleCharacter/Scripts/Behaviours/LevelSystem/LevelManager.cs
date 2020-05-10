@@ -48,8 +48,14 @@ namespace DTWorld.Behaviours.LevelSystem
 
             if (LevelFinishedCanvas == null)
             {
-                LevelFinishedCanvas = GameObject.Find("FightIsWonCanvas");
+                //LevelFinishedCanvas = GameObject.Find("FightIsWonCanvas");
+                var LevelFinishedCanvasSearchGroup = Resources.FindObjectsOfTypeAll<FightIsWonCanvasBehaviour>();
+                if (LevelFinishedCanvasSearchGroup.Length > 0)
+                {
+                    LevelFinishedCanvas = LevelFinishedCanvasSearchGroup[0].gameObject;                    
+                }
             }
+
             LevelFinishedCanvas.SetActive(true);
         }
     }

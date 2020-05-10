@@ -20,22 +20,22 @@ PrefabInstance:
     - target: {fileID: 212270421421278973, guid: b234e7f0946d70b4481bf989623d3299,
         type: 3}
       propertyPath: m_Name
-      value: BanditAssassin Hard (1)
+      value: BanditAssassin Hard
       objectReference: {fileID: 0}
     - target: {fileID: 3928893365734253241, guid: b234e7f0946d70b4481bf989623d3299,
         type: 3}
       propertyPath: MeleeSkill
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3928893365734253241, guid: b234e7f0946d70b4481bf989623d3299,
         type: 3}
       propertyPath: StrengthAttribute
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3928893365734253241, guid: b234e7f0946d70b4481bf989623d3299,
         type: 3}
       propertyPath: DexterityAttribute
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5209066312688843734, guid: b234e7f0946d70b4481bf989623d3299,
         type: 3}

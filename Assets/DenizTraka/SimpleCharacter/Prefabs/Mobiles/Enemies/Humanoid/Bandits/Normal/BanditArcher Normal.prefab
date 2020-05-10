@@ -10,22 +10,22 @@ PrefabInstance:
     - target: {fileID: 600467582913923712, guid: 6490f28148ae159429aeddccff8d11d1,
         type: 3}
       propertyPath: RangedSkill
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 600467582913923712, guid: 6490f28148ae159429aeddccff8d11d1,
         type: 3}
       propertyPath: StrengthAttribute
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 600467582913923712, guid: 6490f28148ae159429aeddccff8d11d1,
         type: 3}
       propertyPath: DexterityAttribute
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4332836075184664260, guid: 6490f28148ae159429aeddccff8d11d1,
         type: 3}
       propertyPath: m_Name
-      value: BanditArcher Normal (1)
+      value: BanditArcher Normal
       objectReference: {fileID: 0}
     - target: {fileID: 4580497263545674662, guid: 6490f28148ae159429aeddccff8d11d1,
         type: 3}

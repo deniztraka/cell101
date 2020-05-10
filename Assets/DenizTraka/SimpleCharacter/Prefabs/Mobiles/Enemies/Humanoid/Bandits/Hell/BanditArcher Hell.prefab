@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 2004073597819503179, guid: 115eebe6cbc2c1b4a873f26003338230,
         type: 3}
       propertyPath: RangedSkill
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2004073597819503179, guid: 115eebe6cbc2c1b4a873f26003338230,
         type: 3}
       propertyPath: StrengthAttribute
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2004073597819503179, guid: 115eebe6cbc2c1b4a873f26003338230,
         type: 3}
       propertyPath: DexterityAttribute
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3173803785796739949, guid: 115eebe6cbc2c1b4a873f26003338230,
         type: 3}
@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 3439623323596400143, guid: 115eebe6cbc2c1b4a873f26003338230,
         type: 3}
       propertyPath: m_Name
-      value: BanditArcher Hell (1)
+      value: BanditArcher Hell
       objectReference: {fileID: 0}
     - target: {fileID: 4820004819424070046, guid: 115eebe6cbc2c1b4a873f26003338230,
         type: 3}

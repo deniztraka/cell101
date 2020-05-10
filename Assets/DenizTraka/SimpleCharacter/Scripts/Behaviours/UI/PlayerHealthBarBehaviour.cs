@@ -1,4 +1,5 @@
-﻿using DTWorld.Behaviours.Interfacelike;
+﻿using System;
+using DTWorld.Behaviours.Interfacelike;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,7 +35,7 @@ namespace DTWorld.Behaviours.UI
             UpdateSliders(currentHealth);
             if(HealthText != null){
                 
-                HealthText.text = currentHealth <= 0 ? "0" : currentHealth.ToString();
+                HealthText.text = currentHealth <= 0 ? "0" : String.Format("{0:0.0}",currentHealth);
             }
 
             if(Animator != null){

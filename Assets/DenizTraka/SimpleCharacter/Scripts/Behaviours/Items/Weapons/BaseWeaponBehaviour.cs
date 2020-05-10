@@ -50,7 +50,7 @@ namespace DTWorld.Behaviours.Items.Weapons
             base.Update();
         }
 
-        protected IEnumerator ExecuteAfterTime(Action task)
+        protected IEnumerator ExecuteAfterTime(float swingRate, Action task)
         {
             if (BeforeAttackingEvent != null)
             {
@@ -70,7 +70,7 @@ namespace DTWorld.Behaviours.Items.Weapons
             }
 
             var lastTime = Time.time;
-            yield return new WaitForSeconds(SwingSpeed);
+            yield return new WaitForSeconds(swingRate);
 
             //Debug.Log(Time.time - lastTime);
 
@@ -95,7 +95,7 @@ namespace DTWorld.Behaviours.Items.Weapons
             }
         }
 
-        protected IEnumerator ExecuteBeforeTime(Action task)
+        protected IEnumerator ExecuteBeforeTime(float swingRate, Action task)
         {
             if (BeforeAttackingEvent != null)
             {
@@ -121,7 +121,7 @@ namespace DTWorld.Behaviours.Items.Weapons
 
             var lastTime = Time.time;
 
-            yield return new WaitForSeconds(SwingSpeed);
+            yield return new WaitForSeconds(swingRate);
 
             //Debug.Log(Time.time - lastTime);
 
@@ -153,9 +153,9 @@ namespace DTWorld.Behaviours.Items.Weapons
             //Debug.Log("after attacking base weapon");            
         }
 
-        public virtual void Attack()
+        public virtual void Attack(float swingRate)
         {
-            StartCoroutine(ExecuteAfterTime(() =>
+            StartCoroutine(ExecuteAfterTime(swingRate,() =>
             {
 
                 //Weapon.Attack();

@@ -44,9 +44,9 @@ namespace DTWorld.Behaviours.Items.Weapons.Ranged
             return;
         }
 
-        public override void Attack()
+        public override void Attack(float swingRate)
         {
-            StartCoroutine(ExecuteAfterTime(() =>
+            StartCoroutine(ExecuteAfterTime(swingRate, () =>
             {
                 Shoot();
             }));
@@ -62,7 +62,7 @@ namespace DTWorld.Behaviours.Items.Weapons.Ranged
                 var dequedObject = ammoList.Dequeue();
                 dequedObject.SetActive(true);
                 dequedObject.transform.position = transform.position;
-                dequedObject.transform.eulerAngles = new Vector3(0,0,GetRotation());//Quaternion.Angle()
+                dequedObject.transform.eulerAngles = new Vector3(0, 0, GetRotation());//Quaternion.Angle()
                 var ammoRigidBody = dequedObject.GetComponent<Rigidbody2D>();
                 ammoRigidBody.AddForce(GetDirection() * AmmoSpeed);
                 ammoList.Enqueue(dequedObject);
