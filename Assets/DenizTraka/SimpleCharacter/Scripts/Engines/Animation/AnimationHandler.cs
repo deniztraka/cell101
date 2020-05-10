@@ -25,7 +25,9 @@ namespace DTWorld.Engines.Animation
 
         public void SetCurrentAnimationSpeedMultiplier(float speed)
         {
-            this.animator.SetFloat("SpeedMultiplier", speed);
+            //Debug.Log(Mathf.(speed));
+            this.animator.SetFloat("SpeedMultiplier", speed / 2);
+            //this.animator.speed = speed;
         }
 
         public int SetCurrentAnimation(Vector2 direction, BaseMobile mobile)
@@ -85,7 +87,8 @@ namespace DTWorld.Engines.Animation
 
         }
 
-        public void SetLastDirection(Vector2 lastDirection){
+        public void SetLastDirection(Vector2 lastDirection)
+        {
             this.lastDirection = lastDirection;
         }
 

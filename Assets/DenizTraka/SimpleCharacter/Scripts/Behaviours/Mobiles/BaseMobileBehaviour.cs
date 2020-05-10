@@ -318,14 +318,14 @@ namespace DTWorld.Behaviours.Mobiles
             animationHandler.SetCurrentAnimationSpeedMultiplier(1 / defendRate);
 
             tempShieldSwingSpeed = ShieldBehaviour.Item.SwingSpeed;
-            ShieldBehaviour.SetSwingSpeed(1 / defendRate);
+            //ShieldBehaviour.SetSwingSpeed(1 / defendRate);
         }
 
         private void SetDefendSpeedAfter()
         {
             animationHandler.SetCurrentAnimationSpeedMultiplier(1f);
             //Todo set swingspeed to old value
-            ShieldBehaviour.SetSwingSpeed(tempShieldSwingSpeed);
+            //ShieldBehaviour.SetSwingSpeed(tempShieldSwingSpeed);
         }
 
         private void SetAttackSpeedBefore()
@@ -333,14 +333,14 @@ namespace DTWorld.Behaviours.Mobiles
             var attackRate = GetSwingSpeed();
             animationHandler.SetCurrentAnimationSpeedMultiplier(1 / attackRate);
             tempWeaponSwingSpeed = WeaponBehaviour.Item.SwingSpeed;
-            WeaponBehaviour.SetSwingSpeed(1 / attackRate);
+            //WeaponBehaviour.SetSwingSpeed(1 / attackRate);
         }
 
         private void SetAttackSpeedAfter()
         {
             animationHandler.SetCurrentAnimationSpeedMultiplier(1f);
             //Todo set swingspeed to old value
-            WeaponBehaviour.SetSwingSpeed(tempWeaponSwingSpeed);
+            //WeaponBehaviour.SetSwingSpeed(tempWeaponSwingSpeed);
         }
 
         public void Defend()

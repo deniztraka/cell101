@@ -46,6 +46,10 @@ namespace DTWorld.Behaviours.LevelSystem
                 PlayerPrefs.SetInt("IsGameFinished", 1);
             }
 
+            if (LevelFinishedCanvas == null)
+            {
+                LevelFinishedCanvas = GameObject.Find("FightIsWonCanvas");
+            }
             LevelFinishedCanvas.SetActive(true);
         }
     }
