@@ -40,7 +40,6 @@ namespace DTWorld.Behaviours.LevelSystem
 
 
             StartCoroutine(ShowWinCanvas(2));
-
         }
 
         private IEnumerator ShowWinCanvas(float seconds)

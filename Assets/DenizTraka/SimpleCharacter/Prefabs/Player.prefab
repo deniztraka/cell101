@@ -5213,13 +5213,13 @@ GameObject:
   - component: {fileID: 4496873959759197376}
   - component: {fileID: 4496873959759197378}
   - component: {fileID: 4496873959759197377}
+  - component: {fileID: 515857170026577446}
   - component: {fileID: 833516541944609498}
   - component: {fileID: 8078710613285584881}
   - component: {fileID: 837316353072960773}
   - component: {fileID: 2334170030202305664}
   - component: {fileID: 7878930106425385174}
   - component: {fileID: 863150497853545747}
-  - component: {fileID: 515857170026577446}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5306,6 +5306,25 @@ CircleCollider2D:
   m_Offset: {x: -0.005, y: 0.58}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!114 &515857170026577446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7808043634761713320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67d4836e3a35a842ae21eb13d62c2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAttributePointsGainFactor: 0.05
+  RangedSkill: 0
+  MeleeSkill: 0
+  StrengthAttribute: 0
+  DexterityAttribute: 0
+  TotalAvaliableAttributePoints: 0
+  isNPC: 0
 --- !u!114 &833516541944609498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5339,11 +5358,13 @@ MonoBehaviour:
   ChaseDistance: 0
   FleeBelowHealth: 0
   FleeDistance: 0
+  HealthBehaviour: {fileID: 0}
   lastDefendTime: 0
   lastAttackTime: 0
   DamageTakenEffect: {fileID: 0}
   RightHandle: {fileID: 1453673550}
   LeftHandle: {fileID: 858482116}
+  HealthBarCanvas: {fileID: 0}
 --- !u!114 &837316353072960773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5428,25 +5449,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentLevel: 0
   TotalExperienceGained: 0
-  isNPC: 0
---- !u!114 &515857170026577446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7808043634761713320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b67d4836e3a35a842ae21eb13d62c2cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseAttributePointsGainFactor: 0.05
-  RangedSkill: 0
-  MeleeSkill: 0
-  StrengthAttribute: 0
-  DexterityAttribute: 0
-  TotalAvaliableAttributePoints: 0
   isNPC: 0
 --- !u!1 &8154525312022652974
 GameObject:

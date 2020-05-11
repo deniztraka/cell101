@@ -144,7 +144,7 @@ namespace DTWorld.Core.Mobiles
 
         public void TakeDamage(float damage)
         {
-            //Debug.Log("Health before damage: " + this.health);
+            Debug.Log("Health before damage: " + this.health);
             this.health -= damage;
             //Debug.Log("Damage taken: " + damage);
             //Debug.Log("Health after damage: " + this.health);

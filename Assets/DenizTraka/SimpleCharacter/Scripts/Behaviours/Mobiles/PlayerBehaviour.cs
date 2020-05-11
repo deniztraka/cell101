@@ -1,4 +1,5 @@
 ﻿using System;
+using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.Items.Weapons;
 using DTWorld.Behaviours.Mobiles.Human;
 using DTWorld.Core.Mobiles;
@@ -37,12 +38,9 @@ namespace DTWorld.Behaviours.Mobiles
                 playerMovement = new FreeFormMovement(this.Rigidbody2D, new KeyboardMovementInput());
             }
 
-
-
-
             this.Mobile = new Player(HealthBehaviour.MaxHealth, this.Speed, playerMovement);
             
-
+            
             HealthBarCanvas.SetActive(true);
         }
 

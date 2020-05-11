@@ -32,6 +32,11 @@ namespace DTWorld.Behaviours.Interfacelike
         public event OnDamageTakenEventHandler OnDamageTakenEvent;
         public event OnHealthBelowZeroEventHandler OnHealthBelowZeroEvent;
 
+        void Awake()
+        {
+
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -43,10 +48,11 @@ namespace DTWorld.Behaviours.Interfacelike
 
         public void TakeDamage(float damage)
         {
-            if(Health <= 0){
+            if (Health <= 0)
+            {
                 return;
             }
-            
+
             if (mobileBehaviour.ShieldBehaviour != null && mobileBehaviour.Mobile.IsDefending)
             {
                 if (mobileBehaviour.ShieldBehaviour.TryParry(damage))
@@ -77,7 +83,7 @@ namespace DTWorld.Behaviours.Interfacelike
         {
             var floatingDamage = Instantiate(FloatingDamagesPrefab, transform.position, Quaternion.identity, transform);
             var textMesh = floatingDamage.GetComponent<TextMesh>();
-            textMesh.text =  String.Format("{0:0.0}", damage);
+            textMesh.text = String.Format("{0:0.0}", damage);
         }
     }
 }
