@@ -54,7 +54,7 @@ namespace DTWorld.Behaviours.Utils
             OnDeathCanvas.SetActive(true);
         }
 
-        private void OnDeath()
+        private void OnDeath(BaseMobileBehaviour mobile)
         {
             StartCoroutine(ShowDeathCanvas(2));
 

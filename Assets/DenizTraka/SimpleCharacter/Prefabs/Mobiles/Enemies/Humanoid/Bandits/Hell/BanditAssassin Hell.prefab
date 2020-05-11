@@ -62,6 +62,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1761245404919438136, guid: f63e0ea8d419e1b49844f786755f1b78,
+        type: 3}
+      propertyPath: CurrentLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1761245404919438136, guid: f63e0ea8d419e1b49844f786755f1b78,
+        type: 3}
+      propertyPath: TotalExperienceGained
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4921259992523061049, guid: f63e0ea8d419e1b49844f786755f1b78,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -75,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 5186934463573357147, guid: f63e0ea8d419e1b49844f786755f1b78,
         type: 3}
       propertyPath: m_Name
-      value: BanditAssassin (1)
+      value: BanditAssassin Hell
       objectReference: {fileID: 0}
     - target: {fileID: 8327058989810226719, guid: f63e0ea8d419e1b49844f786755f1b78,
         type: 3}

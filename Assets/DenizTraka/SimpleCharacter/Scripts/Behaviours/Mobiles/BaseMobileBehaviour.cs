@@ -164,7 +164,7 @@ namespace DTWorld.Behaviours.Mobiles
             }
         }
 
-        private void OnDead()
+        private void OnDead(BaseMobileBehaviour mobile)
         {
             if (audioManager != null)
             {

@@ -30,6 +30,13 @@ namespace DTWorld.Behaviours.LevelSystem
 
         private int numberOfDeaths;
 
+        private MobileLevel playerLevel;
+
+        void Start()
+        {
+            playerLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<MobileLevel>();
+        }
+
         void SpawnEntities()
         {
             var currIndex = 0;
@@ -40,12 +47,22 @@ namespace DTWorld.Behaviours.LevelSystem
             }
         }
 
-        private void OnEnemyDeath()
+        private void OnEnemyDeath(BaseMobileBehaviour enemy)
         {
             numberOfDeaths++;
+
+            var enemyLevel = enemy.GetComponent<MobileLevel>();
+            if (playerLevel == null)
+            {
+                playerLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<MobileLevel>();
+            }
+            playerLevel.GainExperience(enemyLevel.TotalExperienceGained);
+
             if (numberOfDeaths >= Enemies.Count && OnLevelFinishedEvent != null)
             {
+
                 OnLevelFinishedEvent();
+
             }
         }
 

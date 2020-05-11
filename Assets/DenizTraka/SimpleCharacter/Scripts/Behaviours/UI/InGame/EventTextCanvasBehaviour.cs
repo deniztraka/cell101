@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.Interfacelike;
 using UnityEngine;
@@ -10,15 +11,22 @@ public class EventTextCanvasBehaviour : MonoBehaviour
     public Transform WrapperPanel;
 
     private PropsBehaviour playerProps;
+    private MobileLevel playerLevel;
 
     public void Start()
     {
-        playerProps = GameObject.FindGameObjectWithTag("Player").GetComponent<PropsBehaviour>();
+        var playerObj = GameObject.FindGameObjectWithTag("Player");
+        playerProps = playerObj.GetComponent<PropsBehaviour>();
         playerProps.Ranged.OnSkillChangedEvent += new DTWorld.Engines.SkillSystem.Skills.BaseSkill.OnSkillChangedEventHandler(RangedSkillChanged);
         playerProps.Melee.OnSkillChangedEvent += new DTWorld.Engines.SkillSystem.Skills.BaseSkill.OnSkillChangedEventHandler(MeleeSkillChanged);
         playerProps.OnAttributePointsGainedEvent += new PropsBehaviour.OnAttributePointsGainedEventHandler(AddAttributePointsGainedText);
 
+        playerLevel = playerObj.GetComponent<MobileLevel>();
+        playerLevel.OnLevelChangedEvent += new MobileLevel.OnLevelChangedEventHandler(OnLevelChanged);
+        playerLevel.OnExperienceGainedEvent += new MobileLevel.OnExperienceGainedEventHandler(OnXPGained);
     }
+
+    
 
     public void AddEventText(string text, Color color)
     {
@@ -46,5 +54,20 @@ public class EventTextCanvasBehaviour : MonoBehaviour
     private void MeleeSkillChanged(float gainedVal)
     {
         AddSkillChangedText("Melee", gainedVal);
+    }
+
+     private void OnLevelChanged(int earnedAttrPoints, int currentLevel)
+    {
+        AddLevelChangedText(currentLevel);
+    }
+
+    private void AddLevelChangedText(int currentLevel)
+    {
+        AddEventText(String.Format("You just leveled up to {0}", currentLevel), Color.magenta);
+    }
+
+    private void OnXPGained(int val, int currentLevel)
+    {
+        AddEventText(String.Format("You gained {0} xp", val), Color.gray);
     }
 }

@@ -28,7 +28,7 @@ namespace DTWorld.Behaviours.Interfacelike
         public GameObject FloatingDamagesPrefab;
 
         public delegate void OnDamageTakenEventHandler(float damage, float health, float maxHealth);
-        public delegate void OnHealthBelowZeroEventHandler();
+        public delegate void OnHealthBelowZeroEventHandler(BaseMobileBehaviour mobile);
         public event OnDamageTakenEventHandler OnDamageTakenEvent;
         public event OnHealthBelowZeroEventHandler OnHealthBelowZeroEvent;
 
@@ -69,7 +69,7 @@ namespace DTWorld.Behaviours.Interfacelike
 
             if (Health <= 0 && OnHealthBelowZeroEvent != null)
             {
-                OnHealthBelowZeroEvent.Invoke();
+                OnHealthBelowZeroEvent.Invoke(mobileBehaviour);
             }
         }
 

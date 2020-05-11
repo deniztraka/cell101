@@ -37,6 +37,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.63879496
       objectReference: {fileID: 0}
+    - target: {fileID: 1000763329406034791, guid: 702aeec05baa5014abbae21680672bdb,
+        type: 3}
+      propertyPath: CurrentLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000763329406034791, guid: 702aeec05baa5014abbae21680672bdb,
+        type: 3}
+      propertyPath: TotalExperienceGained
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1788384397772945199, guid: 702aeec05baa5014abbae21680672bdb,
         type: 3}
       propertyPath: m_LocalPosition.x

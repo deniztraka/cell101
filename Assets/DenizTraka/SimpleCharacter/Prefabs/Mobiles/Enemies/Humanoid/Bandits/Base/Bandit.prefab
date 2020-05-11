@@ -358,6 +358,7 @@ MonoBehaviour:
   ChaseDistance: 2
   FleeBelowHealth: -1
   FleeDistance: 0
+  HealthBehaviour: {fileID: 0}
   lastDefendTime: 0
   lastAttackTime: 0
   DamageTakenEffect: {fileID: 2266443268727889717}
@@ -413,8 +414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2efc554b68524458c2344fd46a9a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentLevel: 0
-  TotalExperienceGained: 0
+  CurrentLevel: 1
+  TotalExperienceGained: 2
   isNPC: 1
 --- !u!1 &2266443268727889720
 GameObject:

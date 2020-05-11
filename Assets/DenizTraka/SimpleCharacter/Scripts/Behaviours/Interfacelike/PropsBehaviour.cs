@@ -80,7 +80,7 @@ namespace DTWorld.Behaviours.Interfacelike
             }
         }
 
-        public void AddBaseAttributePoints(int val)
+        public void AddBaseAttributePoints(int val, int currentLevel)
         {
             TotalAvaliableAttributePoints += val;
             PlayerPrefs.SetInt("TotalAvaliableAttributePoints", TotalAvaliableAttributePoints);
