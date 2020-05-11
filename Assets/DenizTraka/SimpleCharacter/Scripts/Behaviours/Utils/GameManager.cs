@@ -16,7 +16,7 @@ namespace DTWorld.Behaviours.Utils
         HealthBehaviour playerHealth;
         public GameObject OnDeathCanvas;
 
-        
+
         public GameObject LevelFinishedCanvas;
         // Start is called before the first frame update
 
@@ -27,7 +27,7 @@ namespace DTWorld.Behaviours.Utils
 
         void InitGame()
         {
-            
+
             if (AppManager.Instance.IsRanged)
             {
                 ArcherCharacter.SetActive(true);
@@ -48,9 +48,16 @@ namespace DTWorld.Behaviours.Utils
             yield return new WaitForSeconds(1);
         }
 
+        private IEnumerator ShowDeathCanvas(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            OnDeathCanvas.SetActive(true);
+        }
+
         private void OnDeath()
         {
-            OnDeathCanvas.SetActive(true);
+            StartCoroutine(ShowDeathCanvas(2));
+
         }
     }
 }

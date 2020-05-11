@@ -17,7 +17,7 @@ namespace DTWorld.Behaviours.Mobiles.Human
         public override void Start()
         {
             base.Start();
-            this.Mobile = new Bandit(this.Speed, new FreeFormMovement(Rigidbody2D, GetComponent<AIMovementBehaviour>()));
+            this.Mobile = new Bandit(HealthBehaviour.MaxHealth, this.Speed, new FreeFormMovement(Rigidbody2D, GetComponent<AIMovementBehaviour>()));
         }
 
         public override void Update()

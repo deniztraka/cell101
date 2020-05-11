@@ -11,7 +11,7 @@ namespace DTWorld.Behaviours.Mobiles
 {
     public class PlayerBehaviour : HumanBehaviour
     {
-
+        public GameObject HealthBarCanvas;
         
 
         public override void Start()
@@ -40,7 +40,10 @@ namespace DTWorld.Behaviours.Mobiles
 
 
 
-            this.Mobile = new Player(this.Speed, playerMovement);
+            this.Mobile = new Player(HealthBehaviour.MaxHealth, this.Speed, playerMovement);
+            
+
+            HealthBarCanvas.SetActive(true);
         }
 
         public override void Update()

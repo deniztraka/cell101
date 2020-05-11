@@ -57,8 +57,7 @@ namespace DTWorld.Engines.Animation
                 directionArray = walkingAnimations;
 
                 lastDirectionIndex = DirectionToIndex(direction, 4);
-            }
-
+            }            
             if (mobile.Health <= 0)
             {
                 directionArray = deadAnimations;

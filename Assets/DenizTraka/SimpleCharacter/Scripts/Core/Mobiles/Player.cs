@@ -5,7 +5,7 @@ namespace DTWorld.Core.Mobiles
 {
     public class Player : BaseHuman
     {
-        public Player(float speed, IMovementType movementType) : base(speed, movementType)
+        public Player(float health, float speed, IMovementType movementType) : base(health, speed, movementType)
         {
         }
     }

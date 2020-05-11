@@ -7,7 +7,7 @@ namespace DTWorld.Core.Mobiles.Humans.Bandits
 {
     public class Bandit : BaseHuman
     {
-        public Bandit(float speed, IMovementType movementType) : base(speed, movementType)
+        public Bandit(float health, float speed, IMovementType movementType) : base(health, speed, movementType)
         {
 
         }

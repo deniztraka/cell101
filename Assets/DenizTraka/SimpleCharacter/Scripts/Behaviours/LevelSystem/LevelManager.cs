@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.Interfacelike;
+using DTWorld.Behaviours.Mobiles;
 using DTWorld.Behaviours.UI.InGame;
 using DTWorld.Behaviours.Utils;
 using UnityEngine;
@@ -36,27 +37,46 @@ namespace DTWorld.Behaviours.LevelSystem
         }
         public void LevelFinished()
         {
-            var playerLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<MobileLevel>();
-            playerLevel.GainExperience((int)currentLevel.XPGain);
-            CurrentFightIndex++;
-            PlayerPrefs.SetInt("CurrentFightIndex", CurrentFightIndex);
 
-            if (Levels.List.Count == CurrentFightIndex)
-            {
-                PlayerPrefs.SetInt("IsGameFinished", 1);
-            }
 
-            if (LevelFinishedCanvas == null)
+            StartCoroutine(ShowWinCanvas(2));
+
+        }
+
+        private IEnumerator ShowWinCanvas(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+
+            var playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
             {
-                //LevelFinishedCanvas = GameObject.Find("FightIsWonCanvas");
-                var LevelFinishedCanvasSearchGroup = Resources.FindObjectsOfTypeAll<FightIsWonCanvasBehaviour>();
-                if (LevelFinishedCanvasSearchGroup.Length > 0)
+                var playerBehaviour = playerObj.GetComponent<PlayerBehaviour>();
+                if (playerBehaviour.Mobile.Health > 0)
                 {
-                    LevelFinishedCanvas = LevelFinishedCanvasSearchGroup[0].gameObject;                    
-                }
-            }
+                    var playerLevel = playerObj.GetComponent<MobileLevel>();
+                    playerLevel.GainExperience((int)currentLevel.XPGain);
+                    CurrentFightIndex++;
+                    PlayerPrefs.SetInt("CurrentFightIndex", CurrentFightIndex);
 
-            LevelFinishedCanvas.SetActive(true);
+                    if (Levels.List.Count == CurrentFightIndex)
+                    {
+                        PlayerPrefs.SetInt("IsGameFinished", 1);
+                    }
+
+
+                    if (LevelFinishedCanvas == null)
+                    {
+                        //LevelFinishedCanvas = GameObject.Find("FightIsWonCanvas");
+                        var LevelFinishedCanvasSearchGroup = Resources.FindObjectsOfTypeAll<FightIsWonCanvasBehaviour>();
+                        if (LevelFinishedCanvasSearchGroup.Length > 0)
+                        {
+                            LevelFinishedCanvas = LevelFinishedCanvasSearchGroup[0].gameObject;
+                        }
+                    }
+
+                    LevelFinishedCanvas.SetActive(true);
+                };
+            }
         }
     }
 }

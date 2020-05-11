@@ -9,7 +9,7 @@ namespace DTWorld.Behaviours.Mobiles
         public override void Start()
         {
             base.Start();
-            this.Mobile = new Player(this.Speed, new FreeFormMovement(Rigidbody2D, GetComponent<CharacterScreenMovementBehaviour>()));
+            this.Mobile = new Player(HealthBehaviour.MaxHealth, this.Speed, new FreeFormMovement(Rigidbody2D, GetComponent<CharacterScreenMovementBehaviour>()));
         }
     }
 }

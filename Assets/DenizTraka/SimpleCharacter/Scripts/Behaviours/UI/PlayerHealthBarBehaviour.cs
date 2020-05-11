@@ -33,12 +33,13 @@ namespace DTWorld.Behaviours.UI
         public void OnDamageTakenEvent(float damage, float currentHealth, float maxHealth)
         {
             UpdateSliders(currentHealth);
-            if(HealthText != null){
-                
-                HealthText.text = currentHealth <= 0 ? "0" : String.Format("{0:0.0}",currentHealth);
+            if (HealthText != null)
+            {
+                HealthText.text = currentHealth <= 0 ? "0" : String.Format("{0:0.0}", currentHealth);
             }
 
-            if(Animator != null){
+            if (Animator != null)
+            {
                 Animator.Play("Hearth");
             }
         }
@@ -52,13 +53,14 @@ namespace DTWorld.Behaviours.UI
             SliderRight.maxValue = playerHealth.MaxHealth;
             SliderRight.value = playerHealth.Health;
             SliderFillRight.color = Gradient.Evaluate(1f);
+            HealthText.text = playerHealth.Health <= 0 ? "0" : String.Format("{0:0.0}", playerHealth.Health);
         }
 
         private void UpdateSliders(float val)
         {
             SliderLeft.value = val;
             SliderFillLeft.color = Gradient.Evaluate(SliderRight.normalizedValue);
-            SliderRight.value = val;            
+            SliderRight.value = val;
             SliderFillRight.color = Gradient.Evaluate(SliderRight.normalizedValue);
         }
     }

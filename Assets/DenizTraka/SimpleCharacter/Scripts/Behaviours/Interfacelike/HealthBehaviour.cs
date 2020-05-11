@@ -21,6 +21,8 @@ namespace DTWorld.Behaviours.Interfacelike
             }
         }
 
+        private PropsBehaviour props;
+
         public float MaxHealth;
 
         public GameObject FloatingDamagesPrefab;
@@ -34,6 +36,9 @@ namespace DTWorld.Behaviours.Interfacelike
         void Start()
         {
             mobileBehaviour = gameObject.GetComponent<BaseMobileBehaviour>();
+            props = gameObject.GetComponent<PropsBehaviour>();
+            MaxHealth = props.Strength.CurrentValue == 0 ? 7.5f : props.Strength.CurrentValue * 10;
+            Health = MaxHealth;
         }
 
         public void TakeDamage(float damage)

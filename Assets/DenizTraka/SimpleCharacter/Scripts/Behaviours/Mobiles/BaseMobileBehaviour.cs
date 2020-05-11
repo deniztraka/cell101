@@ -39,6 +39,8 @@ namespace DTWorld.Behaviours.Mobiles
         public float FleeBelowHealth;
         public float FleeDistance;
 
+        public HealthBehaviour HealthBehaviour;
+
         public float lastDefendTime = 0;
         public float lastAttackTime = 0;
 
@@ -113,9 +115,9 @@ namespace DTWorld.Behaviours.Mobiles
                 }
             }
 
-            var healthBehaviourComponent = gameObject.GetComponent<HealthBehaviour>();
-            healthBehaviourComponent.OnDamageTakenEvent += new OnDamageTakenEventHandler(OnDamageTaken);
-            healthBehaviourComponent.OnHealthBelowZeroEvent += new OnHealthBelowZeroEventHandler(OnDead);
+            HealthBehaviour = gameObject.GetComponent<HealthBehaviour>();
+            HealthBehaviour.OnDamageTakenEvent += new OnDamageTakenEventHandler(OnDamageTaken);
+            HealthBehaviour.OnHealthBelowZeroEvent += new OnHealthBelowZeroEventHandler(OnDead);
             if (WeaponBehaviour != null)
             {
                 ChaseDistance = (WeaponBehaviour.AttackDistance / 4) + ChaseDistance;
@@ -169,6 +171,7 @@ namespace DTWorld.Behaviours.Mobiles
                 audioManager.Stop("Walking");
                 audioManager.Play("Dead");
             }
+
             Destroy(gameObject, 1.5f);
         }
 
@@ -191,6 +194,7 @@ namespace DTWorld.Behaviours.Mobiles
                 {
                     audioManager.Stop("Walking");
                 }
+
             }
 
             if (animationHandler != null)

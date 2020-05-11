@@ -46,6 +46,16 @@ namespace DTWorld.Core.Mobiles
 
         public bool IsDefending { get; internal set; }
 
+        public BaseMobile(float health, float Speed, IMovementType movementType)
+        {
+            this.Speed = Speed;
+            this.MovementType = movementType;
+            this.actionRate = 0.5f;
+            this.nextActionTime = 0;
+            this.Health = health;
+            this.IsDefending = false;
+        }
+
         public BaseMobile(float Speed, IMovementType movementType)
         {
             this.Speed = Speed;
