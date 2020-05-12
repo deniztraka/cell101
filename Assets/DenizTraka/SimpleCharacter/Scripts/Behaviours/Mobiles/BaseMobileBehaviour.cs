@@ -177,7 +177,9 @@ namespace DTWorld.Behaviours.Mobiles
 
         public virtual void Update()
         {
-
+            if(HealthBehaviour != null && Mobile != null){
+                Mobile.Health = HealthBehaviour.Health;
+            }
         }
 
         public virtual void FixedUpdate()

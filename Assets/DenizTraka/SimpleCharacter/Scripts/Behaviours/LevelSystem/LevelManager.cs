@@ -15,14 +15,25 @@ namespace DTWorld.Behaviours.LevelSystem
 
         private int CurrentFightIndex;
 
+        private bool finishFlag;
+
         private Level currentLevel;
 
         // Start is called before the first frame update
         void Start()
         {
             SetCurrentLevel();
-            currentLevel.OnLevelFinishedEvent += new Level.OnLevelFinishedEventHandler(LevelFinished);
+            //currentLevel.OnLevelFinishedEvent += new Level.OnLevelFinishedEventHandler(LevelFinished);
             FightCanvas.SetActive(true);
+        }
+
+        void Update()
+        {
+            if (currentLevel.IsFinished && !finishFlag)
+            {
+                finishFlag = true;
+                LevelFinished();
+            }
         }
 
         public Level GetCurrentLevel()

@@ -25,12 +25,14 @@ namespace DTWorld.Behaviours.LevelSystem
 
         public int XPGain;
 
-        public delegate void OnLevelFinishedEventHandler();
-        public event OnLevelFinishedEventHandler OnLevelFinishedEvent;
+        // public delegate void OnLevelFinishedEventHandler();
+        // public event OnLevelFinishedEventHandler OnLevelFinishedEvent;
 
         private int numberOfDeaths;
 
         private MobileLevel playerLevel;
+
+        public bool IsFinished = false;
 
         void Start()
         {
@@ -50,20 +52,13 @@ namespace DTWorld.Behaviours.LevelSystem
         private void OnEnemyDeath(BaseMobileBehaviour enemy)
         {
             numberOfDeaths++;
-
+            IsFinished = numberOfDeaths >= Enemies.Count;
             var enemyLevel = enemy.GetComponent<MobileLevel>();
             if (playerLevel == null)
             {
                 playerLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<MobileLevel>();
             }
             playerLevel.GainExperience(enemyLevel.TotalExperienceGained);
-
-            if (numberOfDeaths >= Enemies.Count && OnLevelFinishedEvent != null)
-            {
-
-                OnLevelFinishedEvent();
-
-            }
         }
 
         private void PrepareEnemy(GameObject enemy, int spawnPointIndex)
