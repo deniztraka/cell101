@@ -63,11 +63,11 @@ public class EventTextCanvasBehaviour : MonoBehaviour
 
     private void AddLevelChangedText(int currentLevel)
     {
-        AddEventText(String.Format("You just leveled up to {0}", currentLevel), Color.magenta);
+        AddEventText(String.Format("You just leveled up to level {0}", currentLevel), Color.white);
     }
 
     private void OnXPGained(int val, int currentLevel)
     {
-        AddEventText(String.Format("You gained {0} xp", val), Color.gray);
+        AddEventText(String.Format("You gained {0} xp", val), Color.black);
     }
 }

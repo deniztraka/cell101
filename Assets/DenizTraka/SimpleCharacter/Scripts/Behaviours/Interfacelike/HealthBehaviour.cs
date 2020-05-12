@@ -42,7 +42,7 @@ namespace DTWorld.Behaviours.Interfacelike
         {
             mobileBehaviour = gameObject.GetComponent<BaseMobileBehaviour>();
             props = gameObject.GetComponent<PropsBehaviour>();
-            MaxHealth = props.Strength.CurrentValue == 0 ? 7.5f : props.Strength.CurrentValue * 10;
+            MaxHealth = props.Strength.CurrentValue == 0 ? 5f : props.Strength.CurrentValue *5f;
             Health = MaxHealth;
         }
 

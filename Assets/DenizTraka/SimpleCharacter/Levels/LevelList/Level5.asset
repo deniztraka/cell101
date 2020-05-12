@@ -19,4 +19,5 @@ MonoBehaviour:
   - {x: -0.5, y: 1.26, z: 1}
   - {x: 0.5, y: 1.26, z: 1}
   Difficulty: 1
-  XPGain: 4
+  XPGain: 8
+  IsFinished: 0

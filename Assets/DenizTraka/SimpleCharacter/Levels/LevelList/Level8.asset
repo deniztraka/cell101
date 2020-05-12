@@ -17,5 +17,5 @@ MonoBehaviour:
   SpawnPoints:
   - {x: 0, y: 1.26, z: 1}
   Difficulty: 1
-  XPGain: 4
+  XPGain: 20
   IsFinished: 0

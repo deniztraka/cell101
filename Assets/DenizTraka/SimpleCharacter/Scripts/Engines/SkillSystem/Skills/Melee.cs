@@ -7,7 +7,7 @@ namespace DTWorld.Engines.SkillSystem.Skills
     {
         public Melee() : base()
         {
-            GainFactor = 0.5f;
+            GainFactor = 0.75f;
         }
 
         public override void Gain(float val)
