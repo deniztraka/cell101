@@ -22,6 +22,7 @@ namespace DTWorld.Behaviours.Interfacelike
         }
 
         private PropsBehaviour props;
+        private MobileLevel level;
 
         public float MaxHealth;
 
@@ -42,7 +43,8 @@ namespace DTWorld.Behaviours.Interfacelike
         {
             mobileBehaviour = gameObject.GetComponent<BaseMobileBehaviour>();
             props = gameObject.GetComponent<PropsBehaviour>();
-            MaxHealth = props.Strength.CurrentValue == 0 ? 5f : props.Strength.CurrentValue *5f;
+            level = gameObject.GetComponent<MobileLevel>();
+            MaxHealth = props.Strength.CurrentValue == 0 ? 5f : (props.Strength.CurrentValue * 5f);
             Health = MaxHealth;
         }
 

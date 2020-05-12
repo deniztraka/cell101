@@ -25,6 +25,8 @@ namespace DTWorld.Behaviours.LevelSystem
 
         public int XPGain;
 
+        public int TotalXPGainedFromEnemies;
+
         // public delegate void OnLevelFinishedEventHandler();
         // public event OnLevelFinishedEventHandler OnLevelFinishedEvent;
 
@@ -59,6 +61,7 @@ namespace DTWorld.Behaviours.LevelSystem
                 playerLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<MobileLevel>();
             }
             playerLevel.GainExperience(enemyLevel.TotalExperienceGained);
+            TotalXPGainedFromEnemies += enemyLevel.TotalExperienceGained;
         }
 
         private void PrepareEnemy(GameObject enemy, int spawnPointIndex)

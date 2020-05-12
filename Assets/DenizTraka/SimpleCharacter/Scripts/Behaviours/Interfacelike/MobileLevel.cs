@@ -21,6 +21,13 @@ namespace DTWorld.Behaviours.Interfacelike
         {
             CurrentLevel = isNPC ? CurrentLevel : PlayerPrefs.GetInt("CurrentLevel");
             TotalExperienceGained = isNPC ? TotalExperienceGained : PlayerPrefs.GetInt("TotalExperienceGained");
+
+            var healthBehaviour = gameObject.GetComponent<HealthBehaviour>();
+            if (healthBehaviour != null)
+            {
+                healthBehaviour.MaxHealth += CurrentLevel * 2f;
+                healthBehaviour.Health = healthBehaviour.MaxHealth;
+            }
         }
 
         public float GetRequiredExpAmountForNextLevel()

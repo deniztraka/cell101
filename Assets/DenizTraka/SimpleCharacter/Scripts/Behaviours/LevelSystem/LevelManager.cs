@@ -48,8 +48,6 @@ namespace DTWorld.Behaviours.LevelSystem
         }
         public void LevelFinished()
         {
-
-
             StartCoroutine(ShowWinCanvas(2));
         }
 

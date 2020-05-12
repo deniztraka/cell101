@@ -26,8 +26,11 @@ public class FightIsWonCanvasBehaviour : MonoBehaviour
     private void InitScreen()
     {
         EnemiesText.text = String.Format("Number of enemies killed: {0}", lastLevel.Enemies.Count);
-        XPGainText.text = String.Format("Total number of XP gained in this fight: {0}", lastLevel.XPGain);//todo: get the xps gaiend from pvp
+        XPGainText.text = String.Format("Total XP gained in this fight: {0}", lastLevel.XPGain + lastLevel.TotalXPGainedFromEnemies);//todo: get the xps gaiend from pvp
         CurrentFightText.text = String.Format("Fight {0}", PlayerPrefs.GetInt("CurrentFightIndex") - 1);
+
+        //reset level
+        lastLevel.TotalXPGainedFromEnemies = 0;
     }
 
     public void QuitButtonClicked()
