@@ -4,12 +4,18 @@ using System.Collections.Generic;
 using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.Mobiles;
 using UnityEngine;
+using UnityEngine.UI;
 namespace DTWorld.Behaviours.Utils
 {
     public class GameManager : MonoBehaviour
     {
         public GameObject ArcherCharacter;
         public GameObject MeleeCharacter;
+
+        public Sprite MeleeImage;
+        public Sprite RangedImage;
+
+        public GameObject ActionButton;
 
         private BaseMobileBehaviour selectedCharacter;
 
@@ -32,11 +38,13 @@ namespace DTWorld.Behaviours.Utils
             {
                 ArcherCharacter.SetActive(true);
                 selectedCharacter = ArcherCharacter.GetComponent<BaseMobileBehaviour>();
+                ActionButton.GetComponent<Image>().sprite = RangedImage;
             }
             else
             {
                 MeleeCharacter.SetActive(true);
                 selectedCharacter = MeleeCharacter.GetComponent<BaseMobileBehaviour>();
+                ActionButton.GetComponent<Image>().sprite = MeleeImage;
             }
 
             playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBehaviour>();

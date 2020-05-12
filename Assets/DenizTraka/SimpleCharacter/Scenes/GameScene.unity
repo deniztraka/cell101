@@ -2649,7 +2649,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 25, y: 60}
+  m_SizeDelta: {x: 40, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &446111199
 MonoBehaviour:
@@ -3452,7 +3452,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -100, y: 100}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &829191353
 MonoBehaviour:
@@ -3836,7 +3836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -100, y: 200}
+  m_AnchoredPosition: {x: -100, y: 250}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &879094117
@@ -5651,6 +5651,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArcherCharacter: {fileID: 1029198102}
   MeleeCharacter: {fileID: 1699960174}
+  MeleeImage: {fileID: 3826527090287550244, guid: 5b6dbc863106aba4db06182ea4c6f050,
+    type: 3}
+  RangedImage: {fileID: 5432962084226298693, guid: 652ecd394d8db594380f7bea8dd01e91,
+    type: 3}
+  ActionButton: {fileID: 446111197}
   OnDeathCanvas: {fileID: 1214888523}
   LevelFinishedCanvas: {fileID: 0}
 --- !u!1 &1408202086
@@ -6815,12 +6820,12 @@ PrefabInstance:
     - target: {fileID: 5142879944599557321, guid: 6f0f2f16fea20fb4aac6a276b8f5d824,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5142879944599557321, guid: 6f0f2f16fea20fb4aac6a276b8f5d824,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5142879944919390000, guid: 6f0f2f16fea20fb4aac6a276b8f5d824,
         type: 3}
@@ -6900,12 +6905,12 @@ PrefabInstance:
     - target: {fileID: 5142879944919390003, guid: 6f0f2f16fea20fb4aac6a276b8f5d824,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5142879944919390003, guid: 6f0f2f16fea20fb4aac6a276b8f5d824,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5142879944919390003, guid: 6f0f2f16fea20fb4aac6a276b8f5d824,
         type: 3}
