@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.Audio;
 using UnityEngine;
 namespace DTWorld.Behaviours.Interfacelike
 {
@@ -8,7 +9,11 @@ namespace DTWorld.Behaviours.Interfacelike
         public int CurrentLevel;
         public int TotalExperienceGained;
 
+        public ParticleSystem LevelGainedEffect;
+
         private int attributePointsForEachLevel = 1;
+
+        private AudioManager audioManager;
 
         public delegate void OnLevelChangedEventHandler(int val, int currentLevel);
         public event OnLevelChangedEventHandler OnLevelChangedEvent;
@@ -21,6 +26,8 @@ namespace DTWorld.Behaviours.Interfacelike
         {
             CurrentLevel = isNPC ? CurrentLevel : PlayerPrefs.GetInt("CurrentLevel");
             TotalExperienceGained = isNPC ? TotalExperienceGained : PlayerPrefs.GetInt("TotalExperienceGained");
+
+            audioManager = gameObject.GetComponent<AudioManager>();
 
             var healthBehaviour = gameObject.GetComponent<HealthBehaviour>();
             if (healthBehaviour != null)
@@ -49,6 +56,15 @@ namespace DTWorld.Behaviours.Interfacelike
             {
                 CurrentLevel++;
                 PlayerPrefs.SetInt("CurrentLevel", CurrentLevel);
+
+                if (LevelGainedEffect != null)
+                {
+                    LevelGainedEffect.Play();
+                    if (audioManager != null)
+                    {
+                        audioManager.Play("LevelUp");
+                    }
+                }
 
                 if (OnLevelChangedEvent != null)
                 {
