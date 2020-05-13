@@ -1885,6 +1885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496304173}
   - component: {fileID: 496304174}
+  - component: {fileID: 496304175}
   m_Layer: 0
   m_Name: MainMenuManager
   m_TagString: Untagged
@@ -1919,6 +1920,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Door: {fileID: 167452910}
+--- !u!114 &496304175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496304172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4e0e9d2ea4400449bb14745c431870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: GetReady
+    Clip: {fileID: 8300000, guid: ca462176f8d13e14eb81c899df5d2848, type: 3}
+    Volume: 1
+    Pitch: 1
+    Source: {fileID: 0}
 --- !u!1 &498142308
 GameObject:
   m_ObjectHideFlags: 0
