@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies:
   - {fileID: 3129155639591653318, guid: 4b08115e0392eb540b91ea47d568f921, type: 3}
-  - {fileID: 212270421421278973, guid: b234e7f0946d70b4481bf989623d3299, type: 3}
+  - {fileID: 5186934463573357147, guid: f63e0ea8d419e1b49844f786755f1b78, type: 3}
   - {fileID: 3129155639591653318, guid: 4b08115e0392eb540b91ea47d568f921, type: 3}
   SpawnPoints:
   - {x: -2, y: 1, z: 1}
@@ -22,4 +22,5 @@ MonoBehaviour:
   - {x: 0, y: 1.26, z: 1}
   Difficulty: 1
   XPGain: 70
+  TotalXPGainedFromEnemies: 0
   IsFinished: 0

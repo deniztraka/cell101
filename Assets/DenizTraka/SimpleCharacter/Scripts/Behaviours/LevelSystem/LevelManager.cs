@@ -17,7 +17,7 @@ namespace DTWorld.Behaviours.LevelSystem
 
         private bool finishFlag;
 
-        private Level currentLevel;
+        public Level CurrentLevel;
 
         // Start is called before the first frame update
         void Start()
@@ -25,11 +25,13 @@ namespace DTWorld.Behaviours.LevelSystem
             SetCurrentLevel();
             //currentLevel.OnLevelFinishedEvent += new Level.OnLevelFinishedEventHandler(LevelFinished);
             FightCanvas.SetActive(true);
+
+            PlayerPrefs.SetInt("NumberOfLevels",Levels.List.Count);
         }
 
         void Update()
         {
-            if (currentLevel.IsFinished && !finishFlag)
+            if (CurrentLevel.IsFinished && !finishFlag)
             {
                 finishFlag = true;
                 LevelFinished();
@@ -38,13 +40,13 @@ namespace DTWorld.Behaviours.LevelSystem
 
         public Level GetCurrentLevel()
         {
-            return currentLevel;
+            return CurrentLevel;
         }
 
         public void SetCurrentLevel()
         {
             CurrentFightIndex = PlayerPrefs.GetInt("CurrentFightIndex");
-            currentLevel = Levels.List[CurrentFightIndex];
+            CurrentLevel = Levels.List[CurrentFightIndex];
         }
         public void LevelFinished()
         {
@@ -62,15 +64,9 @@ namespace DTWorld.Behaviours.LevelSystem
                 if (playerBehaviour.Mobile.Health > 0)
                 {
                     var playerLevel = playerObj.GetComponent<MobileLevel>();
-                    playerLevel.GainExperience((int)currentLevel.XPGain);
+                    playerLevel.GainExperience((int)CurrentLevel.XPGain);
                     CurrentFightIndex++;
-                    PlayerPrefs.SetInt("CurrentFightIndex", CurrentFightIndex);
-
-                    if (Levels.List.Count == CurrentFightIndex)
-                    {
-                        PlayerPrefs.SetInt("IsGameFinished", 1);
-                    }
-
+                    PlayerPrefs.SetInt("CurrentFightIndex", CurrentFightIndex);                    
 
                     if (LevelFinishedCanvas == null)
                     {

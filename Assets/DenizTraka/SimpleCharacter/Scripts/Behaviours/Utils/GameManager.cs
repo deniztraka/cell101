@@ -22,8 +22,6 @@ namespace DTWorld.Behaviours.Utils
         HealthBehaviour playerHealth;
         public GameObject OnDeathCanvas;
 
-
-        public GameObject LevelFinishedCanvas;
         // Start is called before the first frame update
 
         void Awake()

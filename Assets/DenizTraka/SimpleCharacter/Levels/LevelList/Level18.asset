@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbd7461808046954c8fe2545e425bc8b, type: 3}
-  m_Name: Level15
+  m_Name: Level18
   m_EditorClassIdentifier: 
   Enemies:
+  - {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c, type: 3}
   - {fileID: 5186934463573357147, guid: f63e0ea8d419e1b49844f786755f1b78, type: 3}
-  - {fileID: 3129155639591653318, guid: 4b08115e0392eb540b91ea47d568f921, type: 3}
-  - {fileID: 5186934463573357147, guid: f63e0ea8d419e1b49844f786755f1b78, type: 3}
+  - {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c, type: 3}
   SpawnPoints:
   - {x: -2, y: 1, z: 1}
   - {x: 2, y: 1, z: 1}
   - {x: 0, y: 1.26, z: 1}
   Difficulty: 1
-  XPGain: 90
+  XPGain: 150
   TotalXPGainedFromEnemies: 0
   IsFinished: 0

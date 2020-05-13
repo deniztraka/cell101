@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.Mobiles;
+using DTWorlds.Behaviours.Environment;
 using UnityEngine;
 namespace DTWorld.Behaviours.Interfacelike
 {
@@ -48,6 +49,12 @@ namespace DTWorld.Behaviours.Interfacelike
             Health = MaxHealth;
         }
 
+        IEnumerator CreateBloodStainsAfterSeconds(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            BloodStainsPool.Instance.Create(transform.position);
+        }
+
         public void TakeDamage(float damage)
         {
             if (Health <= 0)
@@ -64,6 +71,10 @@ namespace DTWorld.Behaviours.Interfacelike
             }
 
             Health -= damage;
+            if (UnityEngine.Random.value > 0.5)
+            {
+                StartCoroutine(CreateBloodStainsAfterSeconds(0.5f));
+            }
 
             if (OnDamageTakenEvent != null)
             {
