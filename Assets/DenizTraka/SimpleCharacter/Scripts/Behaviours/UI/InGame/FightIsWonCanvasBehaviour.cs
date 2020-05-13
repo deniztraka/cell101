@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.Audio;
 using DTWorld.Behaviours.LevelSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,11 +16,16 @@ public class FightIsWonCanvasBehaviour : MonoBehaviour
     public Text XPGainText;
     Level lastLevel;
 
+
+
+    private AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         var fightManager = GameObject.Find("FightManager").GetComponent<LevelManager>();
         lastLevel = fightManager.GetCurrentLevel();
+        audioManager = GetComponent<AudioManager>();
         InitScreen();
     }
 
@@ -31,6 +37,11 @@ public class FightIsWonCanvasBehaviour : MonoBehaviour
 
         //reset level
         lastLevel.TotalXPGainedFromEnemies = 0;
+
+        if (audioManager != null)
+        {
+            audioManager.Play("FightIsWon");
+        }
     }
 
     public void QuitButtonClicked()

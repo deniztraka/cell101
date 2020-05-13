@@ -4784,13 +4784,14 @@ GameObject:
   - component: {fileID: 1296422196}
   - component: {fileID: 1296422195}
   - component: {fileID: 1296422193}
+  - component: {fileID: 1296422194}
   m_Layer: 5
   m_Name: StartFightCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1296422193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4806,6 +4807,24 @@ MonoBehaviour:
   EnemiesText: {fileID: 1850416782}
   CurrentFightText: {fileID: 773217889}
   XPGainText: {fileID: 475166}
+--- !u!114 &1296422194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296422192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4e0e9d2ea4400449bb14745c431870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Fight
+    Clip: {fileID: 8300000, guid: 947baa2a3bb2192428efe2fd4b8917e9, type: 3}
+    Volume: 0.262
+    Pitch: 1
+    Source: {fileID: 0}
 --- !u!114 &1296422195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6215,7 +6234,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200 xp gain
+  m_Text: 'Total XP gained in this fight:
+
+    19'
 --- !u!222 &1505174689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6241,7 +6262,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 40}
+  m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1624347280
 GameObject:
@@ -6256,13 +6277,32 @@ GameObject:
   - component: {fileID: 1624347283}
   - component: {fileID: 1624347282}
   - component: {fileID: 1624347286}
+  - component: {fileID: 1624347281}
   m_Layer: 5
   m_Name: FightIsWonCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
+--- !u!114 &1624347281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624347280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4e0e9d2ea4400449bb14745c431870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: FightIsWon
+    Clip: {fileID: 8300000, guid: c8c729b28141929419bcc2999161e2fd, type: 3}
+    Volume: 1
+    Pitch: 1
+    Source: {fileID: 0}
 --- !u!114 &1624347282
 MonoBehaviour:
   m_ObjectHideFlags: 0

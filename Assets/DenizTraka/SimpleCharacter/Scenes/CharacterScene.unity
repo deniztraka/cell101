@@ -1935,7 +1935,7 @@ MonoBehaviour:
   Sounds:
   - Name: GetReady
     Clip: {fileID: 8300000, guid: ca462176f8d13e14eb81c899df5d2848, type: 3}
-    Volume: 1
+    Volume: 0.156
     Pitch: 1
     Source: {fileID: 0}
 --- !u!1 &498142308
