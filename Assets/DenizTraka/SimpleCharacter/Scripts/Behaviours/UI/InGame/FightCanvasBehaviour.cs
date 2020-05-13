@@ -31,7 +31,7 @@ namespace DTWorld.Behaviours.UI.InGame
         IEnumerator Fight(){
             
             currentLevel.Spawn();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             
             gameObject.SetActive(false);
             
