@@ -22,9 +22,6 @@ namespace DTWorld.Behaviours.Interfacelike
             }
         }
 
-        private PropsBehaviour props;
-        private MobileLevel level;
-
         public float MaxHealth;
 
         public GameObject FloatingDamagesPrefab;
@@ -43,10 +40,7 @@ namespace DTWorld.Behaviours.Interfacelike
         void Start()
         {
             mobileBehaviour = gameObject.GetComponent<BaseMobileBehaviour>();
-            props = gameObject.GetComponent<PropsBehaviour>();
-            level = gameObject.GetComponent<MobileLevel>();
-            MaxHealth = props.Strength.CurrentValue == 0 ? 5f : (props.Strength.CurrentValue * 5f);
-            Health = MaxHealth;
+            
         }
 
         IEnumerator CreateBloodStainsAfterSeconds(float seconds)
@@ -97,6 +91,7 @@ namespace DTWorld.Behaviours.Interfacelike
             var floatingDamage = Instantiate(FloatingDamagesPrefab, transform.position, Quaternion.identity, transform);
             var textMesh = floatingDamage.GetComponent<TextMesh>();
             textMesh.text = String.Format("{0:0.0}", damage);
+            
         }
     }
 }

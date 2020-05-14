@@ -15,5 +15,6 @@ namespace DTWorld.Core.Audio
         public float Pitch;
         [HideInInspector]
         public AudioSource Source;
+        public bool Loop;
     }
 }

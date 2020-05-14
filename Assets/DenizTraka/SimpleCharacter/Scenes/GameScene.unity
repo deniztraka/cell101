@@ -4825,6 +4825,7 @@ MonoBehaviour:
     Volume: 0.262
     Pitch: 1
     Source: {fileID: 0}
+    Loop: 0
 --- !u!114 &1296422195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6071,6 +6072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1451281390}
   - component: {fileID: 1451281391}
+  - component: {fileID: 1451281392}
   m_Layer: 0
   m_Name: FightManager
   m_TagString: Untagged
@@ -6108,6 +6110,25 @@ MonoBehaviour:
   LevelFinishedCanvas: {fileID: 1624347280}
   FightCanvas: {fileID: 1296422192}
   CurrentLevel: {fileID: 0}
+--- !u!114 &1451281392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451281389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4e0e9d2ea4400449bb14745c431870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: InGameFight
+    Clip: {fileID: 8300000, guid: c5323cc0c067d1b4ba325bf44a02560d, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Source: {fileID: 0}
+    Loop: 1
 --- !u!1 &1482265516
 GameObject:
   m_ObjectHideFlags: 0
@@ -6303,6 +6324,7 @@ MonoBehaviour:
     Volume: 0.312
     Pitch: 1
     Source: {fileID: 0}
+    Loop: 0
 --- !u!114 &1624347282
 MonoBehaviour:
   m_ObjectHideFlags: 0

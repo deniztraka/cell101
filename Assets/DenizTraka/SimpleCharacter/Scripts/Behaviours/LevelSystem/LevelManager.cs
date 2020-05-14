@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.Audio;
 using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.Mobiles;
 using DTWorld.Behaviours.UI.InGame;
@@ -17,6 +18,8 @@ namespace DTWorld.Behaviours.LevelSystem
 
         private bool finishFlag;
 
+        private AudioManager audioManager;
+
         public Level CurrentLevel;
 
         // Start is called before the first frame update
@@ -26,7 +29,12 @@ namespace DTWorld.Behaviours.LevelSystem
             //currentLevel.OnLevelFinishedEvent += new Level.OnLevelFinishedEventHandler(LevelFinished);
             FightCanvas.SetActive(true);
 
-            PlayerPrefs.SetInt("NumberOfLevels",Levels.List.Count);
+            audioManager = GetComponent<AudioManager>();
+
+            if (audioManager != null)
+            {
+                audioManager.Play("InGameFight");
+            }
         }
 
         void Update()
@@ -66,7 +74,7 @@ namespace DTWorld.Behaviours.LevelSystem
                     var playerLevel = playerObj.GetComponent<MobileLevel>();
                     playerLevel.GainExperience((int)CurrentLevel.XPGain);
                     CurrentFightIndex++;
-                    PlayerPrefs.SetInt("CurrentFightIndex", CurrentFightIndex);                    
+                    PlayerPrefs.SetInt("CurrentFightIndex", CurrentFightIndex);
 
                     if (LevelFinishedCanvas == null)
                     {

@@ -62,9 +62,17 @@ namespace DTWorld.Behaviours.Interfacelike
 
         }
 
-        void Start(){
+        void Start()
+        {
             var mobileLevel = GetComponent<MobileLevel>();
             mobileLevel.OnLevelChangedEvent += new MobileLevel.OnLevelChangedEventHandler(AddBaseAttributePoints);
+
+            var healthBehaviour = gameObject.GetComponent<HealthBehaviour>();
+            if (healthBehaviour != null)
+            {
+                healthBehaviour.MaxHealth = Strength.CurrentValue == 0 ? 5f : (Strength.CurrentValue * 3f);
+                healthBehaviour.Health = healthBehaviour.MaxHealth;
+            }
         }
 
         public void TryGainBaseAttribute(float val)

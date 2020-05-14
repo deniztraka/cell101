@@ -31,8 +31,11 @@ public class DoorBehaviour : MonoBehaviour
     {
         characterMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScreenMovementBehaviour>();
         SetOpenStatus(false);
+        var currentFightIndex = PlayerPrefs.GetInt("CurrentFightIndex", 0);
+        var numberOfLevels = 20;
 
-        if (PlayerPrefs.GetInt("CurrentFightIndex",0) + 1 == PlayerPrefs.GetInt("NumberOfLevels",99999))
+        var alradyFinishedAllLevels = currentFightIndex + 1 >= numberOfLevels;
+        if (alradyFinishedAllLevels)
         {
             isFinished = true;
             SpeechText.text = "You are free";

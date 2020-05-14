@@ -70,6 +70,10 @@ namespace DTWorld.Behaviours.LevelSystem
             currentEnemyObj.OnHealthBelowZeroEvent += new HealthBehaviour.OnHealthBelowZeroEventHandler(OnEnemyDeath);
         }
 
+        public void ResetEnemyDeathCount(){
+            numberOfDeaths = 0;
+        }
+
         internal void Spawn()
         {
             SpawnEntities();

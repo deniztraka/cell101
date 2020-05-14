@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.Interfacelike;
+using DTWorld.Behaviours.LevelSystem;
 using DTWorld.Behaviours.Mobiles;
 using UnityEngine;
 using UnityEngine.UI;
@@ -62,6 +63,10 @@ namespace DTWorld.Behaviours.Utils
 
         private void OnDeath(BaseMobileBehaviour mobile)
         {
+            var levelManager = GameObject.Find("FightManager").GetComponent<LevelManager>();
+            var currentLevel = levelManager.GetCurrentLevel();
+            currentLevel.ResetEnemyDeathCount();
+
             StartCoroutine(ShowDeathCanvas(2));
 
         }

@@ -31,9 +31,9 @@ namespace DTWorld.Behaviours.Interfacelike
 
             var healthBehaviour = gameObject.GetComponent<HealthBehaviour>();
             if (healthBehaviour != null)
-            {
+            {                
                 healthBehaviour.MaxHealth += CurrentLevel * 2f;
-                healthBehaviour.Health = healthBehaviour.MaxHealth;
+                healthBehaviour.Health = healthBehaviour.MaxHealth;                
             }
         }
 

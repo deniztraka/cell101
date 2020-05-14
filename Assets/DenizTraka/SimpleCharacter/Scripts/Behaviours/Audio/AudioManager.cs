@@ -19,6 +19,7 @@ namespace DTWorld.Behaviours.Audio
                 sound.Source.clip = sound.Clip;
                 sound.Source.volume = sound.Volume;
                 sound.Source.pitch = sound.Pitch;
+                sound.Source.loop = sound.Loop;
             }
         }
 

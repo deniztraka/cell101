@@ -1935,9 +1935,16 @@ MonoBehaviour:
   Sounds:
   - Name: GetReady
     Clip: {fileID: 8300000, guid: ca462176f8d13e14eb81c899df5d2848, type: 3}
-    Volume: 0.156
+    Volume: 0.2
     Pitch: 1
     Source: {fileID: 0}
+    Loop: 0
+  - Name: Menu
+    Clip: {fileID: 8300000, guid: 89f1a2e48feabab47a5c76920b6ce2af, type: 3}
+    Volume: 0.05
+    Pitch: 1
+    Source: {fileID: 0}
+    Loop: 1
 --- !u!1 &498142308
 GameObject:
   m_ObjectHideFlags: 0

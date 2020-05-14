@@ -16,6 +16,11 @@ namespace DTWorld.Behaviours.UI.MainMenu
             audioManager = GetComponent<AudioManager>();
             Door.SetActive(false);
 
+            if (audioManager != null)
+            {
+                audioManager.Play("Menu");
+            }
+
             StartCoroutine(ExecuteAfterSeconds(Random.Range(2, 5), () =>
               {
                   OpenDoor();
