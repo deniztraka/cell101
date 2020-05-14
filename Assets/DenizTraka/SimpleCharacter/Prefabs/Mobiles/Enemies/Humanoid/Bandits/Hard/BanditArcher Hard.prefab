@@ -140,12 +140,12 @@ PrefabInstance:
     - target: {fileID: 8423556824619493029, guid: 4b08115e0392eb540b91ea47d568f921,
         type: 3}
       propertyPath: CurrentLevel
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8423556824619493029, guid: 4b08115e0392eb540b91ea47d568f921,
         type: 3}
       propertyPath: TotalExperienceGained
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b08115e0392eb540b91ea47d568f921, type: 3}

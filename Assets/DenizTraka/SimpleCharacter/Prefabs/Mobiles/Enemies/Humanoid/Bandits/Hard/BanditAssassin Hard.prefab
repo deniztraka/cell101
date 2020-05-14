@@ -125,12 +125,12 @@ PrefabInstance:
     - target: {fileID: 6735310153058693022, guid: b234e7f0946d70b4481bf989623d3299,
         type: 3}
       propertyPath: CurrentLevel
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6735310153058693022, guid: b234e7f0946d70b4481bf989623d3299,
         type: 3}
       propertyPath: TotalExperienceGained
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8047304962084874604, guid: b234e7f0946d70b4481bf989623d3299,
         type: 3}

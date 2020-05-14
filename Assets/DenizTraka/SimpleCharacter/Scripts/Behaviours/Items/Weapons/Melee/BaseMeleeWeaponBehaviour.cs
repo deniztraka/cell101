@@ -73,7 +73,7 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
             var ownerStrength = OwnerMobileProps.Strength.CurrentValue;
             var weaponDamage = Damage;
 
-            var temp = (Item.Damage + (ownerMeleeSkill / 10)); //melee skill factor + 
+            var temp = (Item.Damage + (ownerMeleeSkill / 7.5f)); //melee skill factor + 
             temp = ((ownerStrength * weaponDamage) / 10) + temp; // weapoin damage factor + 
             return temp;
         }

@@ -72,7 +72,7 @@ namespace DTWorld.Behaviours.Items.Ammo
             var ownerStrength = OwnerWeaponBehaviour.OwnerMobileProps.Strength.CurrentValue;
             var weaponDamage = OwnerWeaponBehaviour.Damage;
 
-            var temp = (Item.Damage + (ownerRangedSkill / 10)); //ranged skill factor + 
+            var temp = (Item.Damage + (ownerRangedSkill / 7.5f)); //ranged skill factor + 
             temp = ((temp * ownerDexterity) / 10) + temp; // dexterity factor +
             temp = ((ownerStrength * weaponDamage) / 10) + temp; // weapoin damage factor + 
             return temp;

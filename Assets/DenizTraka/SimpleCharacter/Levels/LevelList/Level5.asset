@@ -20,4 +20,5 @@ MonoBehaviour:
   - {x: 0.5, y: 1.26, z: 1}
   Difficulty: 1
   XPGain: 8
+  TotalXPGainedFromEnemies: 10
   IsFinished: 0

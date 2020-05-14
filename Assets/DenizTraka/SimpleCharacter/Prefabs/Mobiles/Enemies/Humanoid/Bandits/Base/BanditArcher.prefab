@@ -106,6 +106,16 @@ PrefabInstance:
       propertyPath: DexterityAttribute
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4850067405185452259, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: TotalExperienceGained
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850067405185452259, guid: 73bf121eae938f8428c907e6aeef5618,
+        type: 3}
+      propertyPath: CurrentLevel
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4975803394341621479, guid: 73bf121eae938f8428c907e6aeef5618,
         type: 3}
       propertyPath: m_Color.r
