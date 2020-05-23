@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84baf7fc7769c5b45851e9512cf3ba07, type: 3}
+  m_Name: DoubleDamageAbillity
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  Name: Double Damage
+  Description: doubles your damage on first hit
+  ParticleEffect: {fileID: 1568847660901488103, guid: c4bce10231e57c84e9d05c8794bdf5f2,
+    type: 3}
+  Duration: 2
+  Effects:
+  - {fileID: 3340163480378787722, guid: 715c9760a42fd2843bcbb60893ae8199, type: 3}
