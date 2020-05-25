@@ -70,7 +70,10 @@ namespace DTWorld.Engines.SkillSystem.Abillities
 
                 if (ParticleEffect != null)
                 {
-                    instantiatedParticleEffect = Instantiate(ParticleEffect, Vector3.zero, Quaternion.identity, mobileBehaviour.WeaponBehaviour.transform);
+                    instantiatedParticleEffect = Instantiate(ParticleEffect, Vector3.zero, Quaternion.identity);
+                    instantiatedParticleEffect.transform.SetParent(mobileBehaviour.WeaponBehaviour.transform);
+                    instantiatedParticleEffect.transform.position = Vector3.zero;
+                    instantiatedParticleEffect.transform.localPosition = Vector3.zero;
                 }
                 return this;
             }
