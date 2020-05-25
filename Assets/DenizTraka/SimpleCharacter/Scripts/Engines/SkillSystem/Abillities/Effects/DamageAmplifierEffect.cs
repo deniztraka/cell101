@@ -8,7 +8,7 @@ namespace DTWorld.Engines.SkillSystem.Abillities
     {
         BaseMobileBehaviour mobileBehaviour;
 
-        public float AmplifyValue = 2;
+        public float AmplifyValue = 10;
 
         internal override void OnBeforeDestroy()
         {

@@ -86,7 +86,7 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
                 if (otherEntityHealth.Health > 0)
                 {
                     var calculatedDamage = CalculateTotalDamage();
-                    Debug.Log(calculatedDamage);
+                    //Debug.Log(calculatedDamage);
                     otherEntityHealth.TakeDamage(calculatedDamage);
                     AudioManager.Play("Hit");
                     return true;
