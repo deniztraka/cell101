@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.AI;
+using DTWorld.Behaviours.Interfacelike;
+using DTWorld.Behaviours.Mobiles;
+using DTWorld.Behaviours.Utils;
 using UnityEngine;
 namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
 {
@@ -9,13 +12,14 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
     {
         public Transform CharacterBookPosition;
         public GameObject ActiveLight;
+        public GameObject ExclamationMark;
 
         private bool isClosedExternally;
 
         internal void SetIsOpen(bool v)
         {
             bookIsOpen = v;
-            isClosedExternally = !v ;
+            isClosedExternally = !v;
         }
 
         public GameObject CharacterBookCanvas;
@@ -26,12 +30,14 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
         void Start()
         {
             characterMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScreenMovementBehaviour>();
-            SetHasNews(true);
+
+            SetHasNews(AppManager.Instance.HasLeveledUp);
         }
 
         public void SetHasNews(bool hasNews)
         {
             ActiveLight.SetActive(hasNews);
+            ExclamationMark.SetActive(hasNews);
         }
 
         public void FixedUpdate()
@@ -41,12 +47,13 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
             if (isPlayerClose && !bookIsOpen && !isClosedExternally)
             {
                 CharacterBookCanvasStatus(true);
-
             }
             else if (!isPlayerClose && bookIsOpen)
             {
                 CharacterBookCanvasStatus(false);
             }
+
+            SetHasNews(AppManager.Instance.HasLeveledUp);
         }
 
         void OnMouseDown()

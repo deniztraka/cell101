@@ -10,6 +10,8 @@ namespace DTWorld.Behaviours.Utils
         public static AppManager Instance { get; private set; }
         public bool IsRanged;
 
+        public bool HasLeveledUp;
+
 
         private void Awake()
         {

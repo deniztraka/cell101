@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DTWorld.Behaviours.AI;
 using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.Mobiles;
+using DTWorld.Behaviours.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -64,6 +65,7 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
         {
             BookBehaviour.SetIsOpen(false);
             gameObject.SetActive(false);
+            AppManager.Instance.HasLeveledUp = false;
         }
 
         public void SaveBasicPoints()
