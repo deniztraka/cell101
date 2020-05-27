@@ -228,14 +228,14 @@ namespace DTWorld.Behaviours.Mobiles
             // Debug.Log("dexcalc:" + ((float)propsBehaviour.Dexterity.CurrentValue / 10));
             var calculatedSs = WeaponBehaviour.Item.SwingSpeed + ((float)propsBehaviour.Dexterity.CurrentValue / 10);
 
-            Debug.Log("calculated ss:" + calculatedSs);
+            //Debug.Log("calculated ss:" + calculatedSs);
             return calculatedSs;
         }
 
         public float GetSwingRate()
         {
             var swingSpeed = GetSwingSpeed();
-            Debug.Log("ss:" + swingSpeed);
+            //Debug.Log("ss:" + swingSpeed);
             return 1 / swingSpeed;
         }
 
@@ -298,12 +298,14 @@ namespace DTWorld.Behaviours.Mobiles
                 if (calculatedAttackRate <= Mobile.ActionRate)
                 {
                     nextActionTime = Time.time + Mobile.ActionRate;
+                    //Debug.Log("finalrate:" + Mobile.ActionRate);
                     return Mobile.CanAttack();
 
                 }
                 else
                 {
                     nextActionTime = Time.time + Mobile.ActionRate;
+                    //Debug.Log("finalrate:" + calculatedAttackRate);
                     return Mobile.CanAttack(calculatedAttackRate);
                 }
             }

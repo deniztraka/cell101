@@ -70,7 +70,7 @@ namespace DTWorld.Behaviours.Items.Weapons.Melee
         private float CalculateTotalDamage()
         {
             var ownerMeleeSkill = OwnerMobileProps.Melee.CurrentValue;
-            var ownerStrength = OwnerMobileProps.Strength.CurrentValue;
+            var ownerStrength = (float)OwnerMobileProps.Strength.CurrentValue;
             var weaponDamage = Damage;
 
             var temp = (Item.Damage + (ownerMeleeSkill / 7.5f)); //melee skill factor + 
