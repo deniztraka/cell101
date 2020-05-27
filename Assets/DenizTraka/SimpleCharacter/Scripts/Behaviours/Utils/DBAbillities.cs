@@ -1,17 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using DTWorld.Behaviours.Mobiles;
+using DTWorld.Engines.SkillSystem.Abillities;
 using UnityEngine;
 namespace DTWorld.Behaviours.Utils
 {
-
-    public class AppManager : MonoBehaviour
+    public class DBAbillities : MonoBehaviour
     {
-        public static AppManager Instance { get; private set; }
-        public bool IsRanged;
-
-        public bool HasLeveledUp;
-
+        public static DBAbillities Instance { get; private set; }
+        public List<BaseAbillity> Abillities;
 
         private void Awake()
         {
@@ -24,10 +20,6 @@ namespace DTWorld.Behaviours.Utils
             {
                 Destroy(gameObject);
             }
-        }
-
-        public void PrepareRandomFightValues(){
-
         }
     }
 }

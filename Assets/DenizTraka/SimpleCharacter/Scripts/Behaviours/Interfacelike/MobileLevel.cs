@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.Audio;
+using DTWorld.Behaviours.Utils;
 using UnityEngine;
 namespace DTWorld.Behaviours.Interfacelike
 {
@@ -68,6 +69,7 @@ namespace DTWorld.Behaviours.Interfacelike
 
                 if (OnLevelChangedEvent != null)
                 {
+                    AppManager.Instance.HasLeveledUp = true;
                     OnLevelChangedEvent(attributePointsForEachLevel, CurrentLevel);
                 }
             }

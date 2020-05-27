@@ -7,6 +7,7 @@ using DTWorld.Behaviours.Items.Shields;
 using DTWorld.Behaviours.Items.Weapons;
 using DTWorld.Core.Mobiles;
 using DTWorld.Engines.Animation;
+using DTWorld.Engines.SkillSystem.Abillities;
 using UnityEngine;
 using static DTWorld.Behaviours.Interfacelike.HealthBehaviour;
 using static DTWorld.Behaviours.Items.Shields.BaseShieldBehaviour;
@@ -26,7 +27,8 @@ namespace DTWorld.Behaviours.Mobiles
         private AudioManager audioManager;
         private float nextActionTime = 0;
         private int lastDirectionIndex;
-
+        private BaseAbillity currentActiveAbillity;
+        private float lastAbillityStartTime = 0;
 
         private float tempShieldSwingSpeed;
         private float tempWeaponSwingSpeed;
@@ -175,12 +177,7 @@ namespace DTWorld.Behaviours.Mobiles
             Destroy(gameObject, 3f);
         }
 
-        public virtual void Update()
-        {
-            if(HealthBehaviour != null && Mobile != null){
-                Mobile.Health = HealthBehaviour.Health;
-            }
-        }
+
 
         public virtual void FixedUpdate()
         {
@@ -406,6 +403,41 @@ namespace DTWorld.Behaviours.Mobiles
         public void SetParalyzed(bool val)
         {
             isParalyzed = val;
+        }
+
+        public void UseSkill()
+        {
+
+            if (WeaponBehaviour != null)
+            {
+                var chosenAbillity = WeaponBehaviour.IsRanged ? propsBehaviour.Ranged.GetSelectedAbillity() : propsBehaviour.Melee.GetSelectedAbillity();
+
+                currentActiveAbillity = chosenAbillity.Use(this);
+                lastAbillityStartTime = Time.time;
+            }
+        }
+
+        public virtual void Update()
+        {
+            if (HealthBehaviour != null && Mobile != null)
+            {
+                Mobile.Health = HealthBehaviour.Health;
+            }
+
+            if (currentActiveAbillity != null)
+            {
+                if (currentActiveAbillity.IsActive && lastAbillityStartTime + currentActiveAbillity.Duration >= Time.time)
+                {
+                    //Debug.Log("ITS ACTIVE");
+                }
+                else if (currentActiveAbillity.IsActive)
+                {
+                    //Debug.Log("lets disable");
+                    currentActiveAbillity.Disable(this);
+                }
+            }else {
+                //Debug.Log("null");
+            }
         }
     }
 }

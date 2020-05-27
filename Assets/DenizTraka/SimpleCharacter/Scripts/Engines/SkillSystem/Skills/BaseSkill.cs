@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Engines.SkillSystem.Abillities;
 using DTWorld.Interfaces;
 using UnityEngine;
 namespace DTWorld.Engines.SkillSystem.Skills
@@ -32,6 +33,14 @@ namespace DTWorld.Engines.SkillSystem.Skills
         public delegate void OnSkillChangedEventHandler(float gainVal);
         public event OnSkillChangedEventHandler OnSkillChangedEvent;
 
+        protected List<BaseAbillity> Abillities;
+
+        public BaseSkill()
+        {
+            Abillities = new List<BaseAbillity>();
+            PrepeareAbillities();
+        }
+
         public virtual void Gain(float val)
         {
             if (UnityEngine.Random.value < GainFactor)
@@ -42,6 +51,14 @@ namespace DTWorld.Engines.SkillSystem.Skills
                     OnSkillChangedEvent(val);
                 }
             }
+        }
+
+        public abstract void PrepeareAbillities();
+
+        internal BaseAbillity GetSelectedAbillity()
+        {
+            //Todo get it from player prefs
+            return Abillities[0];
         }
     }
 }

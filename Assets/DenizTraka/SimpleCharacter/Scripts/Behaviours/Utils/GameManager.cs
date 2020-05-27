@@ -33,7 +33,7 @@ namespace DTWorld.Behaviours.Utils
         void InitGame()
         {
 
-            if (AppManager.Instance.IsRanged)
+            if (AppManager.Instance == null || AppManager.Instance.IsRanged)
             {
                 ArcherCharacter.SetActive(true);
                 selectedCharacter = ArcherCharacter.GetComponent<BaseMobileBehaviour>();
