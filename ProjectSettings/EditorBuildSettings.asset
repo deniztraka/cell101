@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DenizTraka/SimpleCharacter/Scenes/GameScene.unity
     guid: c842e7a94b4b6fd4c88076303c4642f1
+  - enabled: 1
+    path: Assets/DenizTraka/SimpleCharacter/Scenes/CreditsScene.unity
+    guid: cd0d3c8e1abd4ed47994f35711d2d6c5
   m_configObjects: {}

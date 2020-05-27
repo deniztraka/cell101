@@ -9,6 +9,7 @@ public class DoorBehaviour : MonoBehaviour
 {
     public Transform DoorPosition;
     public GameObject WeaponSelectionCanvas;
+    public GameObject GameFinishedCanvas;
     private bool isOpen;
     private CharacterScreenMovementBehaviour characterMovement;
     private bool isPlayerClose;
@@ -59,7 +60,7 @@ public class DoorBehaviour : MonoBehaviour
             }
             else
             {
-                //Debug.Log("todo: go to world scene");
+                GameFinishedCanvas.SetActive(true);
             }
         }
         else if (!isPlayerClose && bookIsOpen)
