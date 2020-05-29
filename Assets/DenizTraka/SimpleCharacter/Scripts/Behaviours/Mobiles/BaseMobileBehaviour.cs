@@ -294,7 +294,7 @@ namespace DTWorld.Behaviours.Mobiles
             {
 
                 var calculatedAttackRate = GetSwingRate();
-                Debug.Log(calculatedAttackRate);
+                //Debug.Log(calculatedAttackRate);
                 if (calculatedAttackRate <= Mobile.ActionRate)
                 {
                     nextActionTime = Time.time + Mobile.ActionRate;

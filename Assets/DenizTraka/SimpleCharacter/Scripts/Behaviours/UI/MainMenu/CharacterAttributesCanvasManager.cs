@@ -34,6 +34,8 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
         private PropsBehaviour propsBehaviour;
         private MobileLevel mobileLevel;
         public CharacterBookBehaviour BookBehaviour;
+        public GameObject ResetPointsButton;
+        private Button resetPointsButton;
 
         public void Start()
         {
@@ -58,8 +60,9 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
             tempStr = propsBehaviour.Strength.CurrentValue;
             tempDex = propsBehaviour.Dexterity.CurrentValue;
             tempTotalAvaliableAttributePoints = propsBehaviour.TotalAvaliableAttributePoints;
+            resetPointsButton = ResetPointsButton.GetComponent<Button>();
+            resetPointsButton.interactable = false;
             RecalculateBasicAttributesPanel();
-            //isChanged = false;
         }
         public void CloseBook()
         {
@@ -129,6 +132,8 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
             StrPlusButton.SetActive(tempTotalAvaliableAttributePoints > 0);
             DexMinusButton.SetActive(tempDex > 0 && propsBehaviour.Dexterity.CurrentValue < tempDex);
             DexPlusButton.SetActive(tempTotalAvaliableAttributePoints > 0);
+
+            resetPointsButton.interactable = !(tempDex == propsBehaviour.Dexterity.CurrentValue && tempStr == propsBehaviour.Strength.CurrentValue);
         }
     }
 }
