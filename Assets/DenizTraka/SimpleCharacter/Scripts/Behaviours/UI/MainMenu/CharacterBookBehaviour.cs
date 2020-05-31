@@ -6,6 +6,7 @@ using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.Mobiles;
 using DTWorld.Behaviours.Utils;
 using UnityEngine;
+using UnityEngine.EventSystems;
 namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
 {
     public class CharacterBookBehaviour : MonoBehaviour
@@ -58,14 +59,17 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
 
         void OnMouseDown()
         {
-            if (isPlayerClose && !bookIsOpen)
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
-                CharacterBookCanvasStatus(true);
-            }
-            else
-            {
-                characterMovement.MoveTo(CharacterBookPosition);
-                isClosedExternally = false;
+                if (isPlayerClose && !bookIsOpen)
+                {
+                    CharacterBookCanvasStatus(true);
+                }
+                else
+                {
+                    characterMovement.MoveTo(CharacterBookPosition);
+                    isClosedExternally = false;
+                }
             }
         }
         private void CharacterBookCanvasStatus(bool val)

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DTWorld.Behaviours.AI;
 using UnityEngine;
 using UnityEngine.UI;
+ using UnityEngine.EventSystems;
 
 public class DoorBehaviour : MonoBehaviour
 {
@@ -71,21 +72,24 @@ public class DoorBehaviour : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (isPlayerClose)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            if (!isFinished)
+            if (isPlayerClose)
             {
-                WeaponSelectionCanvasStatus(true);
+                if (!isFinished)
+                {
+                    WeaponSelectionCanvasStatus(true);
+                }
+                else
+                {
+                    //Debug.Log("todo: go to world scene");
+                }
             }
             else
             {
-                //Debug.Log("todo: go to world scene");
+                characterMovement.MoveTo(DoorPosition);
+                isClosedExternally = false;
             }
-        }
-        else
-        {
-            characterMovement.MoveTo(DoorPosition);
-            isClosedExternally = false;
         }
     }
 

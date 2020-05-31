@@ -24,7 +24,7 @@ namespace DTWorld.Behaviours.UI.InGame
 
             EnemiesText.text = String.Format("Number Of Enemies: {0}", currentLevel.Enemies.Count);
             XPGainText.text = String.Format("XP Gain: {0}", currentLevel.XPGain);
-            CurrentFightText.text = String.Format("Fight {0}", PlayerPrefs.GetInt("CurrentFightIndex"));
+            CurrentFightText.text = String.Format("Fight {0}", PlayerPrefs.GetInt("CurrentFightIndex") + 1);
             audioManager = GetComponent<AudioManager>();
         }
 
