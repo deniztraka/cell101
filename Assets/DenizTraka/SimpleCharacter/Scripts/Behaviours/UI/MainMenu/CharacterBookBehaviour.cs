@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
 {
-    public class CharacterBookBehaviour : MonoBehaviour
+    public class CharacterBookBehaviour : MonoBehaviour, IPointerClickHandler
     {
         public Transform CharacterBookPosition;
         public GameObject ActiveLight;
@@ -57,19 +57,16 @@ namespace DTWorld.Behaviours.UI.CharacterSelectionMenu
             SetHasNews(AppManager.Instance.HasLeveledUp);
         }
 
-        void OnMouseDown()
+        public void OnPointerClick(PointerEventData pointerEventData)
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
+            if (isPlayerClose && !bookIsOpen)
             {
-                if (isPlayerClose && !bookIsOpen)
-                {
-                    CharacterBookCanvasStatus(true);
-                }
-                else
-                {
-                    characterMovement.MoveTo(CharacterBookPosition);
-                    isClosedExternally = false;
-                }
+                CharacterBookCanvasStatus(true);
+            }
+            else
+            {
+                characterMovement.MoveTo(CharacterBookPosition);
+                isClosedExternally = false;
             }
         }
         private void CharacterBookCanvasStatus(bool val)

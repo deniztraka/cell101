@@ -5,9 +5,9 @@ using DTWorld.Behaviours.AI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
- using UnityEngine.EventSystems;
+using UnityEngine.EventSystems;
 
-public class HangRopeBehaviour : MonoBehaviour
+public class HangRopeBehaviour : MonoBehaviour, IPointerClickHandler
 {
     public GameObject Canvas;
     public Transform Position;
@@ -30,24 +30,18 @@ public class HangRopeBehaviour : MonoBehaviour
         isClosedExternally = !v;
     }
 
-    void OnMouseDown()
+    public void OnPointerClick(PointerEventData pointerEventData)
     {
-        if (!EventSystem.current.IsPointerOverGameObject())
+        if (isPlayerClose && !isOpen)
         {
-
-
-            if (isPlayerClose && !isOpen)
-            {
-                Canvas.SetActive(true);
-                willOpen = false;
-            }
-            else
-            {
-                willOpen = true;
-                characterMovement.MoveTo(Position);
-                isClosedExternally = false;
-            }
-
+            Canvas.SetActive(true);
+            willOpen = false;
+        }
+        else
+        {
+            willOpen = true;
+            characterMovement.MoveTo(Position);
+            isClosedExternally = false;
         }
     }
 
