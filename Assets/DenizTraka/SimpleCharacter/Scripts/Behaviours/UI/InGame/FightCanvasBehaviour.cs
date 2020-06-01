@@ -31,10 +31,10 @@ namespace DTWorld.Behaviours.UI.InGame
 
         public void StartFight()
         {
-            if (audioManager != null)
-            {
-                audioManager.Play("Fight");
-            }
+            // if (audioManager != null)
+            // {
+            //     audioManager.Play("Fight");
+            // }
             Time.timeScale = 1f;
 
             AppManager.Instance.StartLevel(currentLevel);
