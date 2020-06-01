@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.LevelSystem;
 using DTWorld.Behaviours.Mobiles;
 using UnityEngine;
 namespace DTWorld.Behaviours.Utils
@@ -26,8 +28,21 @@ namespace DTWorld.Behaviours.Utils
             }
         }
 
-        public void PrepareRandomFightValues(){
+        public void PrepareRandomFightValues()
+        {
 
+        }
+
+        internal void StartLevel(Level currentLevel)
+        {
+            StartCoroutine(InitiateLevel(currentLevel));
+        }
+
+        IEnumerator InitiateLevel(Level currentLevel)
+        {
+            currentLevel.Initiate();
+            yield return new WaitForSeconds(1);            
+            currentLevel.Spawn();
         }
     }
 }

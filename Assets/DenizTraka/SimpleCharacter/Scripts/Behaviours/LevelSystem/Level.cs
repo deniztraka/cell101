@@ -18,6 +18,8 @@ namespace DTWorld.Behaviours.LevelSystem
     [CreateAssetMenu(fileName = "Level", menuName = "LevelSystem/Level", order = 1)]
     public class Level : ScriptableObject
     {
+        public GameObject FightPit;
+
         public List<GameObject> Enemies;
         public Vector3[] SpawnPoints;
 
@@ -77,6 +79,10 @@ namespace DTWorld.Behaviours.LevelSystem
         internal void Spawn()
         {
             SpawnEntities();
+        }
+
+        public void Initiate(){
+            Instantiate(FightPit, Vector3.zero, Quaternion.identity);
         }
     }
 }

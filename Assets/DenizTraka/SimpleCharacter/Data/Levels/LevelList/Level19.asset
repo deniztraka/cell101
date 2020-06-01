@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd7461808046954c8fe2545e425bc8b, type: 3}
   m_Name: Level19
   m_EditorClassIdentifier: 
+  FightPit: {fileID: 2860988667108597917, guid: 27c6dcee6ad894e42bc09991678a7584,
+    type: 3}
   Enemies:
   - {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c, type: 3}
   - {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c, type: 3}
