@@ -10,21 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbd7461808046954c8fe2545e425bc8b, type: 3}
-  m_Name: Level21
+  m_Name: Level29
   m_EditorClassIdentifier: 
   FightPit: {fileID: 293429945138623637, guid: 429eeea7d810abd418de1f32f7291b26, type: 3}
   Enemies:
-  - {fileID: 212270421421278973, guid: b234e7f0946d70b4481bf989623d3299, type: 3}
-  - {fileID: 212270421421278973, guid: b234e7f0946d70b4481bf989623d3299, type: 3}
-  - {fileID: 212270421421278973, guid: b234e7f0946d70b4481bf989623d3299, type: 3}
-  - {fileID: 3439623323596400143, guid: 115eebe6cbc2c1b4a873f26003338230, type: 3}
-  - {fileID: 3439623323596400143, guid: 115eebe6cbc2c1b4a873f26003338230, type: 3}
+  - {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c, type: 3}
+  - {fileID: 152437492836282755, guid: da867847f4ba6b940bf464a5a70b5642, type: 3}
+  - {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c, type: 3}
+  - {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c, type: 3}
+  - {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c, type: 3}
+  - {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c, type: 3}
   SpawnPoints:
   - {x: -3.74, y: 2.67, z: 1}
   - {x: 0, y: 3, z: 1}
   - {x: 3.74, y: 2.67, z: 1}
   - {x: -4.75, y: 0, z: 1}
   - {x: 4.75, y: 0, z: 1}
+  - {x: 0, y: 1.5, z: 1}
   Difficulty: 1
   XPGain: 120
   TotalXPGainedFromEnemies: 0

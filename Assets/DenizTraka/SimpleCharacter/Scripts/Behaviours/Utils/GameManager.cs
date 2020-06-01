@@ -69,7 +69,7 @@ namespace DTWorld.Behaviours.Utils
         {
             var levelManager = GameObject.Find("FightManager").GetComponent<LevelManager>();
             var currentLevel = levelManager.GetCurrentLevel();
-            currentLevel.ResetEnemyDeathCount();
+            currentLevel.Reset();
 
             StartCoroutine(ShowDeathCanvas(2));
 

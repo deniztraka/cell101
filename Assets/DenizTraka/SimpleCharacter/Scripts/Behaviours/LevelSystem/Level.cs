@@ -72,8 +72,10 @@ namespace DTWorld.Behaviours.LevelSystem
             currentEnemyObj.OnHealthBelowZeroEvent += new HealthBehaviour.OnHealthBelowZeroEventHandler(OnEnemyDeath);
         }
 
-        public void ResetEnemyDeathCount(){
+        public void Reset(){
             numberOfDeaths = 0;
+            IsFinished = false;
+            TotalXPGainedFromEnemies = 0;
         }
 
         internal void Spawn()
