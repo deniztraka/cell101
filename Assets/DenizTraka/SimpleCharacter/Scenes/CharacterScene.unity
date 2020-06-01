@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.20749268, g: 0.21147677, b: 0.14576986, a: 1}
+  m_IndirectSpecularColor: {r: 0.20749113, g: 0.2114747, b: 0.1457682, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9113,6 +9113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2056875529}
   - component: {fileID: 2056875530}
+  - component: {fileID: 2056875531}
   m_Layer: 0
   m_Name: AppManager
   m_TagString: AppManager
@@ -9148,6 +9149,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsRanged: 0
   HasLeveledUp: 0
+--- !u!114 &2056875531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056875528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4e0e9d2ea4400449bb14745c431870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Fight
+    Clip: {fileID: 8300000, guid: 947baa2a3bb2192428efe2fd4b8917e9, type: 3}
+    Volume: 0.262
+    Pitch: 1
+    Source: {fileID: 0}
+    Loop: 0
 --- !u!1 &2130805107
 GameObject:
   m_ObjectHideFlags: 0

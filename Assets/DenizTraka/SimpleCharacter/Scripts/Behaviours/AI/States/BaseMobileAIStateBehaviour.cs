@@ -30,10 +30,14 @@ namespace DTWorld.Behaviours.AI.States
                 PlayerBehaviour = playerObj.GetComponent<PlayerBehaviour>();
                 DeltaVector = MobileBehaviour.transform.position - PlayerBehaviour.transform.position;
             }
-            animator.SetBool("IsRanged", MobileBehaviour.WeaponBehaviour.IsRanged);
+            if (MobileBehaviour.WeaponBehaviour != null)
+            {
+                animator.SetBool("IsRanged", MobileBehaviour.WeaponBehaviour.IsRanged);
+                animator.SetFloat("AttackDistance", MobileBehaviour.WeaponBehaviour.AttackDistance);
+            }
+
             animator.SetFloat("Health", MobileHealth.Health);
             animator.SetFloat("ChaseDistance", MobileBehaviour.ChaseDistance);
-            animator.SetFloat("AttackDistance", MobileBehaviour.WeaponBehaviour.AttackDistance);
             animator.SetFloat("FleeBelowHealth", MobileBehaviour.FleeBelowHealth);
             animator.SetFloat("FleeDistance", MobileBehaviour.FleeDistance);
 

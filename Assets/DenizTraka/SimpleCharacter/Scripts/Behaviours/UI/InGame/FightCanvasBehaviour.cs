@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.Audio;
 using DTWorld.Behaviours.LevelSystem;
+using DTWorld.Behaviours.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 namespace DTWorld.Behaviours.UI.InGame
@@ -28,24 +29,16 @@ namespace DTWorld.Behaviours.UI.InGame
             audioManager = GetComponent<AudioManager>();
         }
 
-        IEnumerator Fight(){
-            
-            currentLevel.Spawn();
-            yield return new WaitForSeconds(0.5f);
-            
-            gameObject.SetActive(false);
-            
-
-        }
-
         public void StartFight()
         {
-            if (audioManager != null)
-            {
-                audioManager.Play("Fight");
-            }
+            // if (audioManager != null)
+            // {
+            //     audioManager.Play("Fight");
+            // }
             Time.timeScale = 1f;
-            StartCoroutine(Fight());
+
+            AppManager.Instance.StartLevel(currentLevel);
+            gameObject.SetActive(false);
         }
     }
 }

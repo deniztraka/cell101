@@ -34,9 +34,9 @@ public class DoorBehaviour : MonoBehaviour, IPointerClickHandler
         characterMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScreenMovementBehaviour>();
         SetOpenStatus(false);
         var currentFightIndex = PlayerPrefs.GetInt("CurrentFightIndex", 0);
-        var numberOfLevels = 20;
+        var numberOfLevels = 31;
 
-        var alradyFinishedAllLevels = currentFightIndex + 1 >= numberOfLevels;
+        var alradyFinishedAllLevels = currentFightIndex >= numberOfLevels;
         if (alradyFinishedAllLevels)
         {
             isFinished = true;

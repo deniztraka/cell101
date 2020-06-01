@@ -18,6 +18,8 @@ namespace DTWorld.Behaviours.LevelSystem
     [CreateAssetMenu(fileName = "Level", menuName = "LevelSystem/Level", order = 1)]
     public class Level : ScriptableObject
     {
+        public GameObject FightPit;
+
         public List<GameObject> Enemies;
         public Vector3[] SpawnPoints;
 
@@ -70,13 +72,19 @@ namespace DTWorld.Behaviours.LevelSystem
             currentEnemyObj.OnHealthBelowZeroEvent += new HealthBehaviour.OnHealthBelowZeroEventHandler(OnEnemyDeath);
         }
 
-        public void ResetEnemyDeathCount(){
+        public void Reset(){
             numberOfDeaths = 0;
+            IsFinished = false;
+            TotalXPGainedFromEnemies = 0;
         }
 
         internal void Spawn()
         {
             SpawnEntities();
+        }
+
+        public void Initiate(){
+            Instantiate(FightPit, Vector3.zero, Quaternion.identity);
         }
     }
 }

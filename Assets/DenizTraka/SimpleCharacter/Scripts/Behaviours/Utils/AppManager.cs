@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.Audio;
+using DTWorld.Behaviours.LevelSystem;
 using DTWorld.Behaviours.Mobiles;
 using UnityEngine;
 namespace DTWorld.Behaviours.Utils
@@ -12,6 +15,11 @@ namespace DTWorld.Behaviours.Utils
 
         public bool HasLeveledUp;
 
+        private AudioManager audioManager;
+        void Start()
+        {
+            audioManager = GetComponent<AudioManager>();
+        }
 
         private void Awake()
         {
@@ -26,7 +34,26 @@ namespace DTWorld.Behaviours.Utils
             }
         }
 
-        public void PrepareRandomFightValues(){
+        public void PrepareRandomFightValues()
+        {
+
+        }
+
+        internal void StartLevel(Level currentLevel)
+        {
+            StartCoroutine(InitiateLevel(currentLevel));
+        }
+
+        IEnumerator InitiateLevel(Level currentLevel)
+        {
+            currentLevel.Initiate();
+
+            yield return new WaitForSeconds(0.5f);
+            if (audioManager != null)
+            {
+                audioManager.Play("Fight");
+            }
+            currentLevel.Spawn();
 
         }
     }

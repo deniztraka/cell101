@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorld.Behaviours.Audio;
 using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.LevelSystem;
 using DTWorld.Behaviours.Mobiles;
@@ -22,6 +23,7 @@ namespace DTWorld.Behaviours.Utils
 
         HealthBehaviour playerHealth;
         public GameObject OnDeathCanvas;
+        private AudioManager audioManager;
 
         // Start is called before the first frame update
 
@@ -29,6 +31,7 @@ namespace DTWorld.Behaviours.Utils
         {
             InitGame();
         }
+
 
         void InitGame()
         {
@@ -53,6 +56,7 @@ namespace DTWorld.Behaviours.Utils
         private IEnumerator StartGame()
         {
             yield return new WaitForSeconds(1);
+            
         }
 
         private IEnumerator ShowDeathCanvas(float seconds)
@@ -65,7 +69,7 @@ namespace DTWorld.Behaviours.Utils
         {
             var levelManager = GameObject.Find("FightManager").GetComponent<LevelManager>();
             var currentLevel = levelManager.GetCurrentLevel();
-            currentLevel.ResetEnemyDeathCount();
+            currentLevel.Reset();
 
             StartCoroutine(ShowDeathCanvas(2));
 

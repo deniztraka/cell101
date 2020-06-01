@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd7461808046954c8fe2545e425bc8b, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
+  FightPit: {fileID: 2860988667108597917, guid: 27c6dcee6ad894e42bc09991678a7584,
+    type: 3}
   Enemies:
   - {fileID: 4332836075184664260, guid: 6490f28148ae159429aeddccff8d11d1, type: 3}
   SpawnPoints:
