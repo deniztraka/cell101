@@ -8,7 +8,7 @@ namespace DTWorlds.Behaviours.Environment
     {
         private bool isActive;
         private Animator animator;
-
+        private Collider2D collider;
         private float lastTriggeredTime;
         public float TriggerFrequency = 5f;
         public float TriggerChance = 0.1f;
@@ -18,6 +18,8 @@ namespace DTWorlds.Behaviours.Environment
         void Start()
         {
             animator = GetComponent<Animator>();
+            collider = GetComponent<Collider2D>();
+            collider.enabled = false;
         }
 
         // Update is called once per frame
@@ -37,8 +39,10 @@ namespace DTWorlds.Behaviours.Environment
         {
             animator.SetTrigger("Attack");
             isActive = true;
+            collider.enabled = true;
             yield return new WaitForSeconds(TriggerFrequency / 2);
             animator.SetTrigger("Return");
+            collider.enabled = false;
             isActive = false;
         }
 
