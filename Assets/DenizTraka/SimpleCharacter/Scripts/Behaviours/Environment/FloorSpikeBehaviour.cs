@@ -25,9 +25,9 @@ namespace DTWorlds.Behaviours.Environment
         // Update is called once per frame
         void Update()
         {
-            if (Random.value < TriggerChance)
+            if (!isActive && Time.time > lastTriggeredTime + TriggerFrequency)
             {
-                if (!isActive && Time.time > lastTriggeredTime + TriggerFrequency)
+                if (Random.value < TriggerChance)
                 {
                     StartCoroutine(Trigger());
                     lastTriggeredTime = Time.time;
