@@ -170,7 +170,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.dtworldz.cell101
   buildNumber: {}
-  AndroidBundleVersionCode: 10
+  AndroidBundleVersionCode: 11
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
