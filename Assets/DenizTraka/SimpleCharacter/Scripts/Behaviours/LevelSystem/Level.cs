@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorld.Behaviours.Interfacelike;
 using DTWorld.Behaviours.Mobiles;
+using DTWorlds.Behaviours.Environment;
 using UnityEngine;
 namespace DTWorld.Behaviours.LevelSystem
 {
@@ -72,7 +73,8 @@ namespace DTWorld.Behaviours.LevelSystem
             currentEnemyObj.OnHealthBelowZeroEvent += new HealthBehaviour.OnHealthBelowZeroEventHandler(OnEnemyDeath);
         }
 
-        public void Reset(){
+        public void Reset()
+        {
             numberOfDeaths = 0;
             IsFinished = false;
             TotalXPGainedFromEnemies = 0;
@@ -83,8 +85,14 @@ namespace DTWorld.Behaviours.LevelSystem
             SpawnEntities();
         }
 
-        public void Initiate(){
-            Instantiate(FightPit, Vector3.zero, Quaternion.identity);
+        public void Initiate()
+        {
+            var instantiatedPit = Instantiate(FightPit, Vector3.zero, Quaternion.identity);
+            var fightPitBehaviour = instantiatedPit.GetComponent<FightPitBehaviour>();
+            if (fightPitBehaviour != null)
+            {
+                fightPitBehaviour.Init(Difficulty, Enemies);
+            }
         }
     }
 }
