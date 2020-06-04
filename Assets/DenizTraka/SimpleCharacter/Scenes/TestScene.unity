@@ -550,7 +550,7 @@ PrefabInstance:
     - target: {fileID: 2143352051832004761, guid: 8269e4eb458f2184ba4ce490d7c52d1c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.795516
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 2143352051832004761, guid: 8269e4eb458f2184ba4ce490d7c52d1c,
         type: 3}
@@ -600,17 +600,22 @@ PrefabInstance:
     - target: {fileID: 6104248019501390032, guid: 8269e4eb458f2184ba4ce490d7c52d1c,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.152
       objectReference: {fileID: 0}
     - target: {fileID: 6104248019501390032, guid: 8269e4eb458f2184ba4ce490d7c52d1c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c,
         type: 3}
       propertyPath: m_Name
       value: BanditArcher Hell (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270919096270577074, guid: 8269e4eb458f2184ba4ce490d7c52d1c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8269e4eb458f2184ba4ce490d7c52d1c, type: 3}
@@ -1776,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 5743536387444768749, guid: 436f7c1d4b148b54e86891d5736fb446,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5743536387444768749, guid: 436f7c1d4b148b54e86891d5736fb446,
         type: 3}
@@ -3514,6 +3519,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 867984254398461696, guid: 8f672ebaa8ecdf4438c0c2817e663269,
+        type: 3}
+      propertyPath: MapSize.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 867984254398461696, guid: 8f672ebaa8ecdf4438c0c2817e663269,
+        type: 3}
+      propertyPath: MapSize.x
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f672ebaa8ecdf4438c0c2817e663269, type: 3}
 --- !u!1 &1214888523
@@ -4895,7 +4910,7 @@ PrefabInstance:
     - target: {fileID: 2974687731872845529, guid: ec8550b2923f0d14197dedb6b8bc1815,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2974687731872845529, guid: ec8550b2923f0d14197dedb6b8bc1815,
         type: 3}

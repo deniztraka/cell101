@@ -16,7 +16,7 @@ namespace DTWorld.Behaviours.LevelSystem
         Hell
     }
 
-    [CreateAssetMenu(fileName = "Level", menuName = "LevelSystem/Level", order = 1)]
+    [CreateAssetMenu(fileName = "Level", menuName = "DTWorldz/LevelSystem/Level", order = 1)]
     public class Level : ScriptableObject
     {
         public GameObject FightPit;

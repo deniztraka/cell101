@@ -5,7 +5,7 @@ using DTWorld.Behaviours.Mobiles;
 using UnityEngine;
 namespace DTWorld.Engines.SkillSystem.Abillities
 {
-    [CreateAssetMenu(fileName = "DoubleDamageAbillity", menuName = "Abillities/DoubleDamage", order = 1)]
+    [CreateAssetMenu(fileName = "DoubleDamageAbillity", menuName = "DTWorldz/Abilities/DoubleDamage", order = 1)]
     public class DoubleDamageAbillity : BaseAbillity
     {
         public override void Init(BaseAbillity abillity){

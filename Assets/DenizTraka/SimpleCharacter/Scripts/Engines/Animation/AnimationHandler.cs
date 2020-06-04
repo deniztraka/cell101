@@ -11,7 +11,7 @@ namespace DTWorld.Engines.Animation
         protected static readonly string[] walkingAnimations = { "HumanWalkingEast", "HumanWalkingNorth", "HumanWalkingWest", "HumanWalkingSouth" };
         protected static readonly string[] attackingAnimations = { "HumanAttackingEast", "HumanAttackingNorth", "HumanAttackingWest", "HumanAttackingSouth" };
         protected static readonly string[] defendingAnimations = { "HumanDefendEast", "HumanDefendNorth", "HumanDefendWest", "HumanDefendSouth" };
-        protected static readonly string[] deadAnimations = { "HumanDeadEast", "HumanDeadNorth", "HumanDeadWest", "HumanDeadSouth" };
+        protected static readonly string[] deadAnimations = { "HumanDeadEast", "HumanDeadNorth", "HumanDeadWest", "HumanDeadEast" };
         private Animator animator;
         private int lastDirectionIndex;
         private string lastAnimationName = "";

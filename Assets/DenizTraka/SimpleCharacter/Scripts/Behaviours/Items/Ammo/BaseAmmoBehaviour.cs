@@ -12,7 +12,7 @@ namespace DTWorld.Behaviours.Items.Ammo
     {
         public BaseWeaponBehaviour OwnerWeaponBehaviour;
         protected Collider2D Coll;
-        private AudioManager audioManager;
+        private AudioManager audioManager;        
         public new BaseAmmo Item;
 
         public override void Start()
