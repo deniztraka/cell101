@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1720773144036625333}
   - component: {fileID: 389144897988468143}
   - component: {fileID: 1720773144036625332}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: FloorSpikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.054013133, y: 0.031784065}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -127,7 +127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.39197373, y: 0.43643188}
+  m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
 --- !u!114 &1720773144036625332
 MonoBehaviour:

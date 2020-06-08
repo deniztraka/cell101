@@ -13,15 +13,20 @@ namespace DTWorlds.Behaviours.Environment
         public Tilemap WallMap;
         public GameObject TestItem;
 
-        public Vector2 MapSize;
+        public Vector2 MapSize = new Vector2(12, 8);
+
+        public List<GameObject> Traps;
+        public GameObject TrapsWrapper;
 
         public List<TileBase> FloorTiles;
-        public TileBase WallTileFront;
-        public TileBase WallTileFrontRight;
-        public TileBase WallTileFrontLeft;
-        public TileBase WallTileRight;
-        public TileBase WallTileBack;
-        public TileBase WallTileLeft;
+        public TileBase WallTopLeft;
+        public TileBase WallTop;
+        public TileBase WallTopRight;
+        public TileBase WallLeft;
+        public TileBase WallRight;
+        public TileBase WallBottomLeft;
+        public TileBase WallBottomRight;
+        public TileBase WallBottom;
 
         private int xMax = 0;
         private int xMin = 0;
@@ -32,39 +37,55 @@ namespace DTWorlds.Behaviours.Environment
         // Start is called before the first frame update
         void Start()
         {
+
             xMax = (int)MapSize.x / 2;
             xMin = -xMax;
             yMax = (int)MapSize.y / 2;
             yMin = -yMax;
 
-            PlaceFloorTiles();
-            PlaceWallTiles();
+            Init();
+
+        }
+
+        public void Init()
+        {
+            // Debug.Log(String.Format("xMin:{0}, xMax:{1}", xMin, xMax));
+            // Debug.Log(String.Format("yMin:{0}, yMax:{1}", yMin, yMax));
+
+            if (WallMap != null && FloorMap != null)
+            {
+                PlaceFloorTiles();
+                PlaceWallTiles();
+                PlaceTraps(LevelDifficulty.Hell);
+            }
+        }
+
+        private void PlaceTraps(LevelDifficulty difficulty)
+        {
+            // Instantiate(Traps[UnityEngine.Random.Range(0, Traps.Count)], FloorMap.GetCellCenterWorld(new Vector3Int(0, 0, 0)), Quaternion.identity, TrapsWrapper.transform);
+            // Instantiate(Traps[UnityEngine.Random.Range(0, Traps.Count)], FloorMap.GetCellCenterWorld(new Vector3Int(1, 1, 0)), Quaternion.identity, TrapsWrapper.transform);
+            // return;
+
+            for (int x = xMin+1; x < xMax-1; x++)
+            {
+                for (int y = yMin+2; y < yMax-1; y++)
+                {
+                    if (UnityEngine.Random.Range(0,100) < (int)difficulty)
+                    {
+                        Instantiate(Traps[UnityEngine.Random.Range(0, Traps.Count)], FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0)), Quaternion.identity, TrapsWrapper.transform);
+                    }
+                }
+            }
         }
 
         public void Init(LevelDifficulty difficulty, List<GameObject> enemies)
         {
-            PlaceFloorTiles();
-            PlaceWallTiles();
-        }
-
-        private void PlaceWallTiles()
-        {
-            for (int x = xMin; x < xMax; x++)
+            if (WallMap != null && FloorMap != null)
             {
-                WallMap.SetTile(new Vector3Int(x, yMax, 0), WallTileFront); //top edge
-                WallMap.SetTile(new Vector3Int(x, yMin - 1, 0), WallTileBack); //bottom edge
+                PlaceFloorTiles();
+                PlaceWallTiles();
+                PlaceTraps(difficulty);
             }
-            for (int y = yMin; y < yMax; y++)
-            {
-                WallMap.SetTile(new Vector3Int(xMax, y, 0), WallTileRight); //right edge
-                WallMap.SetTile(new Vector3Int(xMin - 1, y, 0), WallTileLeft); //left edge
-            }
-
-            WallMap.SetTile(new Vector3Int(xMax, yMin-1, 0), WallTileBack); //bottom right corner
-            WallMap.SetTile(new Vector3Int(xMin-1, yMin-1, 0), WallTileBack); //bottom left corner
-            WallMap.SetTile(new Vector3Int(xMax, yMax, 0), WallTileFrontRight); //top right corner
-            WallMap.SetTile(new Vector3Int(xMin-1, yMax, 0), WallTileFrontLeft); //topleft corner
-
         }
 
         private void PlaceFloorTiles()
@@ -73,8 +94,32 @@ namespace DTWorlds.Behaviours.Environment
             {
                 for (int y = yMin; y < yMax; y++)
                 {
-                    FloorMap.SetTile(new Vector3Int(x, y, 0), FloorTiles[0]);
+                    FloorMap.SetTile(new Vector3Int(x, y, 0), FloorTiles[UnityEngine.Random.Range(0, FloorTiles.Count)]);
                 }
+            }
+        }
+
+        private void PlaceWallTiles()
+        {            
+            WallMap.SetTile(new Vector3Int(xMax - 1, yMax - 1, 0), WallTopRight);
+            for (int x = xMin + 1; x < xMax - 1; x++)
+            {
+                WallMap.SetTile(new Vector3Int(x, yMax - 1, 0), WallTop);
+            }
+            WallMap.SetTile(new Vector3Int(xMin, yMax - 1, 0), WallTopLeft);
+            for (int y = yMin + 1; y < yMax - 1; y++)
+            {
+                WallMap.SetTile(new Vector3Int(xMin, y, 0), WallLeft);
+            }
+            WallMap.SetTile(new Vector3Int(xMax - 1, yMin, 0), WallBottomLeft);
+            for (int x = xMin + 1; x < xMax - 1; x++)
+            {
+                WallMap.SetTile(new Vector3Int(x, yMin, 0), WallBottom);
+            }
+            WallMap.SetTile(new Vector3Int(xMin, yMin, 0), WallBottomRight);
+            for (int y = yMin + 1; y < yMax - 1; y++)
+            {
+                WallMap.SetTile(new Vector3Int(xMax - 1, y, 0), WallRight);
             }
         }
     }

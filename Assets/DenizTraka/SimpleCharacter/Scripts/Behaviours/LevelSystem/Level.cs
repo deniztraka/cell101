@@ -9,11 +9,11 @@ namespace DTWorld.Behaviours.LevelSystem
 {
     public enum LevelDifficulty
     {
-        VeryEasy,
-        Easy,
-        Medium,
-        Hard,
-        Hell
+        VeryEasy = 2,
+        Easy = 8,
+        Medium = 18,
+        Hard = 35,
+        Hell = 50
     }
 
     [CreateAssetMenu(fileName = "Level", menuName = "DTWorldz/LevelSystem/Level", order = 1)]
